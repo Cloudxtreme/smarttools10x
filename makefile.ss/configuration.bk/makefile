@@ -83,6 +83,7 @@ $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE) : $(GMAKE_OSNAME).schema
 	$(VIEWER)mkdir -p $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE)
 	$(VIEWER)cp -r $(GMAKE_OSNAME).schema/$(GMAKE_PROCESSORTYPE)/* $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE)
 	$(VIEWER)find $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE) -name "CVS" -exec rm -rf {} \; -depth
+	$(VIEWER)find $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE) -name ".svn" -exec rm -rf {} \; -depth
    
 $(binaryTarget) :
 	@echo "Creando " $(binaryTarget)
