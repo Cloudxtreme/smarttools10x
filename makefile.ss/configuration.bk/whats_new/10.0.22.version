@@ -1,0 +1,9 @@
+version 10.0.22 - Modifica los includes de libxml2 que hacian referencia a un 
+numero de version por default.include, ya que hacen uso de la libxml2 ofrecida
+por defecto por la instalacion del SO.
+
+File: no file 2.6.11.include		Status: Locally Removed
+File: default.include  	Status: Locally Added
+File: no file 2.6.x.include		Status: Locally Removed
+File: default.include  	Status: Locally Added
+File: 10.0.22.version  	Status: Locally Added

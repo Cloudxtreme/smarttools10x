@@ -1,0 +1,16 @@
+#!/usr/bin/ksh 
+
+export MYPJ=`pwd`
+export BASEPJ=`pwd`
+
+export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/cooking.pj
+# export SDPPJ=/home/comun/usuarios/frr/plataforma/NemesisRD.pj
+export MAKEFILES_DIR=/home/comun/trabajo/herramientas/SmartTools9_2Evo.pj/configurations
+
+. $MAKEFILES_DIR/../scripts/SmartConfig MAKEFILES_DIR -xml -ssl -crypto
+
+export X=$MYPJ/bin.ss
+export M=$MYPJ/makefile.ss
+
+export V10=/home/comun/usuarios/frr/herramientas/SmartTools/v10.pj/bin.ss
+export V9=/home/comun/usuarios/frr/herramientas/SmartTools/v9.pj

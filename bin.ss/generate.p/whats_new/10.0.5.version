@@ -1,0 +1,7 @@
+version 10.0.5 - Incorpora las mejoras de la Smart.description 10.0.10, referentes a la incluision del tratamiento
+de descripiones de target detallados.
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.Structure.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Added

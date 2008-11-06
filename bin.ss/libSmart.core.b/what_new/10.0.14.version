@@ -1,0 +1,6 @@
+version 10.0.14 - Elimina un BUG a la hora de terminar la ejecucion de un comando lanzado
+mediante el metodo popen.
+
+./core.functions.cc |  Locally Modified
+./core.sccs.cc |  Locally Modified
+./what_new/10.0.14.version |  Locally Added

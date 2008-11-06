@@ -1,0 +1,12 @@
+version 10.0.10 - Mejora el tratamiento de las condiciones de error que pueden ocurrir en el 
+proceso de creacion de las librerias y ejecutables.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: 10.0.10.version  	Status: Locally Added
+
+version 10.0.10.1 - Incluye los .h necesarios en Solaris para usar las macros referentes
+a la captura del codigo de terminacion de los procesos hijos.
+
+./smake.Application.cc |  Locally Modified
+./whats_new/10.0.10.version |  Locally Modified

@@ -1,0 +1,5 @@
+version 10.0.45 - Incorpora la posibilidad de compilar con PostgreSQL.
+
+./whats_new/10.0.45.version |  Locally Added
+./Linux2.6.schema/x86_64/rdbms/postgre/default.include |  Locally Added
+./makefile |  Locally Modified

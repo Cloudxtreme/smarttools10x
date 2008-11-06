@@ -1,0 +1,27 @@
+version 10.0.18 - Soluciona un BUG a la hora de generar los ASN1.
+
+En las reglas dela segunda fase no solo hay que incluir el .asn1 del que se parte sino que hay
+que incluir tambien los .h originados.
+
+# generate.Command.cc (86)
+.$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.h .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C : AlertServiceCentreWithoutResultv1.ASN1 \
+        DatosComunes.ASN1
+        @printf "%s " AlertServiceCentreWithoutResultv1.ASN1
+        $(VIEWER)cp AlertServiceCentreWithoutResultv1.ASN1 `dirname $@`
+        $(VIEWER)cd `dirname $@`; $(ASN1_COMPILER) AlertServiceCentreWithoutResultv1.ASN1 ../DatosComunes.ASN1  $(ASN1_FLAGS) $(USER_ASN1_FLAGS)
+
+# generate.Command.cc (105)
+.$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.o : .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C  \
+        DatosComunes.ASN1
+        @printf "%s " .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C
+        $(VIEWER)$(CPP) -c .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C -I$(MYPJ)/nemesis.ss/libOperacionesMap.b/operaciones.db  $(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CPP_FLAGS) $(USER_CPP_FLAGS)
+
+
+La segunda regla debe incluir el DatosComunes.h para que no intente generar este .o sin tener todavia
+.h creado.
+
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: smart.generate.Command.h	Status: Locally Modified
+File: 10.0.18.version  	Status: Locally Added

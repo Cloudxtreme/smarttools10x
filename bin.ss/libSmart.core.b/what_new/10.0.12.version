@@ -1,0 +1,9 @@
+version 10.0.12 - Optimiza el modo de obtener el nombre del SO, la version y la arquitectura. Ahora se hace mediante el metodo uname.
+
+./core.functions.cc |  Locally Modified
+./core.sccs.cc |  Locally Modified
+./what_new/10.0.12.version |  Locally Added
+
+version 10.0.12.1 - Ajuste. El campo machine, no devuelve 'sparc', sino sun4u.
+./core.functions.cc |  Locally Modified
+./what_new/10.0.12.version |  Locally Modified

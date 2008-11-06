@@ -1,0 +1,23 @@
+version 10.0.38 - Cambia el -g por el -g0
+
+./whats_new/10.0.38.version |  Locally Added
+./Linux2.4.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/x86_64/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/unknown/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+
+version 10.0.38.1 - Incorpora la variable CPP_DEBUG_INDICATOR en la linea de compilacion
+del C++ para dar la posibilidad de que un proyecto siga usando el -g en vez del -g0, que 
+será el indicador por defecto, ya que aunque permite depurar mantiene las funciones
+inline.
+
+El valor de ésta o cualquier otra variable se puede cambiar en el archivo $BASEPJ/tune_project.x.config
+
+./whats_new/10.0.38.version |  Locally Modified
+./config.xml |  Locally Modified
+./Linux2.4.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/x86_64/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/unknown/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./SunOS5.8.schema/sparc/cppcompiler/Sun/forte6/release/debug.include |  Locally Modified
+./CYGWIN_NT-5.11.5.schema/unknown/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified

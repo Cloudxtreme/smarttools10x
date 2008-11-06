@@ -1,0 +1,17 @@
+version 10.0.12 - Incorpora un nuevo indicador de descripcion 'InputOnlyName' requerido para compilar 
+los fuentes de ASN1.
+
+# generate.Command.cc (66)
+mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.h mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C : mensajes.db/ImeiSS7.asn1
+        @printf "%s " mensajes.db/ImeiSS7.asn1
+        $(VIEWER)cp mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C `dirname $@`
+        $(VIEWER)cd `dirname $@`; $(ASN1_COMPILER) mensajes.db/ImeiSS7.asn1  $(ASN1_FLAGS) $(USER_ASN1_FLAGS)
+
+El problema consisten en que antes de invocar al compilar de ASN1 ya ha cambiado al directorio donde esta el fuente, por
+tanto no sera 'mensajes.db/ImeiSS7.asn1' sino simplemente 'ImeiSS7.asn1'.
+
+File: description.MetaLine.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.MetaLine.h	Status: Locally Modified
+File: 10.0.12.version  	Status: Locally Added

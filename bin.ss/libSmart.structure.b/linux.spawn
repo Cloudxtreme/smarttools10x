@@ -1,0 +1,32 @@
+if [ "$1" = "" ]
+then
+   echo "Uso: $0 <directorio de la libreria XML2>"
+   exit 1
+fi
+
+mkdir .Linux2.4i686_GNUgcc_fast_st_none_none.X 
+printf "%s " structure.Agent.cc
+${CC} -c structure.Agent.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Agent.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " structure.Resource.cc
+${CC} -c structure.Resource.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Resource.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " structure.Section.cc
+${CC} -c structure.Section.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Section.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " structure.sccs.cc
+${CC} -c structure.sccs.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.sccs.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+echo; echo Generando libreria ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.structure.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.structure.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Agent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Resource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Section.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.sccs.o  $2 -lz -lrt ; \
+else \
+	if test "true" = "true" ; \
+	then \
+		/usr/bin/ar crv ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.structure.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Agent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Resource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Section.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.sccs.o ; \
+	else \
+		${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.structure.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Agent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Resource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.Section.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/structure.sccs.o ; \
+	fi ; \
+fi ; \
+if [ "false" = "true" ] ; \
+then \
+	chmod -R ug+rwx .Linux2.4i686_GNUgcc_fast_st_none_none.X ; \
+fi ;
+echo; echo

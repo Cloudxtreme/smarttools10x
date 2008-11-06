@@ -1,0 +1,4 @@
+GNOME_HOME=/home/intsdp/libxml2-2.6.11/solaris/
+
+SYSTEM_INCLUDES += -I$(GNOME_HOME)/include/libxml2
+SYSTEM_LIBS += $(GNOME_HOME)/lib/libxml2.a -lz

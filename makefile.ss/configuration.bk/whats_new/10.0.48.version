@@ -1,0 +1,5 @@
+version 1.0.48 - Incorpora la version 1.4.0.8 de señalización.
+
+./whats_new/10.0.48.version |  Locally Added
+./SunOS5.8.schema/sparc/ss7/d7/1.4.0.5.include |  Locally Modified
+./SunOS5.8.schema/sparc/ss7/d7/1.4.0.8.include |  Locally Added

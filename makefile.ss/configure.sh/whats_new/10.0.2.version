@@ -1,0 +1,3 @@
+version 10.0.2 - Evita el uso de los caracteres especiales que pueden aparecer en el 
+resultado de ejecutar 'uname -r' en el SO cygwin.
+

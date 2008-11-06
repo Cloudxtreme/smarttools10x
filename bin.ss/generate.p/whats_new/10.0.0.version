@@ -1,0 +1,33 @@
+version 10.0.0 - Version preliminar. Falta incorpora la capacidad de interpretar los MetaCommand
+para ir creando el comando de cada uno de los componentes.
+
+File: generate.Agent.cc	Status: Locally Added
+File: generate.Application.cc	Status: Locally Added
+File: generate.Executable.cc	Status: Locally Added
+File: generate.FileSystem.cc	Status: Locally Added
+File: generate.Library.cc	Status: Locally Added
+File: generate.LogicalGroup.cc	Status: Locally Added
+File: generate.Makefile.cc	Status: Locally Added
+File: generate.Prototype.cc	Status: Locally Added
+File: generate.SourceContainer.cc	Status: Locally Added
+File: generate.Structure.cc	Status: Locally Added
+File: generate.defines.cc	Status: Locally Added
+File: generate.sccs.cc 	Status: Locally Added
+File: main.cc          	Status: Locally Added
+File: makefile.config  	Status: Locally Added
+File: makefile.order   	Status: Locally Added
+File: smart.generate.Agent.h	Status: Locally Added
+File: smart.generate.Application.h	Status: Locally Added
+File: smart.generate.AutoPointer.h	Status: Locally Added
+File: smart.generate.Executable.h	Status: Locally Added
+File: smart.generate.FileSystem.h	Status: Locally Added
+File: smart.generate.Library.h	Status: Locally Added
+File: smart.generate.LogicalGroup.h	Status: Locally Added
+File: smart.generate.Makefile.h	Status: Locally Added
+File: smart.generate.Prototype.h	Status: Locally Added
+File: smart.generate.RuleWriter.h	Status: Locally Added
+File: smart.generate.SourceContainer.h	Status: Locally Added
+File: smart.generate.Structure.h	Status: Locally Added
+File: smart.generate.defines.h	Status: Locally Added
+File: smart.generate.sccs.h	Status: Locally Added
+File: 10.0.0.version   	Status: Locally Added

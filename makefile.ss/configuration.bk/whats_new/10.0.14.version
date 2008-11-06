@@ -1,0 +1,6 @@
+version 10.0.14 - Ajusta los parametros de los programas quantify y purify, para que usen como
+directorio de ceche el ../$GMAKE_TARGET).puresoft
+
+File: this.include     	Status: Locally Modified
+File: this.include     	Status: Locally Modified
+File: 10.0.14.version  	Status: Locally Added

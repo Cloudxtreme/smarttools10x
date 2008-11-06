@@ -1,0 +1,13 @@
+version 10.0.11 - Permite ajustar las opciones por defecto para cada uno delos proyectos.
+
+Cada proyecto podra fijar los valores asignados a cada uno de los recursos quenos impone el 
+guion asociado al sistema operativo.
+
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.Tuning.cc	Status: Locally Added
+File: configure.sccs.cc	Status: Locally Modified
+File: smart.configure.Application.h	Status: Locally Modified
+File: smart.configure.Tuning.h	Status: Locally Added
+File: 10.0.11.version  	Status: Locally Added

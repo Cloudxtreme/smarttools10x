@@ -1,0 +1,9 @@
+version 10.0.13 - Incorpora el uso de Smart.structure para analizar la estructura definida por la variable
+de entorno GMAKE_STRUCTURE.
+
+File: generate.Application.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: makefile.config  	Status: Locally Modified
+File: smart.generate.SourceContainer.h	Status: Locally Modified
+File: 10.0.13.version  	Status: Locally Added

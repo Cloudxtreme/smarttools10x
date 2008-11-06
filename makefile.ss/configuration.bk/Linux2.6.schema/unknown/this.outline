@@ -1,0 +1,8 @@
+compilador de C/C++ | cppcompiler | true
+core de la librería de interpretación de documentos XML | xml | false
+core de la librería para comunicaciones seguras mediante SSL | ssl | false
+core de la librería  desarrollo de clientes LDAP | ldap | false 
+compilador de ASN1 | asn1 | false
+gestor de base base de datos | rdbms | true | true
+core de las librerías para el control de la señalización SS7 | ss7 | true | true
+

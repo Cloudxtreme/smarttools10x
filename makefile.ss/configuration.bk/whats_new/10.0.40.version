@@ -1,0 +1,16 @@
+version 10.0.40 - Revision de los niveles de entrega.
+
+En la versión 10.0.38 de la configuración de los sistemas Linux 2.x
+se cambió el modificador de compilación -g por el -g0. Se verificó que
+los cores obtenidos ofrecían información sobre el punto de caída. 
+
+El problema es que cuando se va a depurar el proceso la información ofrecida
+no es sucifiente para establecer puntos de rupturar, evaluar variables, etc.
+
+./whats_new/10.0.40.version |  Locally Added
+./Linux2.4.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/i686/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/i686/cppcompiler/GNU/gcc/release/fast.include |  Locally Modified
+./Linux2.6.schema/x86_64/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified
+./Linux2.6.schema/x86_64/cppcompiler/GNU/gcc/release/fast.include |  Locally Modified
+./Linux2.6.schema/unknown/cppcompiler/GNU/gcc/release/debug.include |  Locally Modified

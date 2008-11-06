@@ -1,0 +1,4 @@
+version 10.0.7 - Elimina el error detectado al expandir los .asn1 en su correspondiente .c y .h
+File: analysis.Scanner.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

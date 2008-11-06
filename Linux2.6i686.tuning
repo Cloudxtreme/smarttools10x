@@ -1,0 +1,11 @@
+<Tuning>
+   <Resource Name="GMAKE_THREADING" Value="st"/>
+   <Resource Name="GMAKE_RWTOOLS" Value="none"/>
+   <Resource Name="GMAKE_LIBRARY" Value="static"/>
+   <Resource Name="GMAKE_XML" Value="libxml2/default"/>
+   <Resource Name="GMAKE_SSL" Value="none"/>
+   <Resource Name="GMAKE_ASN1" Value="none"/>
+   <Resource Name="GMAKE_SS7" Value="none"/>
+   <Resource Name="GMAKE_RDBMS" Value="none"/>
+   <Resource Name="GMAKE_RELEASE" Value="fast"/>
+</Tuning>

@@ -1,0 +1,16 @@
+version 10.0.8 - Incorpora la posiblidad de que el fichero de checksum's contenga comentarios.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Added
+
+version 10.0.8.1 - Comprueba que el archivo de checksum's tenga alguna entrada.
+
+File: smake.Application.cc	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Modified
+
+version 10.0.8.2 - Elimina la posibilidad de poner comentarios en el fichero .checksum por 
+la perdida de seguridad que podria accarear
+
+File: smake.Application.cc	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Modified

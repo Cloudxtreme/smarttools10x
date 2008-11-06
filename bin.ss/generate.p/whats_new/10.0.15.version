@@ -1,0 +1,6 @@
+version 10.0.15 - Normaliza el nombre de los parametros enviados al has_resources e ils.
+
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.Library.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.15.version  	Status: Locally Added

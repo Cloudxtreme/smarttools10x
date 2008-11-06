@@ -1,0 +1,15 @@
+version 10.0.13 - Soluciona el fallo detectado cuando las variables PJ terminan en un '/'.
+
+Cargando variable SDPPJ: /home/linuxsdp/proyectos/plataforma/cooking_64.pj/
+Cargando variable SDP_RD_PJ: /home/comun/trabajo/plataforma/NemesisRD/v1_6.pj
+Cargando variable WIDGETRD_PJ: /home/comun/trabajo/herramientas/WidgetRD/v1_5.pj/lib.ss
+
+bad.ss/makefile.order | Fichero: trace.p | No existe en el directorio
+bad.ss/makefile.order | Fichero: timer.p | No existe en el directorio
+
+[ analysis.Scanner.cc (126) ] RuntimeException: smart::naming::File { Parent: 0x0 | This: 0x641b40 | Name: /home/linuxsdp/proyectos/plataforma/cooking_64.pj/ | VPath: $(SDPPJ) } | No es una fuente de analisis reconocida
+
+
+./core.sccs.cc |  Locally Modified
+./what_new/10.0.13.version |  Locally Added
+./naming.db/naming.File.cc |  Locally Modified

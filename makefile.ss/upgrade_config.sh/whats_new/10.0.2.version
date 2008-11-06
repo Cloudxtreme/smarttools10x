@@ -1,0 +1,4 @@
+version 10.0.2 - Incorpora el makefile.resources en las comprobaciones. Recupera los nombres de 
+archivos especiales desde el propio documento de configuracion.
+
+

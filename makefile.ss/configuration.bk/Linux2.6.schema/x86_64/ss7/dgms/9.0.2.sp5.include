@@ -1,0 +1,12 @@
+SS7_HOME=/home/intsdp/DGMS_9.0.2_SP5_ECN4/linuxAS4_2.6.9_64b
+STREAMS_HOME=$(SS7_HOME)/streams
+
+SYSTEM_INCLUDES += -I$(SS7_HOME)/include -I$(STREAMS_HOME)/include
+
+CPP_FLAGS += -DDGMS
+CC_FLAGS += -DDGMS=1
+
+SYSTEM_LIBS += -L$(SS7_HOME)/library \
+   -Bstatic -ltcap -lsccp -lswrmm -ldf -lFt -lapi -lcc -loos -lscos \
+   -Bdynamic  -ldgms -L$(STREAMS_HOME)/lib -lstream
+

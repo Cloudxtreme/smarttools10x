@@ -1,0 +1,5 @@
+version 10.0.31 - Incorpora la variable USER_ASN1_FINECOMMAND que permite ajustar el comando
+asociado a la creacion del .C .h a un fuente .ASN1.
+
+./whats_new/10.0.31.version |  Locally Added
+./config.xml |  Locally Modified

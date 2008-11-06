@@ -1,0 +1,8 @@
+version 10.0.4 - Primeros ajustes en los comandos generados.
+
+File: generate.Application.cc	Status: Locally Modified
+File: generate.Executable.cc	Status: Locally Modified
+File: generate.Library.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Added

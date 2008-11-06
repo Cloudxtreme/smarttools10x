@@ -1,0 +1,7 @@
+version 10.0.41 - eliminar -lposix4
+
+./whats_new/10.0.42.version |  Locally Added
+
+version 10.0.42 - Ajustes JI
+./whats_new/10.0.42.version |  Locally Modified
+.Linux2.6.schema/x86_64/ss7/dgms/9.0.2.sp5.include |  Locally Modified

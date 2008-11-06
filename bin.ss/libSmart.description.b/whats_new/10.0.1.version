@@ -1,0 +1,6 @@
+version 10.0.1 - Normaliza el modo en que se reciben los parametros para el nodo que define la extensiones
+sobre las que se aplica una regla y para el nodo que describe que tipo de archivo genera la regla.
+
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

@@ -1,0 +1,23 @@
+echo "Recordar que SmartTools v10 siempre requiere una version Spawn instalada en /var/tmp/develop/SmartTools.pj"
+
+#export GMAKE_HOME=/var/tmp/develop/SmartTools.pj
+export GMAKE_HOME=/var/tmp/develop/SmartTools.pj
+export QT_DIR=/usr/local/Trolltech/Qt-4.3.2
+
+export MYPJ=`pwd`
+export BASEPJ=`pwd`
+
+#export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/v1_6.pj
+export SDPPJ=/home/comun/usuarios/frr/plataforma/NemesisRD/cooking.pj
+export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/v1_8.pj
+
+. $GMAKE_HOME/bin/SmartConfigure -t warning -v SDPPJ -x $SDPPJ/bad.ss,$SDPPJ/test.ss,$SDPPJ/collaboration.ss
+
+export X=${MYPJ}/bin.ss
+export M=${MYPJ}/makefile.ss
+
+export V10=${MYPJ}/bin.ss
+export V9=/home/comun/usuarios/frr/herramientas/SmartTools/v9.pj
+export PATH=$PATH:$QT_DIR/bin
+
+

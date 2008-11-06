@@ -1,0 +1,7 @@
+version 10.0.1 - Renombra el RelativePath como VariablePath para los nombres de archivo formados en base
+a una variable de entorno.
+
+File: core.sccs.cc     	Status: Locally Modified
+File: naming.File.cc   	Status: Locally Modified
+File: smart.naming.File.h	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

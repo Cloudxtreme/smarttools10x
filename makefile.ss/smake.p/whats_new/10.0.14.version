@@ -1,0 +1,12 @@
+version 10.0.14 - Amplia la funcionalidad del fichero de recursos para poder
+indicar varios valores válidos.
+
+Por ejemplo la línea:
+GMAKE_RDBMS: oracle mysql 
+
+en un determinado componente debería permite la creación de éste cuando cualquiera de los
+dos RDBMS's estén disponibles.
+
+./smake.sccs.cc |  Locally Modified
+./smake.Shuffler.cc |  Locally Modified
+./whats_new/10.0.14.version |  Locally Added

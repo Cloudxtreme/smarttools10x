@@ -1,0 +1,11 @@
+version 10.0.29 - Incorpora la variable USER_CPP_FLAG_RTTI que permite ajustar el valor
+de esta variable.
+
+En Linux por defecto tendra el valor -fno-rtti, lo cual desactiva su uso.
+
+./whats_new/10.0.29.version |  Locally Added
+./config.xml |  Locally Modified
+./Linux2.4.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/x86_64/this.include |  Locally Modified
+./CYGWIN_NT-5.11.5.schema/unknown/this.include |  Locally Modified

@@ -1,0 +1,21 @@
+version 10.0.15 - Hasta ahora el nombre indicado en la seccion FROM de los archivos ASN1 debia
+coindir exactamente con el nombre del archivo ASN1 que publicaba los componentes.
+
+De forma que habia un "FROM ifz-ip-sg"  se suponia que debia existir un archivo ifz-ip-sg.ASN1.
+
+Esta regla no siempre se cumple en el proyecto de Prepago, por lo que vamos a poner una puertra
+trasera para poder indicar el nombre de los archivos que de importar al procesar un ASN1
+
+Con:
+
+--FROM <nombre de archivo ASN1> 
+
+podremos indicar el nombre exacto de los archivos de los que depende el ASN1 en cuestion.
+
+
+File: analysis.ASN1Source.cc	Status: Locally Modified
+File: analysis.CSource.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: smart.analysis.ASN1Source.h	Status: Locally Modified
+File: smart.analysis.CSource.h	Status: Locally Modified
+File: 10.0.15.version  	Status: Locally Added

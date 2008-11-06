@@ -1,0 +1,186 @@
+version 10.0.0 - Version preliminar. Falta incorpora la capacidad de interpretar los MetaCommand
+para ir creando el comando de cada uno de los componentes.
+
+
+version 10.0.10 - Incorpora los cambios para adecuarse a las modificaciones a la hora de describir
+la estructura del guion de los recursos.
+
+Ahora contiene informacion que informa sobre si el recurso puede ser usado en el ILS.
+
+
+version 10.0.11 - Incorpora las mejoras introducidas que permiten configurar el nombre de los
+distintos archivos "especiales" que pueden existir en nuestro proyecto.
+
+
+version 10.0.12 - Pasa el nombre del archivo que contiene la descripcion de recursos. Se evita asi 
+que el ejecutable que lo comprueba tenga que cargar la configuracion, analizar el documento XML, etc, etc 
+
+
+
+
+version 10.0.13 - Incorpora el uso de Smart.structure para analizar la estructura definida por la variable
+de entorno GMAKE_STRUCTURE.
+
+
+version 10.0.14 - Elimina un BUG que hcia que el 'make clobber' no borrara el fichero de salida del componente, solo borraba los directorios temporales. 
+
+El truco para evitar que el make siga generando los .o's una vez que ya hemos creado el link a una libreria usando el ILS 
+consiste en ir creando los TARGET.X del proyecto de forma que apunten como un enlace simbolico al directorio correspondiente
+al que hemos hecho el link.
+
+asi por ejemplo si  el ILS ha generado el enlace:
+
+../_SunOS5.8sparc_Sunforte6_debug_st_oracle_none.X/libNemesis.core.a -> ../_SunOS5.8sparc_Sunforte6_debug_st_none_none.X/libNemesis.core.a
+
+Todos los directorios de salida de los subsistemas de libNemesis.core.b deberan apuntar a los directorios de salida
+de _SunOS5.8sparc_Sunforte6_debug_st_none_none.X
+
+Asi por ejemplo
+   core.b/mt.db/_linux2.4.21_gcc3.3.3_debug_st_oracle9.2.0_none.O -> core.b/mt.db/_linux2.4.21_gcc3.3.3_debug_mt_none_none.O
+
+Con esto se consigue que cuando el make aplica las reglas para generar los .o  se encuentra que todos los .o son posteriores
+a los .cc (por ejemplo) pero esta comprobando el .o a traves del link que acabamos de crear.
+
+---- Recordatorio de paso intermedio que ya hemos superado  ----
+En principio el ILS no esta integrado dentro del makefile del componente, sino que esta en el de su predecesor, por que no 
+encuentro la forma de abortar la compilacion despues de haber creado el link. Tal y como esta ahora crea el link correctamente, 
+pero luego continua generando todos los .o correspondientes a la libreria que esta creado.
+
+Entonces el predecesor en caso de que se vaya a generar una libreria invoca al ILS y si esta actua ya no es necesario invocar
+al makefile de la libreria. Cuando se invoque al makefile desde la libreria desde su mismo .b (p.e.) sera el smake el que se 
+encargue de comprobar si es posible crear la libreria con el ILS o si hay que invocar al make.
+
+
+
+version 10.0.15 - Normaliza el nombre de los parametros enviados al has_resources e ils.
+
+
+version 10.0.16 - Soluciona un problema en la regla para pasar de ProC -> C++ -> .o
+
+
+version 10.0.17 - Incorpora un nuevo indicador de descripcion 'InputOnlyName' requerido para compilar 
+los fuentes de ASN1.
+
+# generate.Command.cc (66)
+mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.h mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C : mensajes.db/ImeiSS7.asn1
+        @printf "%s " mensajes.db/ImeiSS7.asn1
+        $(VIEWER)cp mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C `dirname $@`
+        $(VIEWER)cd `dirname $@`; $(ASN1_COMPILER) mensajes.db/ImeiSS7.asn1  $(ASN1_FLAGS) $(USER_ASN1_FLAGS)
+
+El problema consisten en que antes de invocar al compilar de ASN1 ya ha cambiado al directorio donde esta el fuente, por
+tanto no sera 'mensajes.db/ImeiSS7.asn1' sino simplemente 'ImeiSS7.asn1'.
+
+Soluciona un error por que no se recorrian correctamente todos los nodos del arbol de directorios. Cuando un .ss depedendia
+de otro .ss
+
+
+version 10.0.18 - Soluciona un BUG a la hora de generar los ASN1.
+
+En las reglas dela segunda fase no solo hay que incluir el .asn1 del que se parte sino que hay
+que incluir tambien los .h originados.
+
+# generate.Command.cc (86)
+.$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.h .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C : AlertServiceCentreWithoutResultv1.ASN1 \
+        DatosComunes.ASN1
+        @printf "%s " AlertServiceCentreWithoutResultv1.ASN1
+        $(VIEWER)cp AlertServiceCentreWithoutResultv1.ASN1 `dirname $@`
+        $(VIEWER)cd `dirname $@`; $(ASN1_COMPILER) AlertServiceCentreWithoutResultv1.ASN1 ../DatosComunes.ASN1  $(ASN1_FLAGS) $(USER_ASN1_FLAGS)
+
+# generate.Command.cc (105)
+.$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.o : .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C  \
+        DatosComunes.ASN1
+        @printf "%s " .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C
+        $(VIEWER)$(CPP) -c .$(GMAKE_TARGET).X/AlertServiceCentreWithoutResultv1.C -I$(MYPJ)/nemesis.ss/libOperacionesMap.b/operaciones.db  $(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CPP_FLAGS) $(USER_CPP_FLAGS)
+
+
+La segunda regla debe incluir el DatosComunes.h para que no intente generar este .o sin tener todavia
+.h creado.
+
+
+
+version 10.0.19 - Reordena el codigo del generator::Command para facilitar la mantenibilidad del codigo.
+
+
+version 10.0.1 - Interpreta la informacion de los description::MetaCommand para generar el comando
+correspondiente a cada tipo de archivo.
+
+Evita la referencia directa que habia al fichero Makefile en la regla "load", ya que el nombre
+ahora es configurable.
+
+
+version 10.0.20 - Incorpora las mejoras de Smart.description 10.0.13 referentes a dar la posibilidad de
+crear comandos que incluyan los nombres de dependencias en base a las variables de entorno.
+
+
+version 10.0.21 - Incorpora las mejoras del Smart.description version 10.0.14 relacionadas con las mejora
+del tratamiento del nombre del archivo de configuracion del proyecto.
+
+
+version 10.0.22 - Incorpora la posiblidad de visualizar todos los comandos ejecutados para la
+creacion de los distintos componentes del proyecto que se va a crear con los archivos
+de dependencias.
+
+La variable GMAKE_EOL contrala la forma en la que aparece el nombre del componente que estamos
+creando, normalmente valdra ' ', para visualizar los componentes en el Eclipse deberia valer '\n'.
+
+
+version 10.0.23 - Genera las reglas correspondientes al purify y al quantify.
+
+Incluye informacion sobre el documento XML de configuracion usado en la generacion del los makefiles
+asi como la version de documento usada.
+
+
+version 10.0.24 - Actualliza la creacion de los makefile, hay que tener en cuenta que el directorio
+'tools' se ha cambiado por 'bin'.
+
+
+version 10.0.25 - Incorpora la variable OTHER_USER_DEPENDENCES.
+
+
+version 10.0.26 - Soluciona un BUG detectado al generar el comando asociado al ANS1.
+
+El indicador de inclusion (-u) asociado al nodo virtual de la regla del ASN1 aparece N+1 veces.
+
+Incorpora la solucion del problema detectado en Smart.description 10.0.15.
+
+
+
+version 10.0.27 - Incorpora los cambios de Smart.analysis 10.0.15.
+
+
+version 10.0.28 - Incorpora las mejoras de Smart.description 1.0.16.
+
+El archivo asociado a la variable Project->Configure se carga antes de cualquier otro .include,
+mientras que el archivo asociado a la variable Project->Tune se carga después de haber cargado
+todos los demás .includes asociados a la configuración/guión del entorno en el que nos encontramos
+lo que nos permite modificar de forma definitiva ciertos valores que las variables hayan podido
+tomar.
+
+
+version 10.0.2 - Se provoca un core al lanzar el generate desde un .ss
+
+
+version 10.0.3 - Soluciona el fallo detectado al escribir fuera de los limites de la memoria asignada
+
+
+version 10.0.4 - Primeros ajustes en los comandos generados.
+
+
+version 10.0.5 - Incorpora las mejoras de la Smart.description 10.0.10, referentes a la incluision del tratamiento
+de descripiones de target detallados.
+
+
+version 10.0.6 - Al generar un libreria solo se invocara al chmod  si la variable CC_NEED_CHMOD tiene un valor "true".
+
+
+version 10.0.7 - Ajustes para cuadras las variables de los guiones con las variables usadas en el (Makefile).
+
+
+version 10.0.8 - Se han detectado que no se generan los componentes en base al orden impuesto por el 
+archivo makefiles.order
+
+
+version 10.0.9 - Cuando se generan los makefiles desde un .ss los componentes incluidos pueden intentar cargar
+un makefile.config que no existe en su directorio.
+
+

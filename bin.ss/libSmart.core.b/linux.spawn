@@ -1,0 +1,36 @@
+if [ "$1" = "" ]
+then
+   echo "Uso: $0 <directorio de la libreria XML2>"
+   exit 1
+fi
+
+mkdir ../.Linux2.4i686_GNUgcc_fast_st_none_none.X 
+mkdir .Linux2.4i686_GNUgcc_fast_st_none_none.X 
+mkdir naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X 
+printf "%s " core.Variable.cc
+${CC} -c core.Variable.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.Variable.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " core.functions.cc
+${CC} -c core.functions.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.functions.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " core.sccs.cc
+${CC} -c core.sccs.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.sccs.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " naming.db/naming.File.cc
+${CC} -c naming.db/naming.File.cc -Ihdrs -Inaming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.File.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " naming.db/naming.FileClass.cc
+${CC} -c naming.db/naming.FileClass.cc -Inaming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.FileClass.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+echo; echo Generando libreria ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.core.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.core.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.Variable.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.sccs.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.File.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.FileClass.o  $1/lib/libxml2.a -lz -lrt ; \
+else \
+	if test "true" = "true" ; \
+	then \
+		/usr/bin/ar crv ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.core.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.Variable.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.sccs.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.File.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.FileClass.o ; \
+	else \
+		${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.core.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.Variable.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/core.sccs.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.File.o naming.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/naming.FileClass.o ; \
+	fi ; \
+fi ; \
+if [ "false" = "true" ] ; \
+then \
+	chmod -R ug+rwx .Linux2.4i686_GNUgcc_fast_st_none_none.X ; \
+fi ;
+echo; echo

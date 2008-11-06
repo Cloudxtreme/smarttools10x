@@ -1,0 +1,21 @@
+Para generar el Makefile que generara la version de NemesisRD.core 1.x
+
+Ayuda de autoconf: http://www.gnu.org/software/autoconf/manual/autoconf.html#Build-Directories
+
+Hay que seguir los siguientes pasos:
+	1.- aclocal
+	2.- autoconf
+ 	3.- autoheader
+	4.- automake -a
+
+Con esto habremos generado, básicamente el script 'configure' que nos servirá para ajustar la
+creación del archivo Makefile que genera la librería e instala la librería.
+
+Por defecto lo hará en /usr/local, para cambiar éste directorio se puede ejecutar el configure
+de la siguiente forma:
+
+configure --prefix=/var/tmp/develop, con esto nos creará un $prefix/include y un $prefix/lib
+que contendrá los archivos de cabecera y el .a de la librería.
+
+
+

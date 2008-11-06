@@ -1,0 +1,6 @@
+version 10.0.19 - Reordena el codigo del generator::Command para facilitar la mantenibilidad del codigo.
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: smart.generate.Command.h	Status: Locally Modified
+File: 10.0.19.version  	Status: Locally Added

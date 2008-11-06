@@ -1,0 +1,5 @@
+version 1.0.50 - Soluciona los fallos en las configuraciones de D7
+
+./whats_new/1.0.50.version |  Locally Added
+./SunOS5.8.schema/sparc/ss7/d7/1.4.0.5.include |  Locally Modified
+./SunOS5.8.schema/sparc/ss7/d7/1.4.0.8.include |  Locally Modified

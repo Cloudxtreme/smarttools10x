@@ -1,0 +1,105 @@
+# Configuracion para CYGWIN_NT-5.1
+export LIBXML2_HOME
+export LIBXML2_NAME
+export CCFLAGS
+
+osName=`uname -s`
+osVersion=`uname -r | cut -f 1,2 -d '.'`
+osArch=`uname -p`
+
+export GMAKE_OSNAME=${osName}${osVersion}
+export GMAKE_SYSTEM=${GMAKE_OSNAME}${osArch}
+export GMAKE_PROCESSORTYPE=$osArch
+export GMAKE_TARGET_DIR=.SunOS5.8sparc_Sunforte6_fast_st_none_none.X
+
+output=`pwd`
+export MYPJ=`pwd`
+output=`dirname $output`
+export NEMESIS_HOME=$output/NemesisRD.pj
+export BIN_DIR=$output/smarttools
+export MAKE_DIR=$output/smarttools
+
+echo NEMESIS_HOME: $NEMESIS_HOME
+
+if [ ! -d $NEMESIS_HOME ]
+then
+   echo "Esta instalacion requiere la existencia previa de los módulos básicos de NemesisRD 1.x"
+   exit 1
+fi
+
+export LIBXML2_HOME
+export OTHER_LIBS
+export LIBXML2_NAME
+export CCFLAGS
+export CC
+
+export MYPJ=`pwd`
+
+if [ "$osVersion" = "5.8" ]
+then
+   CC=/utils/SUNWspro/bin/CC
+else
+   CC=/utils/studio11/SUNWspro/bin/CC
+fi
+      LIBXML2_HOME=/home/intsdp/libxml2-2.6.11/solaris ;
+      OTHER_LIBS=-lrt ;
+      LIBXML2_NAME=/home/intsdp/libxml2-2.6.11/solaris/lib/libxml2.a ;
+
+echo CCFLAGS=$CCFLAGS
+
+$CC -V
+
+if [ "$1" != "install" ]
+then
+   cd bin.ss/libSmart.core.b
+   solaris.spawn $LIBXML2_HOME
+   
+   cd ../libSmart.analysis.b
+   solaris.spawn $LIBXML2_HOME
+   
+   cd ../libSmart.description.b
+   solaris.spawn $LIBXML2_HOME
+   
+   cd ../libSmart.structure.b
+   solaris.spawn $LIBXML2_HOME
+   
+   echo solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   cd ../generate.p
+   solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   
+   cd ../browse.p
+   echo solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   
+   cd ../configure.p
+   echo solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   
+   echo "echo No generado" >> ../$GMAKE_TARGET_DIR/onlinehelp
+   chmod +x ../$GMAKE_TARGET_DIR/onlinehelp
+   
+   cd ../../makefile.ss/has_resources.p
+   solaris.spawn
+   
+   cd ../ils.p
+   solaris.spawn
+   
+   cd ../ils_mkdir.p
+   solaris.spawn
+   
+   cd ../smake.p
+   solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   
+   cd ../checksum.p
+   solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+   
+   pwd
+   cd ../configuration.bk
+   set |grep GMAKE
+   make TEXTCODE=spawn 
+else
+   cd makefile.ss/configuration.bk
+   make -D TEXTCODE=spawn 
+fi
+
+

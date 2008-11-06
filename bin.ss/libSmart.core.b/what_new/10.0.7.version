@@ -1,0 +1,6 @@
+version 10.0.7 - incorpora trazas para facilitar la depuracion.
+
+File: core.Variable.cc 	Status: Locally Modified
+File: core.functions.cc	Status: Locally Modified
+File: core.sccs.cc     	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

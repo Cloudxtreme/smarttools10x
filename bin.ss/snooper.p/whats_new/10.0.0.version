@@ -1,0 +1,21 @@
+version 10.0.0 - Version inicial de Snooper
+
+El snooper es una herramienta util para ver los valores de las variables de entorno y las variables
+de configuracion de los makefiles.
+
+./go |  Locally Added
+./MainWindow.ui |  Locally Added
+./makefile.x.config |  Locally Added
+./hdrs/smart.snooper.sccs.h |  Locally Added
+./hdrs/smart.snooper.MainWindow.h |  Locally Added
+./hdrs/smart.snooper.EnvironVariable.h |  Locally Added
+./hdrs/smart.snooper.Application.h |  Locally Added
+./hdrs/smart.snooper.MakefileVariable.h |  Locally Added
+./main.cc |  Locally Added
+./qt.include |  Locally Added
+./snooper.MainWindow.cc |  Locally Added
+./snooper.sccs.cc |  Locally Added
+./snooper.MakefileVariable.cc |  Locally Added
+./snooper.EnvironVariable.cc |  Locally Added
+./snooper.Application.cc |  Locally Added
+./whats_new/10.0.0.version |  Locally Added

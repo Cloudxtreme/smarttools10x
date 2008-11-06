@@ -1,0 +1,32 @@
+version 10.0.47 - Soluciona BUG en las reglas de generación de los archivos .yacc
+
+Index: config.xml
+===================================================================
+RCS file: /home/comun/repositorio/herramientas/SmartTools/v10.pj/makefile.ss/configuration.bk/config.xml,v
+retrieving revision 1.19
+diff -r1.19 config.xml
+1c1
+< <Description Version="10.0.12" Owner="frr@tid.es"> 
+---
+> <Description Version="10.0.47" Owner="frr@tid.es"> 
+78c78
+<       <Target Extensions="cc" Suffix=".yacc"/>
+---
+>       <Target Extensions="h|c" Suffix=".yacc"/>
+81,83c81,88
+<             <Text>$(YACC) $(USER_YACC_FLAGS)</Text>
+<             <Input Indicator=""/>
+<             <Text>$(YACC_FLAGS) ; mv y.tab.c $@</Text>
+---
+>             <Text>$(YACC) $(USER_YACC_FLAGS) </Text>
+>             <InputOnlyName Indicator=""/>
+>             <Text> $(YACC_FLAGS); </Text>
+>          </Line>
+>          <Line>
+>             <Text>cd `dirname $@`; printf "1,$$ s/.c$$//g\nx\n" :gt erase_extension; echo `basename </Text>
+>             <Output Indicator=""/>
+>             <Text>` :gt output; ex output :lt erase_extension :gt /dev/null; mv ../y.tab.c `cat output`.c; mv ../y.tab.h `cat output`.h</Text>
+89c94
+<       <Target Extensions="cc" Suffix=".lex"/>
+---
+>       <Target Extensions="c" Suffix=".lex"/>

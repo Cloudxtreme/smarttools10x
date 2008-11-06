@@ -1,0 +1,22 @@
+version 10.0.0 - Entrega inicial
+
+./main.cc |  Locally Added
+./onlinehelp.Document.cc |  Locally Added
+./hdrs/smart.onlinehelp.Library.h |  Locally Added
+./hdrs/smart.onlinehelp.sccs.h |  Locally Added
+./hdrs/smart.onlinehelp.Class.h |  Locally Added
+./hdrs/smart.onlinehelp.Document.h |  Locally Added
+./hdrs/smart.onlinehelp.Frame.h |  Locally Added
+./hdrs/smart.onlinehelp.Application.h |  Locally Added
+./hdrs/smart.onlinehelp.LibraryKdoc.h |  Locally Added
+./hdrs/smart.onlinehelp.LibraryDoxygen.h |  Locally Added
+./onlinehelp.Frame.cc |  Locally Added
+./onlinehelp.LibraryDoxygen.cc |  Locally Added
+./makefile.config |  Locally Added
+./makefile.resources |  Locally Added
+./onlinehelp.Application.cc |  Locally Added
+./onlinehelp.LibraryKdoc.cc |  Locally Added
+./onlinehelp.sccs.cc |  Locally Added
+./makefile.x.config |  Locally Added
+./makefile.x.resources |  Locally Added
+./whats_new/10.0.0.version |  Locally Added

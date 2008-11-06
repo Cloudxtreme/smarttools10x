@@ -1,0 +1,6 @@
+version 10.0.0 - Version inicial de la herramienta para migrar los antiguos makefile.config que hacian referencia
+ a _$(TARGET).O a los nuevos que hacen referencia a $(GMAKE_TARGET_DIR).
+
+GMAKE_TARGET_DIR tambien es dinamico, dependera del nombre de la variable TARGET que hayamos definido y se le
+concatena el _DIR.
+

@@ -1,0 +1,5 @@
+version 10.0.6 - Saca el nombre del archivo donde se ha generado la asignacion de variables por la
+salida de errores, para que pueda ser capturado por el programa que lo haya invocado.
+
+File: configure.Application.cc	Status: Locally Modified
+File: 10.0.6.version   	Status: Locally Added

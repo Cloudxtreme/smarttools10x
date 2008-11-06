@@ -1,0 +1,148 @@
+mypath=`dirname $0`
+myversion=`ls -rt $mypath/whats_new | grep version | tail -1 | cut -f 1,2,3 -d .`
+
+echo SmartInstall - Instalador de configuraciones de generacion. Version $myversion/Evo-X
+echo Desarrollado por Nuevos Conceptos de Plataformas
+echo "(c) Copyright 2002-2007 Telefonica Investigaci\303\263n y Desarrollo, S.A. Unipersonal."
+echo
+
+# if [ "$GMAKE_HOME" == "" ]
+# then
+#    echo La variable GMAKE_HOME no tiene establecido el directorio de trabajo
+#    exit 1
+# fi
+# 
+# if [ ! -d $GMAKE_HOME ]
+# then
+#    echo La variable GMAKE_HOME no apunta a un directorio valido
+#    exit 1
+# fi
+
+if [ "$1" = "" -o "$2" = "" ]
+then
+   echo "$0: Usage SmartIntall <Ubicacion de ejecutables> <textcode> [<Extension del ejecutable>]"
+   exit 1
+fi
+
+osName=`uname -s`
+osVersion=`uname -r | cut -d '-' -f 1 | cut -f 1 -d '('`
+archName=`uname -p`
+systemID=$osName$osVersion$archName
+
+if [ ! -d ${osName}.schema ]
+then
+   echo "No existe el esquema" ${osName}.schema
+   exit 0
+fi
+
+dataDirectory=../../data
+binDirectory=../../bin
+targetDirectory=$dataDirectory
+
+chmod -R a+w $dataDirectory
+
+if [ -d $targetDirectory/$osName ]
+then
+   printf "Borrando instalaciones anteriores ... "
+   rm -r $dataDirectory/$osName/*
+else
+   printf "Creando repositorio de instalaciones ... "
+fi
+
+mkdir -p $targetDirectory/$osName
+echo
+
+if [ -f $dataDirectory/config.xml ]
+then
+   if [ config.xml -nt $dataDirectory/config.xml ]
+   then
+      echo "Actualizando $dataDirectory/config.xml ..."
+      cp config.xml $dataDirectory
+   else
+      echo "No realiza cambios sobre $dataDirectory/config.xml."
+   fi
+else 
+   echo "Creando $dataDirectory/config.xml ..."
+   cp config.xml $dataDirectory
+fi
+
+> $dataDirectory/empty.include 
+echo
+
+if [ ! -d $binDirectory/$systemID ]
+then
+   mkdir -p $binDirectory/$systemID
+fi
+
+export MAIN_DIRECTORY
+export GADGET_DIRECTORY
+
+release=`uname -r | cut -f 1 -d -`
+
+a=`find $1 -name generate$3 | grep -i $osName | grep $release`
+
+if [ "$a" = "" -a "$osName" = "SunOS" ]
+then
+   a=`find $1 -name generate | grep -i solaris`
+else
+   if [ "$a" = "" ]
+   then
+      a=`find $1 -name generate$3`
+   fi
+fi
+
+   dirname=`dirname $a`
+   dirname=`basename $dirname`
+   MAIN_DIRECTORY=$1/$dirname
+   GADGET_DIRECTORY=../$dirname
+   echo Ejecutable obtenidos de $MAIN_DIRECTORY
+   echo
+
+printf "Actualizando ejecutables ... "
+cp ../configure.sh/SmartConfigure $binDirectory
+cp $MAIN_DIRECTORY/generate$3 $binDirectory/$systemID 
+cp $MAIN_DIRECTORY/browse$3 $binDirectory/$systemID
+cp $MAIN_DIRECTORY/configure$3 $binDirectory/$systemID
+cp $GADGET_DIRECTORY/has_resources$3  $binDirectory/$systemID
+cp $GADGET_DIRECTORY/ils$3  $binDirectory/$systemID
+cp $GADGET_DIRECTORY/ils_mkdir$3  $binDirectory/$systemID
+cp $GADGET_DIRECTORY/smake$3  $binDirectory/$systemID
+cp $GADGET_DIRECTORY/checksum$3  $binDirectory/$systemID
+cp ../upgrade_config.sh/upgrade_config  $binDirectory
+echo
+
+printf "Actualizando instalaciones ..."
+cp -r $osName.schema/* $targetDirectory/$osName
+find $targetDirectory/$name -name "CVS" -exec rm -rf {} \; -depth
+
+printf "\nFirmando instalacion (%s) ... " $2
+keycode=`$binDirectory/$systemID/checksum$3 -tc $2`
+echo $keycode
+
+echo $keycode > $targetDirectory/$osName/.keycode
+> $targetDirectory/$osName/.checksum
+
+cd $targetDirectory/$osName
+
+checksum=`$binDirectory/$systemID/checksum$3 -kc $keycode -f ../config.xml | cut -f 2 -d ' '`
+echo "../config.xml " $checksum >> $targetDirectory/$osName/.checksum
+
+find . | while read file
+do
+   if [ -f $file ]
+   then
+      name=`basename $file`
+    
+      if [ "$name" != ".checksum" ]
+      then
+         checksum=`$binDirectory/$systemID/checksum$3 -kc $keycode -f $file | cut -f 2 -d ' '`
+         echo $file " " $checksum >> $targetDirectory/$osName/.checksum
+      fi 
+   fi
+done
+
+chmod -R a-w $dataDirectory
+
+echo
+echo
+

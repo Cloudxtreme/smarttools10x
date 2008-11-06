@@ -1,0 +1,10 @@
+version 10.0.12 - Incorpora la definicion de la macro SmarTools_10_0 a la hora de compilar los 
+archivos C/C++.
+
+Ajusta las variables de compilacion de ASN1 para que apunten a la version de SNACC que permite
+indicar el nombre del namespace en el que crea las clases.
+
+File: config.xml       	Status: Locally Modified
+File: 1.3.include      	Status: Locally Modified
+File: 1.3.include      	Status: Locally Modified
+File: 10.0.12.version  	Status: Locally Added

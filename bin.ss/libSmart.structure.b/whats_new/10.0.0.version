@@ -1,0 +1,14 @@
+version 10.0.0 - Version inicial de la libreria que facilita el tratamiento de la estructura 
+de recursos disponibles para generar los ejecutables.
+
+Cada recursos esta definido por su distribuidor, su vendedor y su version.
+
+File: structure.Agent.cc	Status: Locally Added
+File: structure.Resource.cc	Status: Locally Added
+File: structure.Section.cc	Status: Locally Added
+File: structure.sccs.cc	Status: Locally Added
+File: smart.structure.Agent.h	Status: Locally Added
+File: smart.structure.Resource.h	Status: Locally Added
+File: smart.structure.Section.h	Status: Locally Added
+File: smart.structure.sccs.h	Status: Locally Added
+File: 10.0.0.version   	Status: Locally Added

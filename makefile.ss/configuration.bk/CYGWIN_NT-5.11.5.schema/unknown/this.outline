@@ -1,0 +1,4 @@
+compilador de C/C++ | cppcompiler | true
+core de la librería de interpretación de documentos XML | xml | false
+core de la librería para comunicaciones seguras mediante SSL | ssl | false
+

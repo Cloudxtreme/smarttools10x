@@ -1,0 +1,86 @@
+compile ()
+{
+   ModuleList="./bin.ss/libSmart.core.b/gnu.install ./bin.ss/libSmart.description.b/gnu.install ./bin.ss/libSmart.analysis.b/gnu.install ./bin.ss/libSmart.structure.b/gnu.install ./bin.ss/configure.p/gnu.install ./bin.ss/onlinehelp.p/gnu.install ./bin.ss/generate.p/gnu.install ./bin.ss/browse.p/gnu.install ./makefile.ss/checksum.p/gnu.install ./makefile.ss/ils_mkdir.p/gnu.install ./makefile.ss/ils.p/gnu.install ./makefile.ss/smake.p/gnu.install ./makefile.ss/has_resources.p/gnu.install"
+   
+   for a in $ModuleList
+   do
+      echo $a
+      cd $a  > /dev/null
+   
+      if [ ! -f Makefile ]
+      then
+         printf "\tCreando %s/Makefile ..." $a
+         aclocal
+         autoconf
+         autoheader
+         automake -a
+         configure --prefix=$1 > /dev/null
+         echo
+      fi
+      make install > /dev/null
+      if [ ! $? -eq 0 ]
+      then
+         echo "Error $? was detected on module $a"
+         exit 1;
+         cd -  > /dev/null
+      fi
+   
+      cd - > /dev/null
+   done
+}
+
+osName=`uname -s`
+osVersion=`uname -r | cut -f 1,2 -d '.'`
+osArch=`uname -p`
+
+export GMAKE_OSNAME=${osName}${osVersion}
+export GMAKE_SYSTEM=${GMAKE_OSNAME}${osArch}
+export GMAKE_PROCESSORTYPE=$osArch
+export GMAKE_TARGET_DIR="bin"
+
+output=`pwd`
+export MYPJ=`pwd`
+output=`dirname $output`
+export NEMESIS_HOME=$output/nemesis
+export BIN_DIR=$output/smarttools
+export MAKE_DIR=$output/smarttools
+
+echo NEMESIS_HOME: $NEMESIS_HOME
+
+if [ ! -d $NEMESIS_HOME ]
+then
+   echo "Esta instalacion requiere la existencia previa de los módulos básicos de NemesisRD 1.x"
+   exit 1
+fi
+
+case $osName in
+   Linux)
+      EXTENSION="" ;;
+   CYGWIN_NT-5.1)
+      EXTENSION=".exe" ;;
+esac
+   
+echo compile ${BIN_DIR}
+compile ${BIN_DIR}
+
+# Durante el proceso de creación de éste ejecutable no se puede llamar igual que el 'configure'
+# de la GNU, porque colisonan, así que lo generamos con el nombre auxiliar y cuando termine
+# de generar los ejecutables, lo renombramos a lo que nos interesa.
+if [ -f ${BIN_DIR}/${GMAKE_TARGET_DIR}/configure2 ]
+then
+   mv ${BIN_DIR}/${GMAKE_TARGET_DIR}/configure2 ${BIN_DIR}/${GMAKE_TARGET_DIR}/configure
+fi
+
+cd makefile.ss/configuration.bk	
+
+if [ "$1" = "" ]
+then
+   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin" 
+else
+   echo Instalacion creada en $1
+   mkdir -p $1
+   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin" MYPJ=$1
+fi
+   
+
+

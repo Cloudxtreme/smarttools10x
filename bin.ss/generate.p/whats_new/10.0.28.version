@@ -1,0 +1,17 @@
+version 10.0.28 - Incorpora las mejoras de Smart.description 1.0.16.
+
+El archivo asociado a la variable Project->Configure se carga antes de cualquier otro .include,
+mientras que el archivo asociado a la variable Project->Tune se carga después de haber cargado
+todos los demás .includes asociados a la configuración/guión del entorno en el que nos encontramos
+lo que nos permite modificar de forma definitiva ciertos valores que las variables hayan podido
+tomar.
+
+./generate.Application.cc |  Locally Modified
+./hdrs/smart.generate.defines.h |  Locally Modified
+./hdrs/smart.generate.Application.h |  Locally Modified
+./whats_new/10.0.28.version |  Locally Added
+./generate.defines.cc |  Locally Modified
+./generate.Structure.cc |  Locally Modified
+./generate.Executable.cc |  Locally Modified
+./generate.SourceContainer.cc |  Locally Modified
+./generate.Library.cc |  Locally Modified

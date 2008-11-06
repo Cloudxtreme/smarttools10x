@@ -1,0 +1,8 @@
+version 10.0.10 - Incorpora los cambios para adecuarse a las modificaciones a la hora de describir
+la estructura del guion de los recursos.
+
+Ahora contiene informacion que informa sobre si el recurso puede ser usado en el ILS.
+
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.10.version  	Status: Locally Added

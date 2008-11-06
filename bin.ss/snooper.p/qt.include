@@ -1,0 +1,17 @@
+$(GMAKE_TARGET_DIR)/MainWindow_ui.h : MainWindow.ui
+	@printf "%s$(GMAKE_EOL)" MainWindow.ui
+	$(QT_UIC) -o $@ MainWindow.ui
+
+$(GMAKE_TARGET_DIR)/MainWindow_moc.cc : hdrs/smart.snooper.MainWindow.h MainWindow.ui
+	@printf "%s$(GMAKE_EOL)" hdrs/smart.snooper.MainWindow.h
+	$(QT_MOC) -i -fsmart.snooper.MainWindow.h -o $@ hdrs/smart.snooper.MainWindow.h
+
+#$(GMAKE_TARGET_DIR)/EnvironVariable_moc.cc : hdrs/smart.snooper.EnvironVariable.h
+#	@printf "%s$(GMAKE_EOL)" hdrs/smart.snooper.EnvironVariable.h
+#	$(QT_MOC) -i -fsmart.snooper.EnvironVariable.h -o $@ hdrs/smart.snooper.EnvironVariable.h
+
+$(GMAKE_TARGET_DIR)/MainWindow_moc.o : $(GMAKE_TARGET_DIR)/MainWindow_moc.cc
+	$(VIEWER)$(CPP) -c $(GMAKE_TARGET_DIR)/MainWindow_moc.cc -I$(MYPJ)/bin.ss/libSmart.structure.b/hdrs -I$(MYPJ)/bin.ss/libSmart.core.b/hdrs -I$(SDPPJ)/official.ss/libNemesis.core.b/hdrs -Ihdrs  $(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CPP_FLAGS) $(USER_CPP_FLAGS) -DSmartTools_10_0
+
+#$(GMAKE_TARGET_DIR)/EnvironVariable_moc.o : $(GMAKE_TARGET_DIR)/EnvironVariable_moc.cc
+#	$(VIEWER)$(CPP) -c $(GMAKE_TARGET_DIR)/EnvironVariable_moc.cc -I$(MYPJ)/bin.ss/libSmart.core.b/hdrs -I$(SDPPJ)/official.ss/libNemesis.core.b/hdrs -Ihdrs  $(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CPP_FLAGS) $(USER_CPP_FLAGS) -DSmartTools_10_0

@@ -1,0 +1,6 @@
+if [ ! -d ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X ] ; then mkdir ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X; fi ;
+if [ ! -d .SunOS5.8sparc_Sunforte6_fast_st_none_none.X ] ; then mkdir .SunOS5.8sparc_Sunforte6_fast_st_none_none.X; fi ;
+printf "%s " ils_mkdir.cc
+${CC} -c ils_mkdir.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/ils_mkdir.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ 
+echo; echo Generando ejecutable ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/ils_mkdir ...
+${CC} -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun,libC -D_BOOLEAN_ -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/ils_mkdir   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/ils_mkdir.o /var/tmp/develop/NemesisRD.pj/official.ss/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libNemesis.core.a /home/intsdp/libxml2-2.6.11/solaris//lib/libxml2.a -lz -fast -xregs=appl -xtarget=ultra -xprefetch=auto -lsocket -lnsl -ly -ll -lelf -lw -lgen -lrt

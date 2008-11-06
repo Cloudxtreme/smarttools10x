@@ -1,0 +1,15 @@
+version 10.0.5 - Incorpora los cambios necesarios para compilar los fuentes en ASN1.
+
+Hay que resaltar que el orden en el que se indican las extensiones de las reglas es importa ya que la 
+variable Output del config.xml siempre hara referencia al ultimo fuente de la regla.
+
+asi por ejemplo, en:
+
+X.C X.h : X.asn1
+   
+El indicador 'Output' hara referencia al X.h. Este orden se indica en el campo <Target Extensions="C|h"/> de la regla.
+
+File: config.xml       	Status: Locally Modified
+File: this.include     	Status: Locally Modified
+File: 1.3.include      	Status: Locally Added
+File: 10.0.5.version   	Status: Locally Added

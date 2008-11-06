@@ -1,0 +1,11 @@
+version 10.0.15 - Soluciona un BUG detectado al generar el comando asociado al ANS1.
+
+El indicador de inclusion (-u) asociado al nodo virtual de la regla del ASN1 aparece N+1 veces.
+
+El fallo era debido a que el metodo MetaLine::multipleIndicator no tenia en cuenta el tipo
+de indicador VDependence. 
+
+File: description.MetaLine.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.MetaLine.h	Status: Locally Modified
+File: 10.0.15.version  	Status: Locally Added

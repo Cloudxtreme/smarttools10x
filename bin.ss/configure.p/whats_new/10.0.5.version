@@ -1,0 +1,12 @@
+version 10.0.5 - Normaliza la estructura de directorio para facilitar su trataminto desde Smart.Generate.
+
+Incorpora la variable GMAKE_STRUCTURE que sea usada para publicar la estructura usada.
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.CppCompiler.cc	Status: Locally Modified
+File: configure.Outline.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: smart.configure.CppCompiler.h	Status: Locally Modified
+File: smart.configure.Outline.h	Status: Locally Modified
+File: smart.configure.Resource.h	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Added

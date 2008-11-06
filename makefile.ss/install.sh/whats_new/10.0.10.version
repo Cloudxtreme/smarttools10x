@@ -1,0 +1,3 @@
+version 10.0.10 - Si la version del ejecutable generado no coincide exactamente con la version
+de la plataforma de ejecucion coge el primero que se encuente.
+

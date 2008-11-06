@@ -1,0 +1,9 @@
+version 10.0.17 - Incorpora la posiblidad de excluir ciertos directorios del 
+proceso de analisis.
+
+./hdrs/smart.analysis.FileSystem.h |  Locally Modified
+./analysis.FileSystem.cc |  Locally Modified
+./analysis.Scanner.cc |  Locally Modified
+./whats_new/10.0.17.version |  Locally Added
+./analysis.sccs.cc |  Locally Modified
+./analysis.Application.cc |  Locally Modified

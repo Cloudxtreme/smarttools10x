@@ -1,0 +1,2 @@
+CPP_FLAGS += -library=rwtools7
+SYSTEM_LIBS += -L /utils/SUNWspro/WS6U1/lib/rw7 -lrwtool

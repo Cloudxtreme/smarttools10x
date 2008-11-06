@@ -1,0 +1,8 @@
+version 10.0.1 - Cuando se ejecuta desde el directorio de un componente debe tener en cuenta si existe el 
+fichero makefile.resoruces y las variables contenidas en el no entraran a formar parte de la combinatoria.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.Shuffler.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: smart.smake.Shuffler.h	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

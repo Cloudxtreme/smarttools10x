@@ -1,0 +1,7 @@
+version 1.0.46 - Incorpora el modificador -Wreturn-type para provocar un warning en caso de 
+que un método declarado no-void no tenga ninguna sentencia de 'return'.
+
+./whats_new/10.0.46.version |  Locally Added
+./Linux2.4.schema/i686/cppcompiler/GNU/gcc/this.include |  Locally Modified
+./Linux2.6.schema/i686/cppcompiler/GNU/gcc/this.include |  Locally Modified
+./Linux2.6.schema/x86_64/cppcompiler/GNU/gcc/this.include |  Locally Modified

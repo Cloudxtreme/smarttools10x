@@ -1,0 +1,32 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.57)
+AC_INIT(generate, 10.0, nemesisrd-1x@googlegroups.com)
+AC_PREFIX_DEFAULT(/usr/local/smarttools)
+
+# Añadido despues
+# ver http://sourceware.org/autobook/autobook/autobook_283.html#SEC283
+AM_INIT_AUTOMAKE 
+AC_CONFIG_SRCDIR([../generate.sccs.cc])
+AM_CONFIG_HEADER([../hdrs/smart.generate.config.h])
+
+# Checks for programs
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_RANLIB
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([fcntl.h stdlib.h unistd.h])
+#AC_CHECK_HEADERS([libcore/HTMLparser.h libcore/parser.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_C_CONST
+
+# Checks for library functions.
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT

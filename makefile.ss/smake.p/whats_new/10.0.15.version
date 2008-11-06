@@ -1,0 +1,16 @@
+version 10.0.15 - Incorpora el mismo sistema de control de procesos hijos implementado
+en el SmartTest y que optimiza la redirección de los canales I/O.
+
+./hdrs/smart.smake.Application.h |  Locally Modified
+./smake.Application.cc |  Locally Modified
+./smake.sccs.cc |  Locally Modified
+./whats_new/10.0.15.version |  Locally Added
+
+version 10.0.15.1 - Revisión del sistema para Solaris 5.8
+
+En Solaris 5.8 no ha sido posible recuperar el código de salida del proceso hijo, 
+invocando directamente a la función waitpid, sino que hay que recuperarlo mediante 
+el tratamiento del la señal asociada a la terminación del hijo.
+
+./smake.Application.cc |  Locally Modified
+./whats_new/10.0.15.version |  Locally Modified

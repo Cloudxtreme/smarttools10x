@@ -1,0 +1,15 @@
+version  10.0.3 - Rnombre el tipo Namespace como LogicGroup 
+
+File: description.Rule.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.Rule.h	Status: Locally Modified
+File: smart.description.RuleAgent.h	Status: Locally Modified
+File: 10.0.3.version   	Status: Locally Added
+
+version 10.0.3.1 - Cambio LogicGroup por LogicalGroup (mas correcto).
+
+File: description.Rule.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: smart.description.Rule.h	Status: Locally Modified
+File: 10.0.3.version   	Status: Locally Modified

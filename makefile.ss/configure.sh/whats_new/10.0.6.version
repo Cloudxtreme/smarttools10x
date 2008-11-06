@@ -1,0 +1,3 @@
+version 10.0.6 - Incorpora la posiblidad de que haya que pasarle al configure el documento
+XML que contiene el ajuste particular del proyecto.
+

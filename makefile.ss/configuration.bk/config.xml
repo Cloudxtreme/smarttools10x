@@ -1,0 +1,120 @@
+<Description Version="10.0.15" Owner="frr@tid.es"> 
+   <TargetDirectory Prefix="." Name="GMAKE_TARGET" Extension=".X"/>
+   <Project Configure="project.x.config" Tune="tune_project.x.config"/>
+   <Makefile Name=".makefile" Configure="makefile.x.config" Resource="makefile.x.resources"/>
+   <Rule Name="C++" Type="AnsiC">
+      <FileClass Values="cc|cxx|cpp|C"/>
+      <Command>
+         <Line>
+            <Text>$(CPP)</Text>
+            <Input Indicator="-c "/>
+            <Includes Indicator="-I"/>
+            <Text>$(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CPP_DEBUG_INDICATOR) $(CPP_FLAGS) $(USER_CPP_FLAGS) $(USER_CPP_FLAG_RTTI) -DSmartTools_10_0</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="ProC" Type="AnsiC">
+      <FileClass Values="pcc"/>
+      <Target Extensions="cc" Suffix=".db"/>
+      <Command>
+         <Line>
+            <Text>$(PLSQL_CPP) $(USER_PLSQL_CPP_FLAGS) $(PLSQL_CPP_INCLUDES) $(PLSQL_CPP_FLAGS)</Text>
+            <Input Indicator="$(PLSQL_INPUT_IND)"/>
+            <Includes Indicator="$(PLSQL_INCLUDE_IND)"/>
+            <Text>$(PLSQL_OUTPUT_IND)$@ :gt $@.lst</Text>
+         </Line>
+         <Line>
+            <Text>rm -f tp??????</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="C" Type="AnsiC">
+      <FileClass Values="c"/>
+      <Command>
+         <Line>
+            <Text>$(CC)</Text>
+            <Input Indicator="-c "/>
+            <Includes Indicator="-I"/>
+            <Text>$(USER_INCLUDES) $(SYSTEM_INCLUDES) -o $@ $(CC_FLAGS) $(USER_CC_FLAGS) -DSmartTools_10_0=1</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="LogicalGroup" Type="LogicalGroup">
+      <FileClass Values="db|d|namespace"/>
+      <RelationShip Values="LogicalGroup|AnsiC|ASN1"/>
+   </Rule>
+   <Rule Name="Library" Type="Library">
+      <FileClass Values="b|lib"/>
+      <RelationShip Values="LogicalGroup|AnsiC|ASN1"/>
+   </Rule>
+   <Rule Name="Executable" Type="Executable">
+      <FileClass Values="p|exec"/>
+      <RelationShip Values="LogicalGroup|AnsiC|ASN1"/>
+   </Rule>
+   <Rule Name="ASN1" Type="ASN1">
+      <FileClass Values="asn1|ASN1"/>
+      <Target Extensions="h|C"/>
+      <Command>
+         <Line>
+            <Text>cp </Text>
+            <Input Indicator=""/>
+            <Text>`dirname $@`</Text>
+         </Line>
+         <Line>
+            <Text>echo </Text>
+            <InputOnlyName Indicator=""/>
+            <Text>:gt `dirname $@`/input; cd `dirname $@`; $(ASN1_COMPILER) $(ASN1_FLAGS) $(USER_ASN1_FLAGS) </Text>
+            <VDependences Indicator=""/>
+            <Text> `cat input`; $(USER_ASN1_FINECOMMAND)</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="Project" Type="FileSystem">
+      <FileClass Values="pj|ss"/>
+      <RelationShip Values="FileSystem|Executable|Library"/>
+   </Rule>
+   <Rule Name="Yacc" Type="AnsiC">
+      <FileClass Values="yacc|y"/>
+      <Target Extensions="h|cc" Suffix=".yacc"/>
+      <Command>
+         <Line>
+            <Text>$(YACC) $(YACC_FLAGS) $(USER_YACC_FLAGS) </Text>
+            <Input Indicator=""/>
+         </Line>
+         <Line>
+            <Text>mv y.tab.? `dirname $@`</Text>
+         </Line>
+         <Line>
+            <Text>cd `dirname $@`; printf "1,$$ s/.cc$$//g\nx\n" :gt erase_extension; echo `basename </Text>
+            <Output Indicator=""/>
+            <Text>` :gt output; ex output :lt erase_extension :gt /dev/null; mv y.tab.c `cat output`.cc; mv y.tab.h `cat output`.h</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="Lex" Type="AnsiC">
+      <FileClass Values="lex|lxx"/>
+      <Target Extensions="cc" Suffix=".lex"/>
+      <Command>
+         <Line>
+            <Text>$(LEX) $(USER_LEX_FLAGS) -o$@ </Text>
+            <Input Indicator=""/>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="IDL" Type="AnsiC">
+      <FileClass Values="idl"/>
+      <FineTarget>
+          <FineEntry Extensions="C|h"/>
+          <FineEntry Extensions="h" Suffix="_i"/>
+          <FineEntry Extensions="C|h" Suffix="_stc"/>
+          <FineEntry Extensions="C|h" Suffix="_r"/>
+      </FineTarget>
+      <Command>
+         <Line>
+            <Text>cd $(@:D); $(IDL_COMPILER) $(IDL_FLAGS)</Text>
+            <Input Indicator=""/>
+         </Line>
+      </Command>
+   </Rule>
+</Description>
+

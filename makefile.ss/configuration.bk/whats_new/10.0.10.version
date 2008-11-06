@@ -1,0 +1,3 @@
+version 10.0.10 - Cambia el nombre de makefiles.resources por makefiles.x.resources porque hemos
+comprobado que puede haber colisiones.
+

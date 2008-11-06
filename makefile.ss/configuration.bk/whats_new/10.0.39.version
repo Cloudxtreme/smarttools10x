@@ -1,0 +1,5 @@
+version 10.0.39 - Incorpora la definicion para compilar con MySQL.
+
+./whats_new/10.0.39.version |  Locally Added
+./Linux2.6.schema/i686/rdbms/mysql/default.include |  Locally Added
+./Linux2.6.schema/x86_64/rdbms/mysql/default.include |  Locally Added

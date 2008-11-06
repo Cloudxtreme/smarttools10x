@@ -1,0 +1,14 @@
+version 10.0.14 - Incorpora la definicion de las variable GMAKE_BASETARGET.
+
+Contiene el valor resultante de desactivar todos los recursos que lo permiten.
+Por ejemplo si
+GMAKE_TARGET=Linux2.6x86_64_GNUgcc_debug_st_oracle10.2.0_none
+
+El valor de la nueva variable sería:
+GMAKE_BASETARGET: Linux2.6x86_64_GNUgcc_debug_st_none_none
+
+./configure.sccs.cc |  Locally Modified
+./hdrs/smart.configure.Resource.h |  Locally Modified
+./hdrs/smart.configure.Application.h |  Locally Modified
+./whats_new/10.0.14.version |  Locally Added
+./configure.Application.cc |  Locally Modified

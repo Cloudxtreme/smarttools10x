@@ -1,0 +1,4 @@
+CPP_FLAGS += -fast -xregs=appl -xtarget=ultra -xprefetch=auto 
+CC_FLAGS += -fast -xregs=appl -xtarget=ultra -xprefetch=auto
+
+LD_FLAGS += -fast -xregs=appl -xtarget=ultra -xprefetch=auto

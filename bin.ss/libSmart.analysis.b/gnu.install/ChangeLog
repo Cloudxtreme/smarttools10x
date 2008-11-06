@@ -1,0 +1,104 @@
+version 10.0.10 - Soluciona el BUG por el que no se reconocian los 'FROM' de los ficheros
+ASN1 cuyo ';' estaba en la linea siguiente.
+
+No se recocian construcciones como:
+
+FROM 
+   MAYOR2
+;
+
+
+version 10.0.11 - Incorpora nuevos metodos para que permiten la solucion del BUG generate (10.0.18).
+
+
+version 10.0.12 - Oculta el fichero de salida de trazas en .file.trace
+
+
+version 10.0.13 - Mejoras para compilar con g++ 3.4.4
+
+
+version 10.0.14 - Incorpora un miembro de tipo std::string que guarda el archivo de configuracion usado
+en el analisis, ya que este dato es visualizado en los makefiles generados en por el ejecutable 'generate'.
+
+
+version 10.0.15 - Hasta ahora el nombre indicado en la seccion FROM de los archivos ASN1 debia
+coindir exactamente con el nombre del archivo ASN1 que publicaba los componentes.
+
+De forma que habia un "FROM ifz-ip-sg"  se suponia que debia existir un archivo ifz-ip-sg.ASN1.
+
+Esta regla no siempre se cumple en el proyecto de Prepago, por lo que vamos a poner una puertra
+trasera para poder indicar el nombre de los archivos que de importar al procesar un ASN1
+
+Con:
+
+--FROM <nombre de archivo ASN1> 
+
+podremos indicar el nombre exacto de los archivos de los que depende el ASN1 en cuestion.
+
+
+
+version 10.0.16 - Migracion a NemesisRD.core 1.6.4 que soporta arquitecturas de 64 bits.
+
+
+version 10.0.17 - Incorpora la posiblidad de excluir ciertos directorios del 
+proceso de analisis.
+
+
+version 10.0.1 - La clase analysis::FileSystem getiona la lista de archivos que no han sido localizados, lo
+que evita tener que hacer una busqueda completa cada vez que se hacen referencia.
+
+
+version 10.0.2 - Si el indicador -c no se establece recogera el documento XML de descricpion de $GMAKE_HOME/data/config.xml
+
+He incorpora los cambios de Smart.core 10.0.1 
+
+
+version 10.0.3 - La clase filesystem::Node ofrece la posiblidad de asociar un descrption::Rule a cada uno de los nodos, pero
+hasta ahora las instncias de analysis::Path no tenian asociada ninguna regla particular, pero para generar los makefiles 
+debemos conocer el tipo exacto de directorio.
+
+
+
+version 10.0.4 - Incorpora la interpretacion del archivo makefiles.order en la ejecucion
+de analysis::Scanner.
+
+
+version 10.0.5 - Incorpora metodo de acceso a las dependencias en analysis::CSource.
+
+
+version 10.0.6 - Incorpora la interpretacion de los includes en formato ProC.
+
+Lo hacemos sobre el mismo analizador de AnsiC, para evitar tener que crear un tipo especificico.
+
+
+version 10.0.7 - Elimina el error detectado al expandir los .asn1 en su correspondiente .c y .h
+
+version 10.0.8 - Soluciona el error detectado al tratar target que generan mas de 2 ficheros.
+
+[23/05/2007 07:49:19] Debug | analysis.Scanner.cc (300) | smart::analysis::Scanner::expand | smart::description::Rule { Name: IDL | Type: AnsiC
+ (0x40) | Mask: 0x0 | ClassFiles: idl } | Node: $(MYPJ)/a.ss/libreria.b/un_idl.idl
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x321278 | Name: un_idl.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x321278 | Name: un_idl.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x322780 | Name: un_idl_i.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x322780 | Name: un_idl_i.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x331508 | Name: un_idl_i_stc_stc.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i_stc_stc.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x331508 | Name: un_idl_i_stc_stc.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i_stc_stc.h }
+
+
+
+version 10.0.9 - Se han detectado que no se generan los componentes en base al orden impuesto por el 
+archivo makefiles.order
+
+

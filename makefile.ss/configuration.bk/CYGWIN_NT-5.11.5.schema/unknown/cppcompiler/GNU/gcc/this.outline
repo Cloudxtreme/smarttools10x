@@ -1,0 +1,3 @@
+modo de creacion de ejecutables | release | true
+modo de ejecucion de los ejecutables | threading | true
+modo de creacion de las librerías | library | false

@@ -1,0 +1,7 @@
+version 10.0.5 - Amplia el nombre de los esquemas con los digitos correspondientes a la 
+version del nucleo.
+
+Esto ha sido necesario porque seguramente sera necesario compilar con opciones distintas 
+para Linux 2.4 y Linux 2.6, ya que para este ultimo es posible que se necesiten generar
+apliciones en 64 bits.
+

@@ -1,0 +1,5 @@
+version 10.0.16 - Migracion a NemesisRD.core 1.6.4 que soporta arquitecturas de 64 bits.
+
+File: analysis.sccs.cc 	Status: Locally Modified
+File: smart.analysis.CSource.h	Status: Locally Modified
+File: 10.0.16.version  	Status: Locally Added

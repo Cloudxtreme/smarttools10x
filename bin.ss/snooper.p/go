@@ -1,0 +1,3 @@
+> .snooper.trace
+../.Linux2.6i686_GNUgcc_debug_st_none_none.X/snooper -t debug &
+

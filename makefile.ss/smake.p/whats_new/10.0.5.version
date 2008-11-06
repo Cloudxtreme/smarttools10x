@@ -1,0 +1,21 @@
+version 10.0.5 - Permite indicar el modificador '-o <nombre de objeto a crear>' lo que facilita la 
+integracion con entornos como el Eclipse (tm).
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: smart.smake.Application.h	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Added
+
+version 10.0.5.1 - Amplia los modificadores para facilitar la integracion con Eclipse.
+
+El modificador -o clean tiene el mismo tratamiento que -clobber y el modificador -vv permite sacar
+directamente la salida en la consola de Eclipse.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smart.smake.Application.h	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Modified
+
+version 10.0.5.2 - Prioriza el modificador -vv sobre el -v.
+
+File: smake.Application.cc	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Modified

@@ -1,0 +1,4 @@
+version 10.0.25 - El modificador -mi686 provocaba errores del compilador al intentar generar la version
+en modo 'fast' se ha cambiado por -mnocona
+File: fast.include     	Status: Locally Modified
+File: 10.0.25.version  	Status: Locally Added

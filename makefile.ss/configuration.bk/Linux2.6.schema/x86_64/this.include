@@ -1,0 +1,35 @@
+#
+# Programas usandos habitualmente
+#
+AS=/usr/bin/as
+LD=/usr/bin/ld
+STRIP=/usr/bin/strip
+AR=/usr/bin/ar
+AWK=/usr/bin/awk
+CAT=/usr/bin/cat
+
+YACC=bison -o y.tab.c
+YACC_FLAGS=-t -d
+
+LEX=flex
+LEX_FLAGS=
+
+CPP_FLAGS=-D__linux__ -D_LINUX_SDP 
+CC_FLAGS=-D__linux__=1 -D_LINUX_SDP=1
+
+# Se indica de forma independiente para dar la posibilidad de
+# eliminar su valor.
+USER_CPP_FLAG_RTTI=-fno-rtti
+
+LIBS=-lrt
+LD_FLAGS=
+
+#
+# Linea de comandos del Purify. Makefile
+#
+PURIFY_FLAGS=-best-effort -cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -chain-length=10 -max-threads=200
+PURIFY=/APLICACIONES/PURESOFT/releases/purify.i386_linux2.2003a.06.15/purify
+
+QUANTIFY_FLAGS=-cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -max-threads=200
+QUANTIFY=/APLICACIONES/PURESOFT/releases/quantify.i386_linux2.2003a.06.15/quantify
+

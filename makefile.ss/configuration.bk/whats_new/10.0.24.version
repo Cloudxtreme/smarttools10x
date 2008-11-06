@@ -1,0 +1,33 @@
+version 10.0.24 - El makefile actual no tiene en cuenta que un mismo SO puede ser ejecutado por 
+varias arquitecturas de procesador. Por ejemplo el Linux 2.6 puede estar correiendo en 32 bits y 
+en 64 bits que por suerte el 'uname -p' da x86_64.
+
+Incorpora el guion para Linux 2.6 en arquitectura de 64 bits.
+
+
+File: makefile         	Status: Locally Modified
+File: this.include     	Status: Locally Added
+File: this.outline     	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 1.3.include      	Status: Locally Added
+File: this.include     	Status: Locally Added
+File: this.outline     	Status: Locally Added
+File: dynamic.include  	Status: Locally Added
+File: static.include   	Status: Locally Added
+File: debug.include    	Status: Locally Added
+File: fast.include     	Status: Locally Added
+File: 5.0.0.include    	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: mt.include       	Status: Locally Added
+File: st.include       	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 10.2.0.include   	Status: Locally Added
+File: 8.0.2.include    	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 1.4.0.5.include  	Status: Locally Added
+File: 9.0.2.sp4.include	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 0.9.8a.include   	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: default.include  	Status: Locally Added
+File: 10.0.24.version  	Status: Locally Added

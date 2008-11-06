@@ -1,0 +1,5 @@
+version 10.0.10 - Incorpora la definfion de la variable GMAKE_OSVERSION=`uname -r | cut -d '-' -f 1 | cut -f 1 -d '('`
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.10.version  	Status: Locally Added

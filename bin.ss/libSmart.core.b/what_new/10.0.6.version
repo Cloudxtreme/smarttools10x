@@ -1,0 +1,9 @@
+version 10.0.6 - Incorpora la posiblidad de desactivar la salida por pantalla de las variables de 
+entorno que va cargando cada proceso.
+
+Se usa en el ILS donde no interesa que se llene la pantalla con mensajes sobre esto.
+
+File: core.Variable.cc 	Status: Locally Modified
+File: core.sccs.cc     	Status: Locally Modified
+File: smart.Variable.h 	Status: Locally Modified
+File: 10.0.6.version   	Status: Locally Added

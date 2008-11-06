@@ -1,0 +1,21 @@
+version 10.0.8 - Ajustes para publicar en la GMAKE_STRUCTURE si una variable de configuracion forma parte
+del TARGET o no.
+
+Incorpora las mejoras de Smart.core 10.0.5.
+
+Define una nueva variable GMAKE_TARGER_DIR que indica el nombre completo del directorio donde se 
+generan los resultados de las distintas compilaciones.
+
+Asi GMAKE_TARGET seria (SunOS5.8sparc_Sunforte6_debug_st_none_none), y GMAKE_TARGET_DIR sera calculado
+en base a la informacion del fichero de configuracion del proyecto. 
+
+Por ejemplo para 
+   <TargetDirectory Prefix="_" Name="GMAKE_TARGET" Extension=".X"/>
+
+GMAKE_TARGET_DIR=_$GMAKE_TARGET.X
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: makefile.config  	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Added

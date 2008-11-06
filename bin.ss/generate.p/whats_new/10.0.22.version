@@ -1,0 +1,12 @@
+version 10.0.22 - Incorpora la posiblidad de visualizar todos los comandos ejecutados para la
+creacion de los distintos componentes del proyecto que se va a crear con los archivos
+de dependencias.
+
+La variable GMAKE_EOL contrala la forma en la que aparece el nombre del componente que estamos
+creando, normalmente valdra ' ', para visualizar los componentes en el Eclipse deberia valer '\n'.
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.22.version  	Status: Locally Added

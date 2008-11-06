@@ -1,0 +1,10 @@
+version 10.0.20 - Soluciona el detectado en la regla del ASN1, faltaba el -u para indicar el nombre
+de los .ASN1 a importar.
+
+version 10.0.20.1 - Evita el uso del modificador '-u', el problema era debido a que en Prepago
+los nombres asociados al FROM del ASN1 no identican el nombre del archivo a importar, pero 
+se ha solucionado con el tema de los "lineas de comentario espaciales".
+
+
+File: config.xml       	Status: Locally Modified
+File: 10.0.20.version  	Status: Locally Added

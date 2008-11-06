@@ -1,0 +1,19 @@
+version 10.0.1 - Primera version que es capaz de compilar en modo basico. 
+
+Se han detectado errores al interpretar el makefile.order y falta incorporar los archivos de configuracion
+de las distintas versiones de los componentes usados.
+
+File: this.include     	Status: Locally Modified
+File: this.include     	Status: Locally Modified
+File: this.include     	Status: Locally Modified
+File: dynamic.include  	Status: Locally Modified
+File: static.include   	Status: Locally Modified
+File: debug.include    	Status: Locally Modified
+File: fast.include     	Status: Locally Modified
+File: 7.0.0.include    	Status: Locally Modified
+File: mt.include       	Status: Locally Modified
+File: 0.9.8a.include   	Status: Locally Added
+File: no file 9.6.9.include		Status: Locally Removed
+File: none.include     	Status: Locally Added
+File: 2.6.11.include   	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

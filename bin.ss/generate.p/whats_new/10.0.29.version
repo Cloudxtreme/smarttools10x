@@ -1,0 +1,6 @@
+version 10.0.29 - Crear los ficheros de reglas con permisos de lectura para el grupo y 
+others.
+
+./generate.sccs.cc |  Locally Modified
+./whats_new/10.0.29.version |  Locally Added
+./generate.Makefile.cc |  Locally Modified

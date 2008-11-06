@@ -1,0 +1,12 @@
+version 10.0.5 - Permite indicar el nombre del directorio de salida en el archivo de configuracion.
+
+Hasta ahora era _$(TARGET).O ahora se puede dar cualquier expresion que incluya la variable TARGET.
+
+Incorpora el metodo Target::rename (naming::File& file) const
+
+File: description.Rule.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.Target.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.Target.h	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Added

@@ -1,0 +1,5 @@
+version 1.0.17 - Soluciona el error de que sólo trataba la primera secuencia ":lt" o ":gt".
+
+./description.sccs.cc |  Locally Modified
+./whats_new/1.0.17.version |  Locally Added
+./description.MetaLine.cc |  Locally Modified

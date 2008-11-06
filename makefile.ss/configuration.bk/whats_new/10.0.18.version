@@ -1,0 +1,6 @@
+version 10.0.18 - Actualiza el numero de version de la libreria libxml2 a 2.6.x en vez de la 2.6.11, ya que estabamos
+usando la 2.6.16 que es la que viene incluida por el sistema operativo.
+
+File: no file 2.6.11.include		Status: Locally Removed
+File: 2.6.x.include    	Status: Locally Added
+File: 10.0.18.version  	Status: Locally Added

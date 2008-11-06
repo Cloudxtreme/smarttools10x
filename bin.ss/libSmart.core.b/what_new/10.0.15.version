@@ -1,0 +1,8 @@
+version 10.0.15 - Rediseña los métodos disponibles para obtener los parámetros
+del sistema operativo. A partir de ahora se hará mediante los métodos internos
+que ofrece cada SO.
+
+./core.functions.cc |  Locally Modified
+./core.sccs.cc |  Locally Modified
+./hdrs/smart.functions.h |  Locally Modified
+./what_new/10.0.15.version |  Locally Added

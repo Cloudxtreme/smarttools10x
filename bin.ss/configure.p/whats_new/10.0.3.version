@@ -1,0 +1,6 @@
+version 10.0.3 - Incorpora la variable GMAKE_CONFIG para saber de donde hay que obtener los archivos
+de configuracion.
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.3.version   	Status: Locally Added

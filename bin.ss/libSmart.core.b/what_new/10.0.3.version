@@ -1,0 +1,6 @@
+version 10.0.3 - Incorpora el metodo naming::File::getNameWithoutExtension
+
+File: core.sccs.cc     	Status: Locally Modified
+File: naming.File.cc   	Status: Locally Modified
+File: smart.naming.File.h	Status: Locally Modified
+File: 10.0.3.version   	Status: Locally Added

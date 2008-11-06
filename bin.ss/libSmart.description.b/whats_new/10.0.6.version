@@ -1,0 +1,18 @@
+version 10.0.6 - Permite indicar el nombre del archivo Makefile/makefile en el documento XML de
+configuracion.
+
+Incorpora la expresion del comando para crear cada uno de los objetos.
+
+
+File: description.MetaCommand.cc	Status: Locally Added
+File: description.MetaLine.cc	Status: Locally Added
+File: description.Rule.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.functions.cc	Status: Locally Added
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.MetaCommand.h	Status: Locally Added
+File: smart.description.MetaLine.h	Status: Locally Added
+File: smart.description.Rule.h	Status: Locally Modified
+File: smart.description.RuleAgent.h	Status: Locally Modified
+File: smart.description.functions.h	Status: Locally Added
+File: 10.0.6.version   	Status: Locally Added

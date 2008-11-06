@@ -1,0 +1,8 @@
+version 10.0.2 - Permite que en el directorio destinado a contener los vendor's de una recurso exista la entrada
+none.include, que sera el archivo incluido desde los Makefiles cuando se desactive el uso del recurso.
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.Vendor.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.2.version   	Status: Locally Added

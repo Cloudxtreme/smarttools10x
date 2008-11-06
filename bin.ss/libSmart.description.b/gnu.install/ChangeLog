@@ -1,0 +1,118 @@
+version 10.0.10 - Incluye la posiblidad de establecer Target detallados, para poder describir las
+reglas de generacion de los IDL's donde se generan multitud de archivos con distintas combinaciones de
+sufijos/extensiones.
+
+Por ejemplo, la regla que usaba Altamira hasta ahora era:
+
+$(IDLC_HDRS)/%.h %_stc.cpp $(IDLC_HDRS)/%_stc.h %_r.cpp  $(IDLC_HDRS)/%_i.h %.cpp: $(IDLC_DIR)/%.idl
+	echo "Obteniendo fichero $*"
+	if [ -f $(IDLC_DIR)/$*.idl ]; then $(CORBA_CMD) $(IDLC_DIR)/$*.idl ; fi;\
+	if [ -f $*.h ]; then mv $*.h $(IDLC_HDRS)/$*.h ; fi ;\
+	if [ -f $*_i.h ]; then mv $*_i.h $(IDLC_HDRS)/$*_i.h ; fi ;\
+	if [ -f $*_stc.C ]; then mv $*_stc.C $*_stc.cpp ; fi ;\
+	if [ -f $*_stc.h ]; then mv $*_stc.h $(IDLC_HDRS)/$*_stc.h ; fi ;\
+	if [ -f $*_r.C ]; then mv $*_r.C $*_r.cpp ; fi ;\
+	if [ -f $*_r.h ]; then mv $*_r.h $(IDLC_HDRS)/$*_r.h ; fi ;\
+	if [ -f  $*.C ]; then mv $*.C $*.cpp ; fi ;\
+	if [ -f  POA_$*.C ]; then rm POA_$*.C; fi ;
+	if [ -f  POA_$*.h ]; then rm POA_$*.h; fi ;
+
+
+version 10.0.11 - Mejora la descripcion de la variable que definide la forma de indicar el directorio destino 
+de las compilaciones.
+
+Permite configurar el nombre del fichero de reglas (Makefile), el nombre del fichero de configuracion
+(makefile.config) y el fichero de recursos (makefile.resources).
+
+
+
+version 10.0.12 - Incorpora un nuevo indicador de descripcion 'InputOnlyName' requerido para compilar 
+los fuentes de ASN1.
+
+# generate.Command.cc (66)
+mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.h mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C : mensajes.db/ImeiSS7.asn1
+        @printf "%s " mensajes.db/ImeiSS7.asn1
+        $(VIEWER)cp mensajes.db/_$(GMAKE_TARGET).X/ImeiSS7.C `dirname $@`
+        $(VIEWER)cd `dirname $@`; $(ASN1_COMPILER) mensajes.db/ImeiSS7.asn1  $(ASN1_FLAGS) $(USER_ASN1_FLAGS)
+
+El problema consisten en que antes de invocar al compilar de ASN1 ya ha cambiado al directorio donde esta el fuente, por
+tanto no sera 'mensajes.db/ImeiSS7.asn1' sino simplemente 'ImeiSS7.asn1'.
+
+
+version 10.0.13 - Incorpora la deficion de VDependence a la hora de crear el meta comando.
+
+Son necesarios para crear los ASN1 ya que el snacc nos obliga a cambiar de directorio y perdemos la pista
+de d�nde estan los ficheros de los que depende el que estamos intentando generar. 
+
+Asi que en vez de poner un 'Dependence' que se calcula relativo a un directorio vamos a poner un 'VDependence'
+que hara referncia a las dependencias pero a patir de las variables de entorno algo asi como '$MYP/xx.ss ...'
+
+
+version 10.0.14 - Permite indicar el nombre del archivo de configuracion de proyecto, que hasta ahora
+se llamaba proyect.config.
+
+
+version 10.0.15 - Soluciona un BUG detectado al generar el comando asociado al ANS1.
+
+El indicador de inclusion (-u) asociado al nodo virtual de la regla del ASN1 aparece N+1 veces.
+
+El fallo era debido a que el metodo MetaLine::multipleIndicator no tenia en cuenta el tipo
+de indicador VDependence. 
+
+
+version 10.0.16 - Incorpora la posiblidad de incluir un archivo que ajusta los valores
+asignados a las variables del GMAKE.
+
+El archivo asociado a la variable Project->Configure se carga antes de cualquier otro .include,
+mientras que el archivo asociado a la variable Project->Tune se carga después de haber cargado
+todos los demás .includes asociados a la configuración/guión del entorno en el que nos encontramos
+lo que nos permite modificar de forma definitiva ciertos valores que las variables hayan podido
+tomar.
+
+
+version 10.0.1 - Normaliza el modo en que se reciben los parametros para el nodo que define la extensiones
+sobre las que se aplica una regla y para el nodo que describe que tipo de archivo genera la regla.
+
+
+version 10.0.2 - Mejora el modo de tratar las reglas que describen el tipo de directorio (FileSystem, Executable ...)
+
+Cada regla tiene asociada una mascara de bits que indica con que otras reglas puede tener relacion.
+
+
+
+version  10.0.3 - Rnombre el tipo Namespace como LogicGroup 
+
+
+version 10.0.3.1 - Cambio LogicGroup por LogicalGroup (mas correcto).
+
+
+version 10.0.4 - incorpora el metodo para obtener el nombre final del objeto obtenido al aplicar cada
+unas de las reglas en base a la extension inicial.
+
+por ejemplo kk.pcc -> kk.db.cc -> kk.o 
+
+
+version 10.0.5 - Permite indicar el nombre del directorio de salida en el archivo de configuracion.
+
+Hasta ahora era _$(TARGET).O ahora se puede dar cualquier expresion que incluya la variable TARGET.
+
+Incorpora el metodo Target::rename (naming::File& file) const
+
+
+version 10.0.6 - Permite indicar el nombre del archivo Makefile/makefile en el documento XML de
+configuracion.
+
+Incorpora la expresion del comando para crear cada uno de los objetos.
+
+
+
+version 10.0.7 - Mejora el sistema de indicacion de variables del description::MetaLine.
+
+
+version 10.0.8 - Permite indicar los caracteres > y < que podrian causar problemas en los documentos
+XML como :gt y :lt.
+
+
+version 10.0.9 - El modificador $(VIEWER) sera incluido automaticamente delante de cada comando.
+
+

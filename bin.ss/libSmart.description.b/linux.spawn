@@ -1,0 +1,38 @@
+if [ "$1" = "" ]
+then
+   echo "Uso: $0 <directorio de la libreria XML2>"
+   exit 1
+fi
+
+mkdir .Linux2.4i686_GNUgcc_fast_st_none_none.X 
+printf "%s " description.MetaCommand.cc
+${CC} -c description.MetaCommand.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaCommand.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.MetaLine.cc
+${CC} -c description.MetaLine.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaLine.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.Rule.cc
+${CC} -c description.Rule.cc -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Rule.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.RuleAgent.cc
+${CC} -c description.RuleAgent.cc -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.RuleAgent.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.Target.cc
+${CC} -c description.Target.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.analysis.b/filesystem.db/hdrs -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Target.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.functions.cc
+${CC} -c description.functions.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.functions.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " description.sccs.cc
+${CC} -c description.sccs.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.sccs.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+echo; echo Generando libreria ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.description.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.description.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaCommand.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaLine.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Rule.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.RuleAgent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Target.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.sccs.o  $1/lib/libxml2.a -lz -lrt ; \
+else \
+	if test "true" = "true" ; \
+	then \
+		/usr/bin/ar crv ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.description.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaCommand.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaLine.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Rule.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.RuleAgent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Target.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.sccs.o ; \
+	else \
+		${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.description.a  .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaCommand.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.MetaLine.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Rule.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.RuleAgent.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.Target.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.functions.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/description.sccs.o ; \
+	fi ; \
+fi ; \
+if [ "false" = "true" ] ; \
+then \
+	chmod -R ug+rwx .Linux2.4i686_GNUgcc_fast_st_none_none.X ; \
+fi ;
+echo; echo

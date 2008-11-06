@@ -1,0 +1,14 @@
+RDBMS_HOME=/export/oracle/app/oracle/product/8.1.7
+
+PLSQL_CPP=$(RDBMS_HOME)/bin/proc
+
+PLSQL_INCLUDE_IND=include=
+PLSQL_OUTPUT_IND=oname=
+PLSQL_INPUT_IND=iname=
+PLSQL_CHAR_MAP=string
+
+PLSQL_CPP_INCLUDES=include=$(RDBMS_HOME)/precomp/public
+PLSQL_CPP_FLAGS=mode=oracle ireclen=132 oreclen=132 CODE=cpp ERROR=YES hold_cursor=yes release_cursor=no SELECT_ERROR=yes char_map=$(PLSQL_CHAR_MAP)
+
+SYSTEM_INCLUDES += -I$(RDBMS_HOME)/precomp/public
+SYSTEM_LIBS += -L$(RDBMS_HOME)/lib -lclntsh -laio -ldl

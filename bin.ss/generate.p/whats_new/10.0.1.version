@@ -1,0 +1,17 @@
+version 10.0.1 - Interpreta la informacion de los description::MetaCommand para generar el comando
+correspondiente a cada tipo de archivo.
+
+Evita la referencia directa que habia al fichero Makefile en la regla "load", ya que el nombre
+ahora es configurable.
+
+File: generate.Agent.cc	Status: Locally Modified
+File: generate.Command.cc	Status: Locally Added
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.Structure.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: smart.generate.Agent.h	Status: Locally Modified
+File: smart.generate.Command.h	Status: Locally Added
+File: smart.generate.Prototype.h	Status: Locally Modified
+File: smart.generate.SourceContainer.h	Status: Locally Modified
+File: smart.generate.Structure.h	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

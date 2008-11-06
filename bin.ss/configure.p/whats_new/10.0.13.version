@@ -1,0 +1,17 @@
+version 10.0.13 - Se he detectado un BUG que imposibilita el uso de los archivo de ajuste.
+
+Actualmente las opciones que se presentan por pantalla tiene un orden predeterminado solo 
+por el orden de aparacion dentro del directorio en el que se encuentran ubicados, por lo 
+que no podemos estar seguros de que una opcion particular vaya a aparecer siempre
+en ese mismo orden.
+
+Para evitar esto vamos a poder a dar la posiblidad de establecer el valor de los recursos
+estableciendo el literal que deseamos que tomen.
+
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.Tuning.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: main.cc          	Status: Locally Modified
+File: smart.configure.Resource.h	Status: Locally Modified
+File: smart.configure.Tuning.h	Status: Locally Modified
+File: 10.0.13.version  	Status: Locally Added

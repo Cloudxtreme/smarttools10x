@@ -1,0 +1,7 @@
+version 10.0.21 - Cambia  Linux2.6.schema/i686/xml/libxml2/2.6.x.include para que 
+apunte al directorio de instalacion estandar.
+
+File: 2.6.x.include    	Status: Locally Modified
+File: 10.0.21.version  	Status: Locally Added
+
+versin 10.0.21.1 - Ajustes finales

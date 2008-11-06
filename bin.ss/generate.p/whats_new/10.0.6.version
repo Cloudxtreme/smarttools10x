@@ -1,0 +1,5 @@
+version 10.0.6 - Al generar un libreria solo se invocara al chmod  si la variable CC_NEED_CHMOD tiene un valor "true".
+
+File: generate.Library.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.6.version   	Status: Locally Added

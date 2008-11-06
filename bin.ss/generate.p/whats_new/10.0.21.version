@@ -1,0 +1,7 @@
+version 10.0.21 - Incorpora las mejoras del Smart.description version 10.0.14 relacionadas con las mejora
+del tratamiento del nombre del archivo de configuracion del proyecto.
+
+File: generate.Application.cc	Status: Locally Modified
+File: generate.Structure.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.21.version  	Status: Locally Added

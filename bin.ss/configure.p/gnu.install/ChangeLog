@@ -1,0 +1,84 @@
+version 10.0.10 - Incorpora la definfion de la variable GMAKE_OSVERSION=`uname -r | cut -d '-' -f 1 | cut -f 1 -d '('`
+
+
+version 10.0.11 - Permite ajustar las opciones por defecto para cada uno delos proyectos.
+
+Cada proyecto podra fijar los valores asignados a cada uno de los recursos quenos impone el 
+guion asociado al sistema operativo.
+
+
+
+version 10.0.12 - Comprueba la existencia del archivo de ajuste de forma automatica sin tener que 
+pasar el parametro del nombre de archivo, tal y como se hacia en la primera version.
+
+El archivo buscado sera $MYPJ/$GMAKE_SYSTEM.tuning
+
+
+version 10.0.13 - Se he detectado un BUG que imposibilita el uso de los archivo de ajuste.
+
+Actualmente las opciones que se presentan por pantalla tiene un orden predeterminado solo 
+por el orden de aparacion dentro del directorio en el que se encuentran ubicados, por lo 
+que no podemos estar seguros de que una opcion particular vaya a aparecer siempre
+en ese mismo orden.
+
+Para evitar esto vamos a poder a dar la posiblidad de establecer el valor de los recursos
+estableciendo el literal que deseamos que tomen.
+
+
+version 10.0.14 - Incorpora la definicion de las variable GMAKE_BASETARGET.
+
+Contiene el valor resultante de desactivar todos los recursos que lo permiten.
+Por ejemplo si
+GMAKE_TARGET=Linux2.6x86_64_GNUgcc_debug_st_oracle10.2.0_none
+
+El valor de la nueva variable sería:
+GMAKE_BASETARGET: Linux2.6x86_64_GNUgcc_debug_st_none_none
+
+
+version 10.0.1 - Incorpora el uso de la variable GMAKE_HOME
+
+
+version 10.0.2 - Permite que en el directorio destinado a contener los vendor's de una recurso exista la entrada
+none.include, que sera el archivo incluido desde los Makefiles cuando se desactive el uso del recurso.
+
+
+version 10.0.3 - Incorpora la variable GMAKE_CONFIG para saber de donde hay que obtener los archivos
+de configuracion.
+
+
+version 10.0.4 - Mejora el tratamiento de la desactivacion de recursos, mediante el patron de directorios.
+
+
+version 10.0.5 - Normaliza la estructura de directorio para facilitar su trataminto desde Smart.Generate.
+
+Incorpora la variable GMAKE_STRUCTURE que sea usada para publicar la estructura usada.
+
+
+version 10.0.6 - Saca el nombre del archivo donde se ha generado la asignacion de variables por la
+salida de errores, para que pueda ser capturado por el programa que lo haya invocado.
+
+
+version 10.0.7 - Se necesita un nuevo campo opcional en el guion que nos indique si el recurso se puede usar
+para optimizar las generaciones de librerias con el ILS.
+
+
+version 10.0.8 - Ajustes para publicar en la GMAKE_STRUCTURE si una variable de configuracion forma parte
+del TARGET o no.
+
+Incorpora las mejoras de Smart.core 10.0.5.
+
+Define una nueva variable GMAKE_TARGER_DIR que indica el nombre completo del directorio donde se 
+generan los resultados de las distintas compilaciones.
+
+Asi GMAKE_TARGET seria (SunOS5.8sparc_Sunforte6_debug_st_none_none), y GMAKE_TARGET_DIR sera calculado
+en base a la informacion del fichero de configuracion del proyecto. 
+
+Por ejemplo para 
+   <TargetDirectory Prefix="_" Name="GMAKE_TARGET" Extension=".X"/>
+
+GMAKE_TARGET_DIR=_$GMAKE_TARGET.X
+
+
+version 10.0.9 - Incorpora el valor por defecto a la variable GMAKE_EOL.
+
+

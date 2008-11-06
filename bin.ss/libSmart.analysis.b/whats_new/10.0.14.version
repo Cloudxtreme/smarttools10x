@@ -1,0 +1,7 @@
+version 10.0.14 - Incorpora un miembro de tipo std::string que guarda el archivo de configuracion usado
+en el analisis, ya que este dato es visualizado en los makefiles generados en por el ejecutable 'generate'.
+
+File: analysis.Application.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: smart.analysis.Application.h	Status: Locally Modified
+File: 10.0.14.version  	Status: Locally Added

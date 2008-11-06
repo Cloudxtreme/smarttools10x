@@ -1,0 +1,6 @@
+SYSTEM_INCLUDES += -I/home/intsdp/ssl/openssl-0.9.8a-sol8-sparc/include -I/home/intsdp/ssl/openssl-0.9.8a-sol8-sparc/include/openssl
+SYSTEM_LIBS += /home/intsdp/ssl/openssl-0.9.8a-sol8-sparc/lib/libssl.a -ldl 
+
+# Por compatiblidad con plataforma prepago SDP
+SYSTEM_LIBS += /home/intsdp/ssl/openssl-0.9.8a-sol8-sparc/lib/libcrypto.a 
+

@@ -1,0 +1,73 @@
+version 10.0.10 - Amplia el nombre de los esquemas con los digitos correspondientes a la 
+version del nucleo.
+
+Esto ha sido necesario porque seguramente sera necesario compilar con opciones distintas 
+para Linux 2.4 y Linux 2.6, ya que para este ultimo es posible que se necesiten generar
+apliciones en 64 bits.
+
+
+version 10.0.11 - Migracion a NemesisRD.core 1.6.4 que soporta arquitecturas de 64 bits.
+
+
+version 10.0.12 - Optimiza el modo de obtener el nombre del SO, la version y la arquitectura. Ahora se hace mediante el metodo uname.
+
+
+version 10.0.12.1 - Ajuste. El campo machine, no devuelve 'sparc', sino sun4u.
+
+version 10.0.13 - Soluciona el fallo detectado cuando las variables PJ terminan en un '/'.
+
+Cargando variable SDPPJ: /home/linuxsdp/proyectos/plataforma/cooking_64.pj/
+Cargando variable SDP_RD_PJ: /home/comun/trabajo/plataforma/NemesisRD/v1_6.pj
+Cargando variable WIDGETRD_PJ: /home/comun/trabajo/herramientas/WidgetRD/v1_5.pj/lib.ss
+
+bad.ss/makefile.order | Fichero: trace.p | No existe en el directorio
+bad.ss/makefile.order | Fichero: timer.p | No existe en el directorio
+
+[ analysis.Scanner.cc (126) ] RuntimeException: smart::naming::File { Parent: 0x0 | This: 0x641b40 | Name: /home/linuxsdp/proyectos/plataforma/cooking_64.pj/ | VPath: $(SDPPJ) } | No es una fuente de analisis reconocida
+
+
+
+version 10.0.14 - Elimina un BUG a la hora de terminar la ejecucion de un comando lanzado
+mediante el metodo popen.
+
+
+version 10.0.1 - Renombra el RelativePath como VariablePath para los nombres de archivo formados en base
+a una variable de entorno.
+
+
+version 10.0.2 - Actualiza la version de NemesisRD
+
+version 10.0.3 - Incorpora el metodo naming::File::getNameWithoutExtension
+
+
+version 10.0.4 - Incorpora el metodo naming::File::getRelativePath.
+
+
+version 10.0.5 - Incorpora el metodo functions::getSystemId () que devuelve una cadena con el identificador
+usado para deferencia el sistema operativo usado.
+
+Se calcula como la concatenacion de: 
+
+uname -s + uname -r | cut -d '-' -f 1 + uname -p
+
+   
+
+version 10.0.6 - Incorpora la posiblidad de desactivar la salida por pantalla de las variables de 
+entorno que va cargando cada proceso.
+
+Se usa en el ILS donde no interesa que se llene la pantalla con mensajes sobre esto.
+
+
+version 10.0.7 - incorpora trazas para facilitar la depuracion.
+
+
+version 10.0.8 - Incorpora el metodo smart::functions::keycode que devuelve un codigo numerico
+en base a la cadena recibida como parametro.
+
+
+version 10.0.9 - Modifica el metodo smart::functions::getSystemId para prevenir que el nombre de 'release' 
+del SO no contenga caracteres que pudieran tener significados espaciales como '/' o '('.
+
+En CYGWIN 'uname -r' saca la cadena '1.5.24(0.156/4/2)'
+
+

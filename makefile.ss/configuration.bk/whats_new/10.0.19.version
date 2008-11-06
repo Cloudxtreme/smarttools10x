@@ -1,0 +1,17 @@
+version 10.0.19 - Incorpora el guion para compilar en  CYGWIN_NT-5.1
+
+File: this.include     	Status: Locally Added
+File: this.outline     	Status: Locally Added
+File: this.include     	Status: Locally Added
+File: this.outline     	Status: Locally Added
+File: dynamic.include  	Status: Locally Added
+File: static.include   	Status: Locally Added
+File: debug.include    	Status: Locally Added
+File: fast.include     	Status: Locally Added
+File: mt.include       	Status: Locally Added
+File: st.include       	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 0.9.8a.include   	Status: Locally Added
+File: none.include     	Status: Locally Added
+File: 2.6.x.include    	Status: Locally Added
+File: 10.0.19.version  	Status: Locally Added

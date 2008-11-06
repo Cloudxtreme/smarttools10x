@@ -1,0 +1,4 @@
+CPP_FLAGS += -mt -D_MT
+CC_FLAGS += -mt -D_MT=1
+
+SYSTEM_LIBS += -lpthread 

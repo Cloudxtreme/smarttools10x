@@ -1,0 +1,10 @@
+version 10.0.12 - Modificaciones para que los cambios realizados sobre una determinada arquitectura no 
+tenga ningun efecto en ninguna otra arquitectura. 
+
+Se ha detectado el problema de que al firmar la version de Linux 2.6 en 32 bits, se ve afectada la version
+de Linux 2.6 en 64 bits.
+
+Se enlaza con la version de firmado de 10.0.32.
+./smake.Application.cc |  Locally Modified
+./smake.sccs.cc |  Locally Modified
+./whats_new/10.0.12.version |  Locally Added

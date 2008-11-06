@@ -1,0 +1,31 @@
+if [ "$1" = "" ]
+then
+   echo "Uso: $0 <directorio de la libreria XML2>"
+   exit 1
+fi
+
+if [ ! -d .Linux2.4i686_GNUgcc_fast_st_none_none.X ] ; then mkdir .Linux2.4i686_GNUgcc_fast_st_none_none.X; fi ;
+printf "%s " configure.Outline.cc
+${CC} -c configure.Outline.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Outline.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Resource.cc
+${CC} -c configure.Resource.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Resource.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Vendor.cc
+${CC} -c configure.Vendor.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Vendor.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Application.cc
+${CC} -c configure.Application.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Application.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.CppCompiler.cc
+${CC} -c configure.CppCompiler.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.CppCompiler.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Directory.cc
+${CC} -c configure.Directory.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Directory.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Version.cc
+${CC} -c configure.Version.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Version.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.sccs.cc
+${CC} -c configure.sccs.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.sccs.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " main.cc
+${CC} -c main.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/main.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " configure.Tuning.cc
+${CC} -c configure.Tuning.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs  -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Tuning.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+
+
+echo; echo Generando ejecutable ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/configure ...
+${CC} -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/configure  .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Outline.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Resource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Vendor.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Application.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.CppCompiler.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Directory.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Version.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.sccs.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/main.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/configure.Tuning.o /var/tmp/develop/SmartTools.pj/bin.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.description.a /var/tmp/develop/SmartTools.pj/bin.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.core.a /var/tmp/develop/NemesisRD.pj/official.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libNemesis.app.a /var/tmp/develop/NemesisRD.pj/official.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libNemesis.xml.a /var/tmp/develop/NemesisRD.pj/official.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libNemesis.io.a /var/tmp/develop/NemesisRD.pj/official.ss/.Linux2.4i686_GNUgcc_fast_st_none_none.X/libNemesis.core.a  $2 -lz $3 

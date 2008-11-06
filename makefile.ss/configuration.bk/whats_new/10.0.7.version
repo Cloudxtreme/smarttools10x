@@ -1,0 +1,6 @@
+version 10.0.7 - Elimina los parametros de optimizacion de gcc que han generado una copia un poco inestable.
+
+File: config.xml       	Status: Locally Modified
+File: go               	Status: Locally Added
+File: fast.include     	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

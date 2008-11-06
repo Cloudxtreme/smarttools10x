@@ -1,0 +1,11 @@
+version 10.0.2 - Mejora el modo de tratar las reglas que describen el tipo de directorio (FileSystem, Executable ...)
+
+Cada regla tiene asociada una mascara de bits que indica con que otras reglas puede tener relacion.
+
+
+File: description.Rule.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.Rule.h	Status: Locally Modified
+File: smart.description.RuleAgent.h	Status: Locally Modified
+File: 10.0.2.version   	Status: Locally Added

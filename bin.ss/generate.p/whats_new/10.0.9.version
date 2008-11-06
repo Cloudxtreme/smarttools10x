@@ -1,0 +1,6 @@
+version 10.0.9 - Cuando se generan los makefiles desde un .ss los componentes incluidos pueden intentar cargar
+un makefile.config que no existe en su directorio.
+
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.9.version   	Status: Locally Added

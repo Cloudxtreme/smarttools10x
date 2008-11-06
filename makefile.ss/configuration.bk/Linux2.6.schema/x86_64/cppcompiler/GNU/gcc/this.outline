@@ -1,0 +1,4 @@
+modo de creacion de ejecutables | release | true
+modo de ejecucion de los ejecutables | threading | true
+uso de la biblioteca de clases RWTools | rwtools | false
+modo de creacion de las librerías | library | false

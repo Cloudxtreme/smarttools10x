@@ -1,0 +1,8 @@
+version 10.0.12 - Pasa el nombre del archivo que contiene la descripcion de recursos. Se evita asi 
+que el ejecutable que lo comprueba tenga que cargar la configuracion, analizar el documento XML, etc, etc 
+
+
+
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.12.version  	Status: Locally Added

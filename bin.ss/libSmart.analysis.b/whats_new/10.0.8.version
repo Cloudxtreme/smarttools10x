@@ -1,0 +1,27 @@
+version 10.0.8 - Soluciona el error detectado al tratar target que generan mas de 2 ficheros.
+
+[23/05/2007 07:49:19] Debug | analysis.Scanner.cc (300) | smart::analysis::Scanner::expand | smart::description::Rule { Name: IDL | Type: AnsiC
+ (0x40) | Mask: 0x0 | ClassFiles: idl } | Node: $(MYPJ)/a.ss/libreria.b/un_idl.idl
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x321278 | Name: un_idl.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x321278 | Name: un_idl.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x322780 | Name: un_idl_i.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x322780 | Name: un_idl_i.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatDirectory.cc (24) | smart::analysis::filesystem::FlatDirectory::add | smart::naming
+::File { Parent: 0x3259b8 | This: 0x331508 | Name: un_idl_i_stc_stc.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i_stc_stc.h }
+
+[23/05/2007 07:49:19] Information | analysis.filesystem.FlatEntry.cc (26) | smart::analysis::filesystem::FlatEntry::add | smart::naming::File {
+ Parent: 0x3259b8 | This: 0x331508 | Name: un_idl_i_stc_stc.h | VPath: $(MYPJ)/a.ss/libreria.b/.$(TARGET).O/un_idl_i_stc_stc.h }
+
+
+File: analysis.Scanner.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Added

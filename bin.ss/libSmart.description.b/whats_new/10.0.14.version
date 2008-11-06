@@ -1,0 +1,8 @@
+version 10.0.14 - Permite indicar el nombre del archivo de configuracion de proyecto, que hasta ahora
+se llamaba proyect.config.
+
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.functions.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.functions.h	Status: Locally Modified
+File: 10.0.14.version  	Status: Locally Added

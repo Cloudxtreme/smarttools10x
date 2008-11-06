@@ -1,0 +1,11 @@
+SS7_HOME=/home/intsdp/DGMS_8.0.2_SP3
+
+SYSTEM_INCLUDES += -I$(SS7_HOME)/include
+
+CPP_FLAGS += -DDGMS
+CC_FLAGS += -DDGMS=1
+
+SYSTEM_LIBS += -L$(SS7_HOME)/library32 \
+   -Bstatic -ltcap -ldf -lFt -lapi -lcc -loos  \
+   -Bdynamic  -ldgms -lposix4
+

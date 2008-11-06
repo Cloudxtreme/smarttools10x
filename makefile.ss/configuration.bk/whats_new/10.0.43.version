@@ -1,0 +1,7 @@
+version 10.0.43 - anadir -lsccp -lswrmm -lscos
+
+./whats_new/10.0.43.version |  Locally Added
+
+version 10.0.43 - Ajustes JI
+./whats_new/10.0.43.version |  Locally Modified
+.Linux2.6.schema/x86_64/ss7/dgms/9.0.2.sp5.include |  Locally Modified

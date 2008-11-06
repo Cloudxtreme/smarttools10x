@@ -1,0 +1,12 @@
+version 10.0.5 - Incorpora el metodo functions::getSystemId () que devuelve una cadena con el identificador
+usado para deferencia el sistema operativo usado.
+
+Se calcula como la concatenacion de: 
+
+uname -s + uname -r | cut -d '-' -f 1 + uname -p
+
+   
+File: core.functions.cc	Status: Locally Modified
+File: core.sccs.cc     	Status: Locally Modified
+File: smart.functions.h	Status: Locally Modified
+File: 10.0.5.version   	Status: Locally Added

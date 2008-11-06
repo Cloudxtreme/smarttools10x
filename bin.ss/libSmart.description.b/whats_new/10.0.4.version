@@ -1,0 +1,10 @@
+version 10.0.4 - incorpora el metodo para obtener el nombre final del objeto obtenido al aplicar cada
+unas de las reglas en base a la extension inicial.
+
+por ejemplo kk.pcc -> kk.db.cc -> kk.o 
+
+File: description.Rule.cc	Status: Locally Modified
+File: description.Target.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.Rule.h	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Added

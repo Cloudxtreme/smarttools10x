@@ -1,0 +1,2 @@
+CPP_FLAGS += -O3 -march=nocona 
+CC_FLAGS += -O3 -march=nocona

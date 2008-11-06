@@ -1,0 +1,8 @@
+version 10.0.30 - Incorpora la libreria requerida para evitar el error de linkado.
+
+Generando SunOS5.8sparc_Sunforte6_debug_st_none_none ... Undefined                      first referenced
+ symbol                             in file
+hstrerror                           /home/comun/usuarios/frr/plataforma/NemesisRD/cooking.pj/official.ss/.SunOS5.8sparc_Sunforte6_debug_st_none_none.X/libNemesis.comm.a(comm.Network.o)
+
+./whats_new/10.0.30.version |  Locally Added
+./SunOS5.8.schema/sparc/this.include |  Locally Modified

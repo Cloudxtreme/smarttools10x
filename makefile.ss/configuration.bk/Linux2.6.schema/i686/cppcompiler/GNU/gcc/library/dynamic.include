@@ -1,0 +1,2 @@
+LIBRARY_MODE=-shared -fpic
+LIBRARY_EXTENSION=.so

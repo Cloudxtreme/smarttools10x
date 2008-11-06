@@ -1,0 +1,11 @@
+version 10.0.13 - Ajustes realizados para compilar la plataforma SDP original.
+
+Ajusta el comando de LEX, porque en realidad ya solo se usa el flex, que permite
+indicar el nombre de la con el indicador -o
+
+Ajusta los path de busqueda de la OpenSSL.
+
+File: this.include     	Status: Locally Modified
+File: this.include     	Status: Locally Modified
+File: 0.9.8a.include   	Status: Locally Modified
+File: 10.0.13.version  	Status: Locally Modified

@@ -1,0 +1,7 @@
+version 10.0.6 - Incorpora la interpretacion de los includes en formato ProC.
+
+Lo hacemos sobre el mismo analizador de AnsiC, para evitar tener que crear un tipo especificico.
+
+File: analysis.CSource.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: 10.0.6.version   	Status: Locally Added

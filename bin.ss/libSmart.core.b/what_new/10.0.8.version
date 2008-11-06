@@ -1,0 +1,7 @@
+version 10.0.8 - Incorpora el metodo smart::functions::keycode que devuelve un codigo numerico
+en base a la cadena recibida como parametro.
+
+File: core.functions.cc	Status: Locally Modified
+File: core.sccs.cc     	Status: Locally Modified
+File: smart.functions.h	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Added

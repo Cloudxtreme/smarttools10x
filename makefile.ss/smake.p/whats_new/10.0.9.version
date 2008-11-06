@@ -1,0 +1,8 @@
+version 10.0.9 - Mejora el tratamiento de la salida del hijo lanzado con la ejecucion del 'make'.
+
+Ya que ahora no es necesario enviarlo al tty para ver la salida en directo.
+
+
+./smake.Application.cc |  Locally Modified
+./smake.sccs.cc |  Locally Modified
+./whats_new/10.0.9.version |  Locally Added

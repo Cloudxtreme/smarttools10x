@@ -1,0 +1,4 @@
+version 10.0.27 - Incorpora el ejecutable del onlinehelp.p en la instalacion.
+
+./whats_new/10.0.27.version |  Locally Added
+./makefile |  Locally Modified

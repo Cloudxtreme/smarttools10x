@@ -1,0 +1,8 @@
+version 10.0.7 - Mejora el sistema de indicacion de variables del description::MetaLine.
+
+File: description.MetaCommand.cc	Status: Locally Modified
+File: description.MetaLine.cc	Status: Locally Modified
+File: description.Rule.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.MetaLine.h	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

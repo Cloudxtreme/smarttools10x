@@ -1,0 +1,61 @@
+#
+# WorkShop Project File
+#
+# This file is machine generated, do not modify
+#
+
+projectid "/home/comun/usuarios/frr/herramientas/SmartTools/v10.pj/evo-x";
+projectver 6.0;
+
+project_t cset_QWvyOdc423VRxOrrQAMy = {
+
+    entities = {
+        {
+            name = "evo-x";
+            type = EXE;
+            path = "evo-x";
+            builder = CC_Builder;
+            output_dir = "output";
+            options = {
+                CC_Builder<lib_dir>.value="/usr/dt/lib",
+                CC_Builder<lib_dir>.value="/usr/openwin/lib",
+                CC_Builder<link_library>.value="Xm",
+                CC_Builder<link_library>.value="Xt",
+                CC_Builder<link_library>.value="X11",
+                CC_Builder<link_library>.value="m",
+                CC_Builder<link_library>.value="socket",
+                CC_Builder<link_library>.value="nsl",
+                CC_Builder<link_library>.value="thread",
+                CC_Builder<link_library>.value="pthread",
+                CC_Builder<link_library>.value="intl",
+                CC_Builder<link_library>.value="gen",
+                CC_Builder<link_library>.value="posix4",
+                CC_Builder<link_library>.value="dl",
+                CC_Builder<link_library>.value="curses";
+            };
+        };
+    };
+
+    globals = {
+        {
+            id = "CC_Builder";
+            builder = CC_Builder;
+            options = {
+                CC_Builder<debug>;
+            };
+        };
+    };
+
+    gendata = {
+        {
+            tag = projecttype;
+            type = string_t;
+            value ="simple";
+        },
+        {
+            tag = projectdir;
+            type = string_t;
+            value ="/home/comun/usuarios/frr/herramientas/SmartTools/v10.pj";
+        };
+    };
+};

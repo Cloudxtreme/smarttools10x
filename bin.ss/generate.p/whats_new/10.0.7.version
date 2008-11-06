@@ -1,0 +1,8 @@
+version 10.0.7 - Ajustes para cuadras las variables de los guiones con las variables usadas en el (Makefile).
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.Executable.cc	Status: Locally Modified
+File: generate.Library.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

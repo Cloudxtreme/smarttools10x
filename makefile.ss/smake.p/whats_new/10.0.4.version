@@ -1,0 +1,13 @@
+version 10.0.4 - Intenta evitar el problema detectado en Linux al compilar en modo 'fast'. En alguna ocasion el 
+comando no se ejecutaba correctamente debido a que no interpretaba correctamente el nombre del fichero
+sobre el que se direccionaba la salida.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Added
+
+version 10.0.4.1 - Tal y como se ejecuta en la version 10.0.4 no se podia ver el progreso con el 
+'-v' ya que el terminal solo se refrescaba cuando se enviaba un '\n'.
+
+File: smake.Application.cc	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Modified

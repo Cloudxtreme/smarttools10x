@@ -1,0 +1,71 @@
+echo SmartConfigure - Configurador de proyecto. Version 10.0.6/Evo-X
+echo Desarrollado por Nuevos Conceptos de Plataformas
+echo "(c) Copyright 2002-2007 Telefonica Investigaci\303\263n y Desarrollo, S.A. Unipersonal."
+echo
+
+if [ "$GMAKE_HOME" == "" ]
+then
+   echo La variable GMAKE_HOME no tiene establecido el directorio de trabajo
+   exit 1
+fi
+
+if [ ! -d $GMAKE_HOME ]
+then
+   echo La variable GMAKE_HOME no apunta a un directorio valido
+   exit 1
+fi
+
+osName=`uname -s`
+osVersion=`uname -r`
+v1=`echo $osVersion |cut -f 1 -d .`
+v2=`echo $osVersion |cut -f 2 -d .`
+osVersion=$v1.$v2
+archName=`uname -p`
+
+autoName=.$osName$osVersion$archName.auto
+systemID=$osName$osVersion$archName
+
+if [ "$1" = "-noauto" ]
+then
+   rm -f $autoName
+   shift
+fi
+
+if [ -f $autoName ]
+then
+   echo Recargando memoria de configuracion de $autoName
+   echo
+else
+   if [ "$1" = "-tuning" ]
+   then
+      shift;
+      $GMAKE_HOME/bin/$systemID/configure -tuning $1
+      shift
+   else
+      $GMAKE_HOME/bin/$systemID/configure 
+   fi
+fi
+
+. $autoName
+
+if [ -x $GMAKE_HOME/bin/$systemID/generate ]
+then
+   alias gmake=`echo $GMAKE_HOME/bin/$systemID/generate $*`
+   echo Alias 'gmake' establecido para el generador de Makefiles
+else
+   echo "No existe ejecutable $GMAKE_HOME/bin/$systemID/generate"
+   echo "Aviso no se pudo establecer el alias para el generador de Makefiles ('gmake')"
+   echo
+fi
+
+if [ -x $GMAKE_HOME/bin/$systemID/smake ]
+then
+   alias smake=`echo $GMAKE_HOME/bin/$systemID/smake`
+   echo Alias 'smake' establecido para el generador de Makefiles
+else
+   echo "No existe ejecutable $GMAKE_HOME/bin/$systemID/smake"
+   echo "Aviso no se pudo establecer el alias para el generador de Makefiles ('smake')"
+   echo
+fi
+
+

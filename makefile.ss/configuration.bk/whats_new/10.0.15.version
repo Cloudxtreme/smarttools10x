@@ -1,0 +1,21 @@
+version 10.0.15 - Reordena los ficheros de configuracion de señalizacion.
+
+Mejora el sistema de instalacion, que a partir de ahora se realizada con el comando make TEXTCODE=<text code>
+usado para firmar la configuracion.
+
+File: makefile         	Status: Locally Added
+File: no file 1.3.0.15.include		Status: Locally Removed
+File: no file 1.3.0.8.include		Status: Locally Removed
+File: no file 1.4.0.2.include		Status: Locally Removed
+File: no file 1.4.0.3.include		Status: Locally Removed
+File: no file 1.4.0.4.include		Status: Locally Removed
+File: no file 8.0.2.sp4.include		Status: Locally Removed
+File: no file 9.0.2.sp2.include		Status: Locally Removed
+File: no file 1.3.0.15.include		Status: Locally Removed
+File: no file 1.3.0.8.include		Status: Locally Removed
+File: no file 1.4.0.2.include		Status: Locally Removed
+File: no file 1.4.0.3.include		Status: Locally Removed
+File: no file 1.4.0.4.include		Status: Locally Removed
+File: no file 8.0.2.sp4.include		Status: Locally Removed
+File: no file 9.0.2.sp2.include		Status: Locally Removed
+File: 10.0.15.version  	Status: Locally Added

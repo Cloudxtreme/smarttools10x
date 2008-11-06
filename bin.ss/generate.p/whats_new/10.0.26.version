@@ -1,0 +1,10 @@
+version 10.0.26 - Soluciona un BUG detectado al generar el comando asociado al ANS1.
+
+El indicador de inclusion (-u) asociado al nodo virtual de la regla del ASN1 aparece N+1 veces.
+
+Incorpora la solucion del problema detectado en Smart.description 10.0.15.
+
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.26.version  	Status: Locally Added

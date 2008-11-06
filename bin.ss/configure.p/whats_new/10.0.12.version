@@ -1,0 +1,8 @@
+version 10.0.12 - Comprueba la existencia del archivo de ajuste de forma automatica sin tener que 
+pasar el parametro del nombre de archivo, tal y como se hacia en la primera version.
+
+El archivo buscado sera $MYPJ/$GMAKE_SYSTEM.tuning
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.12.version  	Status: Locally Added

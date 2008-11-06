@@ -1,0 +1,8 @@
+version 10.0.11 - Soluciona un BUG inyectado en 10.0.8. El resultado de la compilacion siempre sale por pantalla
+aunque no se indique el modo 'verbose'.
+
+Incorpora las mejoras de Smart.core 10.0.12.
+
+./smake.Application.cc |  Locally Modified
+./smake.sccs.cc |  Locally Modified
+./whats_new/10.0.11.version |  Locally Added

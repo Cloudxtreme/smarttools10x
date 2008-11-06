@@ -1,0 +1,6 @@
+versio 10.0.12 - Solo copia el config.xml en caso de que haya sufrido algun cambio desde la ultima ejecucion
+de un proceso de instalacion.
+
+Ojo!! Si se cambia el config.xml habra que volver a firmar todos los SO's ya que es un archivo compartido por
+todos y todos ellos lo tienen firmado en su archivo .checkum.
+

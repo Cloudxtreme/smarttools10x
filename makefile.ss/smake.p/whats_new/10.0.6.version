@@ -1,0 +1,8 @@
+version 10.0.6 - Mejora el funcionamiento del modificador -vv de forma que se indica se establece
+automaticamente el valor de GMAKE_EOL='\n' para que se vaya viendo el componente que se crea 
+desde el Eclipse.
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: smart.smake.Shuffler.h	Status: Locally Modified
+File: 10.0.6.version   	Status: Locally Added

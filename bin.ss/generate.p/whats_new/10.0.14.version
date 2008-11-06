@@ -1,0 +1,38 @@
+version 10.0.14 - Elimina un BUG que hcia que el 'make clobber' no borrara el fichero de salida del componente, solo borraba los directorios temporales. 
+
+El truco para evitar que el make siga generando los .o's una vez que ya hemos creado el link a una libreria usando el ILS 
+consiste en ir creando los TARGET.X del proyecto de forma que apunten como un enlace simbolico al directorio correspondiente
+al que hemos hecho el link.
+
+asi por ejemplo si  el ILS ha generado el enlace:
+
+../_SunOS5.8sparc_Sunforte6_debug_st_oracle_none.X/libNemesis.core.a -> ../_SunOS5.8sparc_Sunforte6_debug_st_none_none.X/libNemesis.core.a
+
+Todos los directorios de salida de los subsistemas de libNemesis.core.b deberan apuntar a los directorios de salida
+de _SunOS5.8sparc_Sunforte6_debug_st_none_none.X
+
+Asi por ejemplo
+   core.b/mt.db/_linux2.4.21_gcc3.3.3_debug_st_oracle9.2.0_none.O -> core.b/mt.db/_linux2.4.21_gcc3.3.3_debug_mt_none_none.O
+
+Con esto se consigue que cuando el make aplica las reglas para generar los .o  se encuentra que todos los .o son posteriores
+a los .cc (por ejemplo) pero esta comprobando el .o a traves del link que acabamos de crear.
+
+---- Recordatorio de paso intermedio que ya hemos superado  ----
+En principio el ILS no esta integrado dentro del makefile del componente, sino que esta en el de su predecesor, por que no 
+encuentro la forma de abortar la compilacion despues de haber creado el link. Tal y como esta ahora crea el link correctamente, 
+pero luego continua generando todos los .o correspondientes a la libreria que esta creado.
+
+Entonces el predecesor en caso de que se vaya a generar una libreria invoca al ILS y si esta actua ya no es necesario invocar
+al makefile de la libreria. Cuando se invoque al makefile desde la libreria desde su mismo .b (p.e.) sera el smake el que se 
+encargue de comprobar si es posible crear la libreria con el ILS o si hay que invocar al make.
+
+
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.Library.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.Structure.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: smart.generate.Library.h	Status: Locally Modified
+File: smart.generate.SourceContainer.h	Status: Locally Modified
+File: smart.generate.Structure.h	Status: Locally Modified
+File: 10.0.14.version  	Status: Locally Added

@@ -1,0 +1,4 @@
+CPP_DEBUG_INDICATOR=-g -finline-functions
+CPP_FLAGS += -D_DEBUG
+CC_FLAGS += -g -D_DEBUG=1
+

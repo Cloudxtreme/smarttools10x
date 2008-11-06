@@ -1,0 +1,6 @@
+SYSTEM_INCLUDES += -I /usr/include
+CPP_FLAGS += -DAC_INT2_TYPE=short -DAC_INT4_TYPE=long
+CC_FLAGS += -DAC_INT2_TYPE=short -DAC_INT4_TYPE=long
+
+SYSTEM_LIBS += -lldap
+

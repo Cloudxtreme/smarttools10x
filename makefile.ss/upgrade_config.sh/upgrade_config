@@ -1,0 +1,45 @@
+if [ "$GMAKE_HOME" == "" ]
+then
+   echo La variable GMAKE_HOME no ha sido establecida.
+   exit 1
+fi
+
+CONFIG_FILE=$GMAKE_HOME/data/config.xml
+
+echo Fichero de configuracion: $CONFIG_FILE
+
+makefile_config=`cat $CONFIG_FILE | grep Makefile | cut -f 3 -d = | cut -f 2 -d '"'`
+makefile_resources=`cat $CONFIG_FILE | grep Makefile | cut -f 4 -d = | cut -f 2 -d '"'`
+target=`cat $CONFIG_FILE | grep TargetDirectory | cut -f 3 -d = | cut -f 2 -d '"'`
+target=${target}_DIR
+
+echo makefile.config: $makefile_config
+echo makefile.resources: $makefile_resources
+echo target: $target
+
+echo "1,$ s/_\$(TARGET).O/\$($target)/g" > /tmp/$$
+echo "x" >> /tmp/$$
+
+find . -name "makefile.config" | while read a
+do
+   echo $a ...
+   dir=`dirname $a`
+   cp $a $dir/$makefile_config
+
+   ex $dir/$makefile_config < /tmp/$$ > /dev/null
+done
+
+
+echo "1,$ s/GMAKE_THREADMODE/GMAKE_THREADING/" > /tmp/$$
+echo "x" >> /tmp/$$
+
+find . -name "makefile.resources" | while read a
+do
+   echo $a ...
+   dir=`dirname $a`
+   cp $a $dir/$makefile_resources
+   ex $dir/$makefile_resources < /tmp/$$ > /dev/null
+done
+
+rm /tmp/$$
+

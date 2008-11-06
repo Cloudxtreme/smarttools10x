@@ -1,0 +1,15 @@
+version 10.0.0 - Version inicial del combinador de TARGET para optimizar el uso del ILS.
+
+File: makefile.config  	Status: Locally Added
+File: makefile.resources	Status: Locally Added
+File: smake.Application.cc	Status: Locally Added
+File: smake.Shuffler.cc	Status: Locally Added
+File: smake.Target.cc  	Status: Locally Added
+File: smake.main.cc    	Status: Locally Added
+File: smake.sccs.cc    	Status: Locally Added
+File: smart.smake.Application.h	Status: Locally Added
+File: smart.smake.ResourceContainer.h	Status: Locally Added
+File: smart.smake.Shuffler.h	Status: Locally Added
+File: smart.smake.Target.h	Status: Locally Added
+File: smart.smake.sccs.h	Status: Locally Added
+File: 10.0.0.version   	Status: Locally Added

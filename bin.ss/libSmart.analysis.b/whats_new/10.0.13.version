@@ -1,0 +1,6 @@
+version 10.0.13 - Mejoras para compilar con g++ 3.4.4
+
+File: analysis.sccs.cc 	Status: Locally Modified
+File: analysis.filesystem.FlatDirectory.cc	Status: Locally Modified
+File: analysis.filesystem.FlatEntry.cc	Status: Locally Modified
+File: 10.0.13.version  	Status: Locally Added

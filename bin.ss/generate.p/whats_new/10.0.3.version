@@ -1,0 +1,6 @@
+version 10.0.3 - Soluciona el fallo detectado al escribir fuera de los limites de la memoria asignada
+
+File: generate.Command.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: smart.generate.Command.h	Status: Locally Modified
+File: 10.0.3.version   	Status: Locally Added

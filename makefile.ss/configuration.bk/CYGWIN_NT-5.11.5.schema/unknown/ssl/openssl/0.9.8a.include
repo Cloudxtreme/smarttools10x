@@ -1,0 +1,3 @@
+SYSTEM_INCLUDES += -I/usr/include/openssl
+SYSTEM_LIBS += -lssl
+

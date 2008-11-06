@@ -1,0 +1,12 @@
+version 10.0.11 - Mejora la descripcion de la variable que definide la forma de indicar el directorio destino 
+de las compilaciones.
+
+Permite configurar el nombre del fichero de reglas (Makefile), el nombre del fichero de configuracion
+(makefile.config) y el fichero de recursos (makefile.resources).
+
+
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.functions.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.functions.h	Status: Locally Modified
+File: 10.0.11.version  	Status: Locally Added

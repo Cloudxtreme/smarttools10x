@@ -1,0 +1,34 @@
+mkdir -p ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+mkdir -p .SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+
+printf "%s " description.MetaCommand.cc
+${CC} -c description.MetaCommand.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaCommand.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.MetaLine.cc
+${CC} -c description.MetaLine.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaLine.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.Rule.cc
+${CC} -c description.Rule.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Rule.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.RuleAgent.cc
+${CC} -c description.RuleAgent.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.RuleAgent.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.Target.cc
+${CC} -c description.Target.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.analysis.b/filesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Target.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.functions.cc
+${CC} -c description.functions.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.functions.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " description.sccs.cc
+${CC} -c description.sccs.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.sccs.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+echo; echo Generando libreria ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.description.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.description.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaCommand.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaLine.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Rule.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.RuleAgent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Target.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.sccs.o  /home/intsdp/libxml2-2.6.11/solaris//lib/libxml2.a -lz -lsocket -lnsl -ly -ll -lelf -lw -lgen -lrt ; \
+else \
+	if test "false" = "true" ; \
+	then \
+		/usr/ccs/bin/ar crv ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.description.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaCommand.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaLine.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Rule.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.RuleAgent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Target.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.sccs.o ; \
+	else \
+		${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.description.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaCommand.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.MetaLine.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Rule.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.RuleAgent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.Target.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/description.sccs.o ; \
+	fi ; \
+fi ; \
+if [ "true" = "true" ] ; \
+then \
+	chmod -R ug+rwx .SunOS5.8sparc_Sunforte6_fast_st_none_none.X ; \
+fi ;
+echo; echo

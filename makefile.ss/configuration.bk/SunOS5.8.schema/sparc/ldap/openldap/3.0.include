@@ -1,0 +1,8 @@
+LDAP_DIR=/home/intsdp/libldap/solaris
+USER_CPP_FLAGS += -DAC_INT2_TYPE=short -DAC_INT4_TYPE=int
+USER_INCLUDES += -I$(LDAP_DIR)/include -I$(LDAP_DIR)/libraries/libldap -I$(LDAP_DIR)/libraries/liblber
+
+LDAP_LIBS=$(LDAP_DIR)/libraries
+SYSTEM_LIBS += $(LDAP_LIBS)/liblutil/liblutil.a $(LDAP_LIBS)/libldap/libldap.a $(LDAP_LIBS)/liblber/liblber.a
+
+

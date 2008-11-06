@@ -1,0 +1,47 @@
+if [ "$1" = "" ]
+then
+   echo "Uso: $0 <directorio de la libreria XML2>"
+   exit 1
+fi
+
+mkdir ../.Linux2.4i686_GNUgcc_fast_st_none_none.X 
+mkdir .Linux2.4i686_GNUgcc_fast_st_none_none.X 
+mkdir filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X 
+
+printf "%s " filesystem.db/analysis.filesystem.FlatDirectory.cc
+${CC} -c filesystem.db/analysis.filesystem.FlatDirectory.cc -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatDirectory.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " filesystem.db/analysis.filesystem.FlatEntry.cc
+${CC} -c filesystem.db/analysis.filesystem.FlatEntry.cc -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatEntry.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " filesystem.db/analysis.filesystem.Node.cc
+${CC} -c filesystem.db/analysis.filesystem.Node.cc -Ifilesystem.db/hdrs -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Node.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " filesystem.db/analysis.filesystem.Path.cc
+${CC} -c filesystem.db/analysis.filesystem.Path.cc -Ihdrs -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Path.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.ASN1Source.cc
+${CC} -c analysis.ASN1Source.cc -Ihdrs -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.ASN1Source.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.Application.cc
+${CC} -c analysis.Application.cc -Ihdrs -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.app.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.xml.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Application.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.CSource.cc
+${CC} -c analysis.CSource.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.CSource.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.FileSystem.cc
+${CC} -c analysis.FileSystem.cc -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.FileSystem.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.Scanner.cc
+${CC} -c analysis.Scanner.cc -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.io.b/hdrs -Ihdrs -Ifilesystem.db/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.description.b/hdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/naming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Scanner.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+printf "%s " analysis.sccs.cc
+${CC} -c analysis.sccs.cc -Ihdrs -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I$1/include/libxml2 -o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.sccs.o -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  
+echo; echo Generando libreria ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.analysis.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.analysis.a  filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatDirectory.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatEntry.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Node.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Path.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.ASN1Source.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Application.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.CSource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.FileSystem.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Scanner.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.sccs.o  $1/lib/libxml2.a -lz -lrt ; \
+else \
+	if test "true" = "true" ; \
+	then \
+		/usr/bin/ar crv ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.analysis.a  filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatDirectory.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatEntry.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Node.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Path.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.ASN1Source.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Application.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.CSource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.FileSystem.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Scanner.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.sccs.o ; \
+	else \
+		${CC}   -I$1/include/libxml2 -D__linux__ $CCFLAGS -D_LINUX_SDP -fno-rtti  -D_REENTRANT -DLINUX  -O3 -fexpensive-optimizations  -o ../.Linux2.4i686_GNUgcc_fast_st_none_none.X/libSmart.analysis.a  filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatDirectory.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.FlatEntry.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Node.o filesystem.db/.Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.filesystem.Path.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.ASN1Source.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Application.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.CSource.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.FileSystem.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.Scanner.o .Linux2.4i686_GNUgcc_fast_st_none_none.X/analysis.sccs.o ; \
+	fi ; \
+fi ; \
+if [ "false" = "true" ] ; \
+then \
+	chmod -R ug+rwx .Linux2.4i686_GNUgcc_fast_st_none_none.X ; \
+fi ;
+echo; echo

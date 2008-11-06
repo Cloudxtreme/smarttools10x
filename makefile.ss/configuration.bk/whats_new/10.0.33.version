@@ -1,0 +1,18 @@
+Version 10.0.33 - Incorpora la arquitectura 'unknown' para Linux 2.6 por ser requerida
+en la distribucion de Ubuntu.
+
+./whats_new/10.0.33.version |  Locally Added
+./Linux2.6.schema/unknown/this.include |  Locally Added
+./Linux2.6.schema/unknown/this.outline |  Locally Added
+./Linux2.6.schema/unknown/asn1/none.include |  Locally Added
+./Linux2.6.schema/unknown/asn1/snacc/1.3.include |  Locally Added
+./Linux2.6.schema/unknown/rdbms/none.include |  Locally Added
+./Linux2.6.schema/unknown/rdbms/oracle/10.2.0.include |  Locally Added
+./Linux2.6.schema/unknown/ss7/none.include |  Locally Added
+./Linux2.6.schema/unknown/ss7/d7/1.4.0.5.include |  Locally Added
+./Linux2.6.schema/unknown/ss7/dgms/9.0.2.sp4.include |  Locally Added
+./Linux2.6.schema/unknown/ssl/none.include |  Locally Added
+./Linux2.6.schema/unknown/ssl/openssl/0.9.8a.include |  Locally Added
+./Linux2.6.schema/unknown/xml/none.include |  Locally Added
+./Linux2.6.schema/unknown/xml/libxml2/default.include |  Locally Added
+./Linux2.6.schema/unknown/ldap/none.include |  Locally Added

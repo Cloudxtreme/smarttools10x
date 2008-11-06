@@ -1,0 +1,19 @@
+version 10.0.2 - Incorpora la comprobacion de los recursos restrictivos al menor.
+
+El fallo se ha detectado cuando tenemos un GMAKE_TARGET=SunOS5.8sparc_Sunforte6_debug_st_oracle9.2.0_none
+pero el makefile.resources del componente contiene:
+GMAKE_RDBMS: none
+
+Al estar el GMAKE_RDBMS en la lista de recursos bloqueados no intenta hacer combinaciones sobre el 
+pero llega un momento en que intenta crear el TARGET y falla por que el procesos no tiene las librerias
+preparadas para el TARGET con oracle.
+
+Incorpora el uso de la variable GMAKE_TARGET_DIR que oculta la forma del directorio usado como salida
+hasta ahora sera _$(TARGET).O, pero ahoa puede ser cualquier expresion, p.e. .$(GMAKE_TARGET).X
+
+
+File: smake.Application.cc	Status: Locally Modified
+File: smake.Shuffler.cc	Status: Locally Modified
+File: smake.sccs.cc    	Status: Locally Modified
+File: smart.smake.Shuffler.h	Status: Locally Modified
+File: 10.0.2.version   	Status: Locally Added

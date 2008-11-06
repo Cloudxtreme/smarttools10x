@@ -1,0 +1,11 @@
+version 10.0.11 - Incorpora el archivo de configuracion de Oracle 10.2.0
+
+File: 10.2.0.include   	Status: Locally Added
+File: 10.0.11.version  	Status: Locally Added
+
+version 10.0.11.1 - Evita la referencia a la libreria libaio que se usaba en Oracle 9.2.0 ya que en esta version
+ha dejado de existir.
+
+
+File: 10.2.0.include   	Status: Locally Modified
+File: 10.0.11.version  	Status: Locally Modified

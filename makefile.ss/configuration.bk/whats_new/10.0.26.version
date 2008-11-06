@@ -1,0 +1,26 @@
+version 10.0.26 - Incorpora las librerias de OpenLDAP como un nuevo recurso.
+
+Elimina el comentario del .checksum
+
+Las librerias OpenLDAP son necesarias para generar la NemesisRD.ldap.
+
+./SunOS5.8.schema/sparc/this.outline |  Locally Modified
+./SunOS5.8.schema/sparc/ldap/none.include |  Locally Added
+./SunOS5.8.schema/sparc/ldap/openldap/3.0.include |  Locally Added
+./whats_new/10.0.26.version |  Locally Added
+
+version 10.0.26.1 - Incorpora las entradas de OpenLDAP a los distintos SO's
+pero por ahora establece ninguna configuracion valida ya que con las nuevas
+versiones no sabemos como se puede acceder al fd asociado al LDAP y este 
+es necesario para la mayoria de las aplicaciones.
+
+
+./Linux2.4.schema/i686/ldap/none.include |  Locally Added
+./Linux2.4.schema/i686/this.outline |  Locally Modified
+./Linux2.6.schema/i686/ldap/none.include |  Locally Added
+./Linux2.6.schema/i686/this.outline |  Locally Modified
+./Linux2.6.schema/x86_64/ldap/none.include |  Locally Added
+./whats_new/10.0.26.version |  Locally Modified
+./makefile |  Locally Modified
+
+./Linux2.6.schema/x86_64/this.outline |  Locally Modified

@@ -1,0 +1,7 @@
+version 10.0.24 - Actualliza la creacion de los makefile, hay que tener en cuenta que el directorio
+'tools' se ha cambiado por 'bin'.
+
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.Library.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.24.version  	Status: Locally Added

@@ -1,0 +1,5 @@
+version 10.0.9 - Incorpora el valor por defecto a la variable GMAKE_EOL.
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.9.version   	Status: Locally Added

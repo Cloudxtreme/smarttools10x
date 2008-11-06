@@ -1,0 +1,10 @@
+version 10.0.7 - Se necesita un nuevo campo opcional en el guion que nos indique si el recurso se puede usar
+para optimizar las generaciones de librerias con el ILS.
+
+File: configure.Outline.cc	Status: Locally Modified
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: smart.configure.CppCompiler.h	Status: Locally Modified
+File: smart.configure.Outline.h	Status: Locally Modified
+File: smart.configure.Resource.h	Status: Locally Modified
+File: 10.0.7.version   	Status: Locally Added

@@ -1,0 +1,6 @@
+version 10.0.15 - Incorpora los cambios del nuevo core, que para obtener los datos
+del SO y la máquina accede a las estructuras internas del SO.
+
+./configure.Application.cc |  Locally Modified
+./configure.sccs.cc |  Locally Modified
+./whats_new/10.0.15.version |  Locally Added

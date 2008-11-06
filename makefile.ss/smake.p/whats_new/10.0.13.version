@@ -1,0 +1,10 @@
+version 10.0.13 - Soluciona los problemas detectados en Linux 2.4, provocados por el modo de recuperar
+el estado de terminacion del hijo. 
+
+./smake.Application.cc |  Locally Modified
+./smake.sccs.cc |  Locally Modified
+./whats_new/10.0.13.version |  Locally Added
+
+version 10.0.13.1 - Ajuste en el tratamiento del pclose = -1.
+./smake.Application.cc |  Locally Modified
+./whats_new/10.0.13.version |  Locally Modified

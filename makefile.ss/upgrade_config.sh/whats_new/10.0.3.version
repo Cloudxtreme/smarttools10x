@@ -1,0 +1,3 @@
+version 10.0.3 - Tiene en cuenta el renombrado de la variable GMAKE_THREADMODE que ahora se 
+llama GMAKE_THREADING.
+

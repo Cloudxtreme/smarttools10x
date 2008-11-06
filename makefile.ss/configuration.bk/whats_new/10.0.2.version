@@ -1,0 +1,5 @@
+version 10.0.2 - Incorpora en el guion de configuracion un campo opcional que indica que el recurso puede ser 
+usado en el ILS para optimizar las generaciones de librerias.
+
+File: this.outline     	Status: Locally Modified
+File: 10.0.2.version   	Status: Locally Added

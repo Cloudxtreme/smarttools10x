@@ -1,0 +1,14 @@
+version 10.0.49 - Soluciona los errores detectados al ejecutar las reglas de LEX y YACC.
+
+./whats_new/10.0.49.version |  Locally Added
+./config.xml |  Locally Modified
+./Linux2.4.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/x86_64/this.include |  Locally Modified
+./Linux2.6.schema/unknown/this.include |  Locally Modified
+
+version 10.0.49.1 - Soluciona el BUG detectado cuando el .yacc está en un directorio .db que 
+pertenece al directorio desde el que se invoca al smake.
+
+./whats_new/10.0.49.version |  Locally Modified
+./config.xml |  Locally Modified

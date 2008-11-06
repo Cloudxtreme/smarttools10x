@@ -1,0 +1,12 @@
+version 10.0.4 - Completa los includes para Oracle 9.2.0 y Oracle 8.1.7.
+
+Ademas cambia algunas variables y en vez de añadirlas en el CPP_FLAGS lo hace en SYSTEM_INCLUDES y el SYSTEM_LIBS
+
+File: this.include     	Status: Locally Modified
+File: 7.0.0.include    	Status: Locally Modified
+File: mt.include       	Status: Locally Modified
+File: 9.2.0.include    	Status: Locally Modified
+File: 8.1.7.include    	Status: Locally Modified
+File: 0.9.8a.include   	Status: Locally Modified
+File: 2.6.11.include   	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Added

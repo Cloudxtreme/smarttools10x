@@ -1,0 +1,10 @@
+version 10.0.37 - Incorpora las definiciones requeridas para compilar con OpenLDAP 
+sobre Linux 2.x
+
+
+./whats_new/10.0.37.version |  Locally Added
+./Linux2.4.schema/i686/ldap/openldap/default.include |  Locally Added
+./Linux2.6.schema/i686/ldap/openldap/default.include |  Locally Added
+./Linux2.6.schema/x86_64/ldap/openldap/default.include |  Locally Added
+./Linux2.6.schema/unknown/ldap/openldap/default.include |  Locally Added
+./makefile |  Locally Modified

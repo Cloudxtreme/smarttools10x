@@ -1,0 +1,5 @@
+version 10.0.1 - Incorpora el uso de la variable GMAKE_HOME
+
+File: configure.Application.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: 10.0.1.version   	Status: Locally Added

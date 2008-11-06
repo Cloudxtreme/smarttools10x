@@ -1,0 +1,6 @@
+version 10.0.4 - Mejora el tratamiento de la desactivacion de recursos, mediante el patron de directorios.
+
+File: configure.Resource.cc	Status: Locally Modified
+File: configure.sccs.cc	Status: Locally Modified
+File: smart.configure.Directory.h	Status: Locally Modified
+File: 10.0.4.version   	Status: Locally Added

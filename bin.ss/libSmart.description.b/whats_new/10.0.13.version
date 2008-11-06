@@ -1,0 +1,13 @@
+version 10.0.13 - Incorpora la deficion de VDependence a la hora de crear el meta comando.
+
+Son necesarios para crear los ASN1 ya que el snacc nos obliga a cambiar de directorio y perdemos la pista
+de dónde estan los ficheros de los que depende el que estamos intentando generar. 
+
+Asi que en vez de poner un 'Dependence' que se calcula relativo a un directorio vamos a poner un 'VDependence'
+que hara referncia a las dependencias pero a patir de las variables de entorno algo asi como '$MYP/xx.ss ...'
+
+File: description.MetaLine.cc	Status: Locally Modified
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.MetaLine.h	Status: Locally Modified
+File: 10.0.13.version  	Status: Locally Added

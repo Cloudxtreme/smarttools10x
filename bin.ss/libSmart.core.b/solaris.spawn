@@ -1,0 +1,31 @@
+mkdir -p ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+mkdir -p .SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+mkdir -p naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+
+printf "%s " core.Variable.cc
+${CC} -c core.Variable.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.Variable.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " core.functions.cc
+${CC} -c core.functions.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.functions.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " core.sccs.cc
+${CC} -c core.sccs.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.sccs.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " naming.db/naming.File.cc
+${CC} -c naming.db/naming.File.cc -Ihdrs -Inaming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.File.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " naming.db/naming.FileClass.cc
+${CC} -c naming.db/naming.FileClass.cc -Inaming.db/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.FileClass.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+echo; echo Generando libreria ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.core.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.core.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.Variable.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.sccs.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.File.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.FileClass.o  /home/intsdp/libxml2-2.6.11/solaris//lib/libxml2.a -lz -lsocket -lnsl -ly -ll -lelf -lw -lgen -lrt ; \
+else \
+	if test "false" = "true" ; \
+	then \
+		/usr/ccs/bin/ar crv ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.core.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.Variable.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.sccs.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.File.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.FileClass.o ; \
+	else \
+		${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.core.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.Variable.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.functions.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/core.sccs.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.File.o  naming.db/.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/naming.FileClass.o ; \
+	fi ; \
+fi ; \
+if [ "true" = "true" ] ; \
+then \
+	chmod -R ug+rwx .SunOS5.8sparc_Sunforte6_fast_st_none_none.X ; \
+fi ;
+echo; echo

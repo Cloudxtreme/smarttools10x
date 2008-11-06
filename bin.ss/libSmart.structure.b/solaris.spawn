@@ -1,0 +1,28 @@
+mkdir -p ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+mkdir -p .SunOS5.8sparc_Sunforte6_fast_st_none_none.X 
+
+printf "%s " structure.Agent.cc
+${CC} -c structure.Agent.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Agent.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " structure.Resource.cc
+${CC} -c structure.Resource.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Resource.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " structure.Section.cc
+${CC} -c structure.Section.cc -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Section.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+printf "%s " structure.sccs.cc
+${CC} -c structure.sccs.cc -I/var/tmp/develop/SmartTools.pj/bin.ss/libSmart.core.b/hdrs -Ihdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/hdrs -I/var/tmp/develop/NemesisRD.pj/official.ss/libNemesis.core.b/internal.db/hdrs   -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -o .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.sccs.o -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  
+echo; echo Generando libreria ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.structure.a ...
+if test "static" = "dynamic" ; \
+then \
+	${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.structure.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Agent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Resource.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Section.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.sccs.o  /home/intsdp/libxml2-2.6.11/solaris//lib/libxml2.a -lz -lsocket -lnsl -ly -ll -lelf -lw -lgen -lrt ; \
+else \
+	if test "false" = "true" ; \
+	then \
+		/usr/ccs/bin/ar crv ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.structure.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Agent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Resource.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Section.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.sccs.o ; \
+	else \
+		${CC} -xar  -I/home/intsdp/libxml2-2.6.11/solaris//include/libxml2 -D__solaris__ -D_SOLARIS_SDP -fns -dalign -D_REENTRANT -DTARGET=SunOS5.8sparc_Sunforte6_debug_st_none_none -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_ -fast -xregs=appl -xtarget=ultra -xprefetch=auto  -o ../.SunOS5.8sparc_Sunforte6_fast_st_none_none.X/libSmart.structure.a   .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Agent.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Resource.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.Section.o  .SunOS5.8sparc_Sunforte6_fast_st_none_none.X/structure.sccs.o ; \
+	fi ; \
+fi ; \
+if [ "true" = "true" ] ; \
+then \
+	chmod -R ug+rwx .SunOS5.8sparc_Sunforte6_fast_st_none_none.X ; \
+fi ;
+echo; echo

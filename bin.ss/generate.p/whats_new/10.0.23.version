@@ -1,0 +1,9 @@
+version 10.0.23 - Genera las reglas correspondientes al purify y al quantify.
+
+Incluye informacion sobre el documento XML de configuracion usado en la generacion del los makefiles
+asi como la version de documento usada.
+
+File: generate.Executable.cc	Status: Locally Modified
+File: generate.Structure.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.23.version  	Status: Locally Added

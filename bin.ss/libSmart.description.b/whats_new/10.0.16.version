@@ -1,0 +1,14 @@
+version 10.0.16 - Incorpora la posiblidad de incluir un archivo que ajusta los valores
+asignados a las variables del GMAKE.
+
+El archivo asociado a la variable Project->Configure se carga antes de cualquier otro .include,
+mientras que el archivo asociado a la variable Project->Tune se carga después de haber cargado
+todos los demás .includes asociados a la configuración/guión del entorno en el que nos encontramos
+lo que nos permite modificar de forma definitiva ciertos valores que las variables hayan podido
+tomar.
+
+./description.RuleAgent.cc |  Locally Modified
+./hdrs/smart.description.functions.h |  Locally Modified
+./description.sccs.cc |  Locally Modified
+./whats_new/10.0.16.version |  Locally Added
+./description.functions.cc |  Locally Modified

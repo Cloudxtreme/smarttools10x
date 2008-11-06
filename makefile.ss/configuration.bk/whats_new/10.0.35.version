@@ -1,0 +1,4 @@
+version 10.0.35 - Incluye la macro para poder compilar correctamente en CYGWIN.
+
+./whats_new/10.0.35.version |  Locally Added
+./CYGWIN_NT-5.11.5.schema/unknown/this.include |  Locally Modified

@@ -1,0 +1,6 @@
+# Las RWTools no deberian ser usadas en nuevos proyectos.
+# Pero se tienen que mantener por la plataforma SDP.
+
+CPP_FLAGS += -I$(SDPPJ)/hdrs/linux -I$(SDPPJ)/roguetools.ss/libtls15s.b -D_RWCONFIG=15s -DRW_NO_STL
+SYSTEM_LIBS += $(SDPPJ)/roguetools.ss/$(GMAKE_TARGET_DIR)/libtls15s.a
+

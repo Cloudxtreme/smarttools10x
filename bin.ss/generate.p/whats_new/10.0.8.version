@@ -1,0 +1,7 @@
+version 10.0.8 - Se han detectado que no se generan los componentes en base al orden impuesto por el 
+archivo makefiles.order
+
+File: generate.FileSystem.cc	Status: Locally Modified
+File: generate.SourceContainer.cc	Status: Locally Modified
+File: generate.sccs.cc 	Status: Locally Modified
+File: 10.0.8.version   	Status: Locally Added

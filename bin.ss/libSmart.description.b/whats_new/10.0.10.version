@@ -1,0 +1,25 @@
+version 10.0.10 - Incluye la posiblidad de establecer Target detallados, para poder describir las
+reglas de generacion de los IDL's donde se generan multitud de archivos con distintas combinaciones de
+sufijos/extensiones.
+
+Por ejemplo, la regla que usaba Altamira hasta ahora era:
+
+$(IDLC_HDRS)/%.h %_stc.cpp $(IDLC_HDRS)/%_stc.h %_r.cpp  $(IDLC_HDRS)/%_i.h %.cpp: $(IDLC_DIR)/%.idl
+	echo "Obteniendo fichero $*"
+	if [ -f $(IDLC_DIR)/$*.idl ]; then $(CORBA_CMD) $(IDLC_DIR)/$*.idl ; fi;\
+	if [ -f $*.h ]; then mv $*.h $(IDLC_HDRS)/$*.h ; fi ;\
+	if [ -f $*_i.h ]; then mv $*_i.h $(IDLC_HDRS)/$*_i.h ; fi ;\
+	if [ -f $*_stc.C ]; then mv $*_stc.C $*_stc.cpp ; fi ;\
+	if [ -f $*_stc.h ]; then mv $*_stc.h $(IDLC_HDRS)/$*_stc.h ; fi ;\
+	if [ -f $*_r.C ]; then mv $*_r.C $*_r.cpp ; fi ;\
+	if [ -f $*_r.h ]; then mv $*_r.h $(IDLC_HDRS)/$*_r.h ; fi ;\
+	if [ -f  $*.C ]; then mv $*.C $*.cpp ; fi ;\
+	if [ -f  POA_$*.C ]; then rm POA_$*.C; fi ;
+	if [ -f  POA_$*.h ]; then rm POA_$*.h; fi ;
+
+File: description.RuleAgent.cc	Status: Locally Modified
+File: description.functions.cc	Status: Locally Modified
+File: description.sccs.cc	Status: Locally Modified
+File: smart.description.RuleAgent.h	Status: Locally Modified
+File: smart.description.functions.h	Status: Locally Modified
+File: 10.0.10.version  	Status: Locally Added

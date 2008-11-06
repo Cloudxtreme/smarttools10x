@@ -1,0 +1,10 @@
+version 10.0.9 - Se han detectado que no se generan los componentes en base al orden impuesto por el 
+archivo makefiles.order
+
+File: analysis.Scanner.cc	Status: Locally Modified
+File: analysis.sccs.cc 	Status: Locally Modified
+File: analysis.filesystem.Path.cc	Status: Locally Modified
+File: smart.analysis.filesystem.Node.h	Status: Locally Modified
+File: smart.analysis.filesystem.Path.h	Status: Locally Modified
+File: smart.analysis.Scanner.h	Status: Locally Modified
+File: 10.0.9.version   	Status: Locally Added

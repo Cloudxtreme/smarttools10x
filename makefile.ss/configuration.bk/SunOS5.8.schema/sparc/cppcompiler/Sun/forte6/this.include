@@ -1,0 +1,19 @@
+CC=/utils/SUNWspro/bin/cc
+CPP=/utils/SUNWspro/bin/CC
+LINKER=$(CPP)
+LINKER_OUTPUT_INDICATOR=-o
+
+CC_USE_AR=false
+CC_NEED_CHMOD=true
+
+#
+# Variables relacionadas con el repositorio de templates usadas en los Makefiles
+#
+#FLAGS_TEMPLATE= -ptr
+#TEMPLATE_REPOSITORY=$(FLAGS_TEMPLATE)_$(TARGET).O
+#TEMPLATE_FOR_DB=../_$(TARGET).O
+#TEMPLATE_FOR_ALL=_$(TARGET).O
+
+CC_FLAGS += -fns -dalign -D_REENTRANT -DTARGET=$(TARGET) -D__forte__ -library=Crun -D_BOOLEAN_ 
+CPP_FLAGS += -fns -dalign -D_REENTRANT -DTARGET=$(TARGET) -D__forte__ -library=iostream,Cstd,Crun -D_BOOLEAN_
+
