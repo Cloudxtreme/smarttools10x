@@ -1,4 +1,4 @@
-echo SmartConfigure - Configurador de proyecto. Version 10.0.6/Evo-X
+echo SmartConfigure - Configurador de proyecto. Version 11.0.0/Evo-X
 echo Desarrollado por Nuevos Conceptos de Plataformas
 echo "(c) Copyright 2002-2007 Telefonica Investigaci\303\263n y Desarrollo, S.A. Unipersonal."
 echo
@@ -13,6 +13,17 @@ if [ ! -d $GMAKE_HOME ]
 then
    echo La variable GMAKE_HOME no apunta a un directorio valido
    exit 1
+fi
+
+export GMAKE_ORACLE_HOME
+
+if  [ -f $GMAKE_HOME/data/oracle_minimal.config ]
+then
+   GMAKE_ORACLE_HOME=`cat $GMAKE_HOME/data/oracle_minimal.config`
+   GMAKE_ORACLE_HOME=$GMAKE_ORACLE_HOME/`uname -s`
+   GMAKE_ORACLE_HOME=$GMAKE_ORACLE_HOME/`uname -m`
+else
+   GMAKE_ORACLE_HOME="/export/oracle/app/oracle/product" 
 fi
 
 osName=`uname -s`
@@ -68,4 +79,15 @@ else
    echo
 fi
 
+echo $GMAKE_RDBMS | grep oracle > /dev/null
+
+export GMAKE_ORACLE_VERSION=""
+
+if [ $? -eq 0 ]
+then
+   GMAKE_ORACLE_VERSION=`echo $GMAKE_RDBMS | cut -f 2 -d '/'`
+fi
+
+echo
+echo GMAKE_ORACLE_HOME: $GMAKE_ORACLE_HOME
 

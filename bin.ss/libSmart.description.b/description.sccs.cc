@@ -23,7 +23,7 @@
 #include <smart.sccs.h>
 #include <smart.description.sccs.h>
 
-smart_define_sccs_tag (description, 17) 
+smart_define_sccs_tag (description, 1) 
 
 void smart::description::sccs::activate ()
    throw ()

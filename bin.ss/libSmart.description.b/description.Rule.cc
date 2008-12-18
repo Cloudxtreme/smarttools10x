@@ -169,7 +169,59 @@ std::string description::Rule::getOutputName (const naming::File* _file) const
    }
    
    result = file.getNameWithoutExtension ();
-   return result += ".o";   
+   result += ".o";   
+   
+   LOGDEBUG (
+      string msg ("description::Rule::getOutputName | "); 
+      msg += _file->asString ();
+      msg += " | ";
+      msg += asString ();
+      msg += " | Result: ";
+      msg += result;
+      Logger::debug (msg, FILE_LOCATION);
+   );
+
+   return result;
+}
+
+std::string description::Rule::getAllOutputNames (const std::string& outputDirectory, const naming::File* _file) const 
+   throw (RuntimeException)
+{
+   naming::File file (*_file);
+   naming::File backup;
+   string result;
+   
+   const Rule* currentRule (this);
+   const Target* target;
+   
+   for (const_target_iterator ii = currentRule->target_begin (), maxii = currentRule->target_end (); ii != maxii; ii ++) {
+      target = Rule::target (ii);
+
+      if (target->getRule ()->isASource () == false)
+         continue;
+
+      currentRule = target->getRule ();
+      backup = file;
+      target->rename (file);
+      
+      result += outputDirectory;
+      result += '/';
+      result += file.getNameWithoutExtension ();
+      result += ".o ";      
+      file = backup;
+   }
+   
+   LOGDEBUG (
+      string msg ("description::Rule::getAllOutputNames | "); 
+      msg += _file->asString ();
+      msg += " | ";
+      msg += asString ();
+      msg += " | Result: ";
+      msg += result;
+      Logger::debug (msg, FILE_LOCATION);
+   );
+   
+   return result;
 }
 
 void description::Rule::directAdd (const naming::FileClass* fileClass) 

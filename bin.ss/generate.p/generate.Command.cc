@@ -83,9 +83,20 @@ void generate::Command::execute ()
    string ofilename = writeOutput (makefile, rule, *csource);
    string ifilename = writeFirstInput (makefile, csource);
    writeCommand (makefile, rule, csource, ifilename, ofilename);
-  
+   
+   forward (makefile, csource);
+}
+   
+void generate::Command::forward (generate::Makefile& makefile,   const analysis::CSource* csource) 
+   throw (RuntimeException)
+{
+   using namespace description;
+   
+   const Rule* rule = csource->getRule ();
+   
    const Target* target;
    naming::File nextFile;
+   string ofilename, ifilename;
    
    for (Rule::const_target_iterator tt = rule->target_begin (), maxtt = rule->target_end (); tt != maxtt; tt ++) {
       rule = (target = Rule::target (tt))->getRule ();
@@ -100,6 +111,15 @@ void generate::Command::execute ()
       ofilename = writeOutput (makefile, rule, nextFile);
       ifilename = writeOtherInput (makefile, csource, nextFile);
       writeCommand (makefile, rule, csource, ifilename, ofilename);
+      
+      LOGDEBUG (
+         string msg ("generate::Command::forward | ");
+         msg += rule->asString ();
+         msg += " | NextFile: ";
+         msg += nextFile.getName ();
+         Logger::debug (msg, FILE_LOCATION);
+      );
+      
    }
    
    makefile.newline ();

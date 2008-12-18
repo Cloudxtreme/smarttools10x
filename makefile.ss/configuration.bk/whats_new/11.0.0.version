@@ -1,0 +1,29 @@
+version 11.0.0 - En el comando LEX no se estaba haciendo uso de la variable LEX_FLAGS.
+
+Crea el archivo $GMAKE_HOME/data/oracle_minimal.config que contiene el directorio donde estarán 
+instaladas las versiones de Oracle(tm) con lo mínimo imprescindible para que funcione el compilador
+de ProC/C++ y las librerías de OCI.
+
+Incorpora la posiblidad de elegir la librerías D7 version 1.5.0 en Solaris 5.10.
+
+./whats_new/11.0.0.version |  Locally Added
+./config.xml |  Locally Modified
+./Linux2.4.schema/i686/rdbms/oracle/9.2.0.include |  Locally Modified
+./Linux2.6.schema/i686/rdbms/oracle/10.2.0.include |  Locally Modified
+./Linux2.6.schema/i686/rdbms/oracle/9.2.0.include |  Locally Added
+./Linux2.6.schema/x86_64/rdbms/oracle/10.2.0.include |  Locally Modified
+./Linux2.6.schema/unknown/rdbms/oracle/10.2.0.include |  Locally Modified
+./makefile |  Locally Modified
+./SunOS5.8.schema/sparc/rdbms/oracle/8.1.7.include |  Locally Modified
+./SunOS5.8.schema/sparc/rdbms/oracle/9.2.0.include |  Locally Modified
+./SunOS5.10.schema/sparc/rdbms/oracle/10.2.0.include |  Locally Modified
+./SunOS5.10.schema/sparc/ss7/d7/1.5.0.include |  Locally Added
+./create.minimal |  Locally Added
+./proc.sh |  Locally Added
+
+version 11.0.0.1 - Incorpora las configuraciones para todas las versiones de Oracle.
+
+./whats_new/11.0.0.version |  Locally Modified
+./SunOS5.8.schema/sparc/rdbms/oracle/10.2.0.include |  Locally Added
+./SunOS5.10.schema/sparc/rdbms/oracle/9.2.0.include |  Locally Added
+./SunOS5.10.schema/sparc/rdbms/oracle/8.2.0.include |  Locally Added

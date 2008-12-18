@@ -344,6 +344,12 @@ void analysis::Scanner::expand (const description::Rule* rule, filesystem::Node*
       csource->firststep_add (node);                                                            // (2)
       csource->interpreted ();                                                                  // (3)
       
+      LOGDEBUG (
+         string msg ("analysis::Scanner::expand | New: ");
+         msg += csource->asString ();
+         Logger::debug (msg, FILE_LOCATION);
+      );
+      
       file = backup;                                           
    }
 }

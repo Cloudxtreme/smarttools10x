@@ -39,7 +39,7 @@ using namespace nemesis;
 
 class FlatDirectory {
 public:
-   typedef SafeSortedVector <FlatEntry, naming::File::SortByName, const std::string&> entry_container;
+   typedef SafeSortedVector <FlatEntry, naming::File::SortByName, std::string> entry_container;
    typedef entry_container::iterator entry_iterator;
    typedef entry_container::const_iterator const_entry_iterator;
    

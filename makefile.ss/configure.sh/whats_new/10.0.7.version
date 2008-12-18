@@ -1,0 +1,11 @@
+version 10.0.7 - Incorpora la definición de la variable GMAKE_ORACLE_HOME 
+que indica el directorio donde está el repositorio de configuraciones 
+mínimas de Oracle(tm), que permiten la ejecución del compilador de ProC/C++
+y las OCI, y poco más.
+
+A partir de la variable GMAKE_RDBMS obtiene la versión de oracle usada
+y la copia en la variable GMAKE_ORACLE_VERSION, que será usada posteriormente
+en el ../bin/proc.sh
+
+./whats_new/10.0.7.version |  Locally Added
+./SmartConfigure |  Locally Modified

@@ -36,8 +36,13 @@ all : $(dataDirectory) $(dataDirectory)/$(GMAKE_OSNAME)/$(GMAKE_PROCESSORTYPE) \
 	$(binaryTarget) \
 	$(dataDirectory)/config.xml \
 	$(dataDirectory)/empty.include \
+	$(dataDirectory)/oracle_minimal.config \
 	$(binDirectory)/SmartConfigure \
 	$(binDirectory)/upgrade_config \
+	$(binDirectory)/proc.sh \
+	$(binDirectory)/flex.sh \
+	$(binDirectory)/soap.sh \
+	$(binDirectory)/wsdl.sh \
 	$(binaryTarget)/generate$(EXTENSION) $(binaryTarget)/browse$(EXTENSION) $(binaryTarget)/configure$(EXTENSION) \
 	$(binaryTarget)/onlinehelp$(EXTENSION) \
 	$(binaryTarget)/has_resources$(EXTENSION) \
@@ -93,6 +98,10 @@ $(dataDirectory)/config.xml : config.xml
 	@echo "Actualizando " $@
 	$(VIEWER)cp config.xml $@
    
+$(dataDirectory)/oracle_minimal.config : makefile
+	@echo "Actualizando " $@
+	$(VIEWER)echo "/export/oracle/app/oracle/product" > $(dataDirectory)/oracle_minimal.config ; 
+
 $(dataDirectory)/empty.include :
 	@echo "Creando " $(dataDirectory)/empty.include 
 	$(VIEWER)> $(dataDirectory)/empty.include 
@@ -105,6 +114,22 @@ $(dataDirectory)/empty.include :
 	@echo "Actualizando " $@
 	$(VIEWER)cp ../upgrade_config.sh/upgrade_config $@
   
+$(binDirectory)/proc.sh : makefile proc.sh
+	@echo "Actualizando " $@
+	$(VIEWER)cp proc.sh $@
+
+$(binDirectory)/soap.sh : makefile soap.sh
+	@echo "Actualizando " $@
+	$(VIEWER)cp soap.sh $@
+
+$(binDirectory)/wsdl.sh : makefile wsdl.sh
+	@echo "Actualizando " $@
+	$(VIEWER)cp wsdl.sh $@
+
+$(binDirectory)/flex.sh : makefile flex.sh
+	@echo "Actualizando " $@
+	$(VIEWER)cp flex.sh $@
+
 $(binaryTarget)/generate$(EXTENSION) : $(sourceMainBinary)/generate$(EXTENSION)
 	@echo "Actualizando " $@
 	$(VIEWER)cp $(sourceMainBinary)/generate$(EXTENSION) $@

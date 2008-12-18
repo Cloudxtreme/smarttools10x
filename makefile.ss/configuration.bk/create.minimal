@@ -1,0 +1,75 @@
+# Herramienta para crear las versiones reducidas de Oracle(tm).
+# genera la estructura de librerías y ejecutables mínima necesaria
+# para generar los ejecutables de procesos que uses ProC/C++ y 
+# procesos que usen NemesisRD.dbms.oracle, que internamente usan
+# las librerías OCI
+
+# comun> uname -a
+# Linux ocs3 2.6.9-67.ELsmp #1 SMP Wed Nov 7 13:58:04 EST 2007 i686 i686 i386 GNU/Linux
+# Oracle: 10.2.0
+
+if [ "$1" = "" ]
+then
+   echo "Versiones disponibles en esta máquina: "
+   /bin/ls /export/oracle/app/oracle/product
+   echo
+   echo "Use: $0 <Oracle version>"
+   exit 1
+fi
+
+system=`uname -s`
+architecture=`uname -m`
+oracleVersion=$1
+
+oracleHome=/export/oracle/app/oracle/product/$oracleVersion
+
+if [ ! -d $oracleHome ]
+then
+   echo $oracleHome does not exist
+   exit 3
+fi
+
+oracleMinimal=$system/$architecture/$oracleVersion
+echo OracleMinimal: $oracleMinimal
+
+if [ -d $oracleMinimal ]
+then
+   echo $oracleMinimal already exists
+   exit 2
+fi
+
+mkdir -p $oracleMinimal
+
+cd $oracleMinimal
+
+mkdir -p precomp/admin
+mkdir -p precomp/mesg
+mkdir -p precomp/public
+mkdir -p rdbms/demo
+mkdir -p rdbms/public
+
+# Copia el archivo de configuración por defecto del proc
+cp $oracleHome/precomp/admin/pcscfg.cfg precomp/admin
+cp -r $oracleHome/precomp/mesg/* precomp/mesg
+cp -r $oracleHome/precomp/public/*.h precomp/public
+cp $oracleHome/rdbms/demo/*.h rdbms/demo
+cp $oracleHome/rdbms/public/*.h rdbms/public
+
+mkdir bin
+cp $oracleHome/bin/proc bin
+
+mkdir lib
+ldd bin/proc | head -3 | while read a
+do
+   library=`echo $a | cut -f 1 -d '='`
+   if [ -f $oracleHome/lib/$library ]
+   then
+      library=`echo $library | cut -f 1 -d '.'`
+      echo copiando $library ...
+      cp $oracleHome/lib/$library* lib
+   fi
+done
+
+echo Archivos instalados:
+find .
+

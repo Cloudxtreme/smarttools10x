@@ -1,0 +1,8 @@
+version 11.0.3 - Permite ejecutar/linkar con Oracle 10 en Solaris 5.x
+con las librerías de 32 bits, pero ejecutando el compilador de ProC/C++
+como la aplicación de 64 bits que es.
+
+./whats_new/11.0.3.version |  Locally Added
+./SunOS5.8.schema/sparc/rdbms/oracle/10.2.0_32bits.include |  Locally Added
+./SunOS5.10.schema/sparc/rdbms/oracle/10.2.0_32bits.include |  Locally Added
+./proc.sh |  Locally Modified

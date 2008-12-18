@@ -46,7 +46,7 @@ class Scanner;
 using namespace nemesis;
 
 class FileSystem : public Singleton <FileSystem> {
-   typedef SortedVector <naming::File, naming::File::SortByName, const std::string&> notfound_container;
+   typedef SortedVector <naming::File, naming::File::SortByName, std::string> notfound_container;
    typedef notfound_container::iterator notfound_iterator;
    
 public:

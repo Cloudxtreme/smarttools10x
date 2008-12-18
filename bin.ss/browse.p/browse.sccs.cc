@@ -25,7 +25,7 @@
 
 #include <nemesis.ModuleManager.h>
 
-smart_define_sccs_tag (Browse, 1);
+smart_define_sccs_tag (Browse, 0);
 
 void smart::browse::sccs::activate ()
    throw ()

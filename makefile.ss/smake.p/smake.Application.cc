@@ -100,24 +100,6 @@ void smake::Application::initialize ()
 
    sigignore (SIGPIPE);
 
-   int ret;
-   struct sigaction sa;
-   struct sigaction osa;
-
-// Para recuperar el código de salida del hijo no hay más-tu-tía que 
-// instalar el manejador de señal de salida.
-#ifdef __solaris__
-   sa.sa_handler = sigchld_handler;
-   sigfillset (&sa.sa_mask);
-   sa.sa_flags = SA_RESTART;
-   ret = sigaction (SIGCHLD, &sa, &osa);
-   if (ret < 0)
-     {
-       printf ("cannot set signal handler, bye!\n");
-       exit (-1);
-     }
-#endif
-
    if (ccll.exists ("t") == true) 
       Logger::setLevel (Logger::asLevel (ccll.getValue ("t")));
 
@@ -342,10 +324,6 @@ int smart::smake::Application::getKeyCode (const std::string& filename) const
    return result;
 }
 
-
-
-
-
 bool smart::smake::Application::execute (const string& exec, FILE* log, const char* vtarget)
    throw (RuntimeException)
 {
@@ -359,6 +337,24 @@ bool smart::smake::Application::execute (const string& exec, FILE* log, const ch
       fprintf (log, "%s\n", msg.c_str ());
       fflush (log);      
    }
+
+// Para recuperar el código de salida del hijo no hay más-tu-tía que 
+// instalar el manejador de señal de salida.
+#ifdef __solaris__
+   int ret;
+   struct sigaction sa;
+   struct sigaction osa;
+
+   sa.sa_handler = sigchld_handler;
+   sigfillset (&sa.sa_mask);
+   sa.sa_flags = SA_RESTART;
+   ret = sigaction (SIGCHLD, &sa, &osa);
+   if (ret < 0)
+     {
+       printf ("cannot set signal handler, bye!\n");
+       exit (-1);
+     }
+#endif
 
    int child_pid;
    

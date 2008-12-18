@@ -3,8 +3,8 @@
 
 <cproject>
 <storageModule moduleId="org.eclipse.cdt.core.settings">
-<cconfiguration id="cdt.managedbuild.toolchain.gnu.base.553349919">
-<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.553349919" moduleId="org.eclipse.cdt.core.settings" name="Linux GCC">
+<cconfiguration id="cdt.managedbuild.toolchain.gnu.base.17137823">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.17137823" moduleId="org.eclipse.cdt.core.settings" name="Linux GCC">
 <externalSettings/>
 <extensions>
 <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
@@ -15,27 +15,27 @@
 </extensions>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<configuration artifactName="Smart.core.b" buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.553349919" name="Linux GCC" parent="org.eclipse.cdt.build.core.emptycfg">
-<folderInfo id="cdt.managedbuild.toolchain.gnu.base.553349919.933803190" name="/" resourcePath="">
-<toolChain id="cdt.managedbuild.toolchain.gnu.base.2006754933" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
-<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.753802723" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-<builder arguments="-f .makefile" buildPath="${workspace_loc:/Smart.core.b}" command="make" id="cdt.managedbuild.target.gnu.builder.base.677845677" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
-<tool id="cdt.managedbuild.tool.gnu.archiver.base.1622128420" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.593985166" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
-<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1746291162" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+<configuration artifactName="libSmart.core.b" buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.17137823" name="Linux GCC" parent="org.eclipse.cdt.build.core.emptycfg">
+<folderInfo id="cdt.managedbuild.toolchain.gnu.base.17137823.1643086515" name="/" resourcePath="">
+<toolChain id="cdt.managedbuild.toolchain.gnu.base.636065321" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
+<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.413546186" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+<builder arguments="-vv" autoBuildTarget="all" buildPath="${workspace_loc:/libSmart.core.b}" cleanBuildTarget="-o clean" command="${GMAKE_HOME}/bin/${GMAKE_SYSTEM}/smake" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="cdt.managedbuild.target.gnu.builder.base.714483337" incrementalBuildTarget="-o all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.base.1352420675" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1441059585" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.320435711" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 </tool>
-<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.111646242" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
-<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2095009146" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.2124560169" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1154880075" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
-<tool id="cdt.managedbuild.tool.gnu.c.linker.base.456139476" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
-<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.494215391" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
-<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.263660342" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+<tool id="cdt.managedbuild.tool.gnu.c.linker.base.930314573" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1362929137" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.773746217" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 <additionalInput kind="additionalinput" paths="$(LIBS)"/>
 </inputType>
 </tool>
-<tool id="cdt.managedbuild.tool.gnu.assembler.base.589262830" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
-<inputType id="cdt.managedbuild.tool.gnu.assembler.input.60012163" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.base.1392100315" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1013226816" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 </tool>
 </toolChain>
 </folderInfo>
@@ -45,8 +45,8 @@
 <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
@@ -55,8 +55,8 @@
 </profile>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
@@ -65,8 +65,8 @@
 </profile>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
@@ -75,8 +75,8 @@
 </profile>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
@@ -85,8 +85,8 @@
 </profile>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
@@ -95,8 +95,8 @@
 </profile>
 <profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
 <buildOutputProvider>
-<openAction enabled="false" filePath=""/>
-<parser enabled="false"/>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
 </buildOutputProvider>
 <scannerInfoProvider id="specsFile">
 <runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
@@ -128,6 +128,6 @@
 </cconfiguration>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<project id="Smart.core.b.null.1411886682" name="Smart.core.b"/>
+<project id="libSmart.core.b.null.1215079254" name="libSmart.core.b"/>
 </storageModule>
 </cproject>

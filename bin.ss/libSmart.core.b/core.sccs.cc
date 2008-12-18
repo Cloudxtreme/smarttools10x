@@ -21,7 +21,7 @@
 
 #include <nemesis.ModuleManager.h>
 
-smart_define_sccs_tag (core, 15);
+smart_define_sccs_tag (core, 1);
 
 void smart::sccs::activate ()
    throw ()

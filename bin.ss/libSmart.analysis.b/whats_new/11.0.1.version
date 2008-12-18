@@ -1,0 +1,29 @@
+Soluciona el BUG detectado al generar las reglas para gSOAP, sólo saca la primera dependencia.
+
+# generate.SourceContainer.cc (197)
+OBJECT_LIST=$(OTHER_USER_OBJECTS) \
+        .$(GMAKE_TARGET).X/sizeC.o
+
+primer nivel de dependencias.
+
+Mientras que las dependencias totales serían:
+
+.$(GMAKE_TARGET).X/sizeC.cc .$(GMAKE_TARGET).X/sizeH.h .$(GMAKE_TARGET).X/sizeStub.h .$(GMAKE_TARGET).X/size.proxy.cc .$(GMAKE_TARGET).X/size.service.cc : size.gsoap
+        @printf "%s$(GMAKE_EOL)" size.gsoap
+        $(VIEWER)$(SOAP) $(SOAP_FLAGS) $(USER_SOAP_FLAGS) size.gsoap
+
+Después del parche el tema queda:
+
+# generate.SourceContainer.cc (197)
+OBJECT_LIST=$(OTHER_USER_OBJECTS) \
+        .$(GMAKE_TARGET).X/sizeC.o .$(GMAKE_TARGET).X/size.proxy.o .$(GMAKE_TARGET).X/size.service.o
+
+
+./hdrs/smart.analysis.FileSystem.h |  Locally Modified
+./filesystem.db/hdrs/smart.analysis.filesystem.FlatDirectory.h |  Locally Modified
+./filesystem.db/hdrs/smart.analysis.filesystem.Path.h |  Locally Modified
+./analysis.Scanner.cc |  Locally Modified
+./whats_new/11.0.1.version |  Locally Added
+./analysis.sccs.cc |  Locally Modified
+./.project |  Locally Modified
+./.cproject |  Locally Modified

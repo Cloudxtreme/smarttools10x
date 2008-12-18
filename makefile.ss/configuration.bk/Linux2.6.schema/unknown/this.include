@@ -11,7 +11,7 @@ CAT=/usr/bin/cat
 YACC=bison -o y.tab.c
 YACC_FLAGS=-t -d
 
-LEX=flex
+LEX=$(GMAKE_HOME)/bin/flex.sh
 LEX_FLAGS=
 
 CPP_FLAGS=-D__linux__ -D_LINUX_SDP 

@@ -24,9 +24,12 @@ find . -name "makefile.config" | while read a
 do
    echo $a ...
    dir=`dirname $a`
-   cp $a $dir/$makefile_config
 
-   ex $dir/$makefile_config < /tmp/$$ > /dev/null
+   if [ ! -f $dir/$makefile_config ]
+   then
+      cp $a $dir/$makefile_config
+      ex $dir/$makefile_config < /tmp/$$ > /dev/null
+   fi
 done
 
 
@@ -37,8 +40,12 @@ find . -name "makefile.resources" | while read a
 do
    echo $a ...
    dir=`dirname $a`
-   cp $a $dir/$makefile_resources
-   ex $dir/$makefile_resources < /tmp/$$ > /dev/null
+
+   if [ ! -f $dir/$makefile_resources ]
+   then
+      cp $a $dir/$makefile_resources
+      ex $dir/$makefile_resources < /tmp/$$ > /dev/null
+   fi
 done
 
 rm /tmp/$$

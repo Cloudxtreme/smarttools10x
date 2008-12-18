@@ -66,9 +66,10 @@ private:
    void initialize (Prototype*, const analysis::filesystem::Node*) throw (RuntimeException);
    void execute () throw (RuntimeException);
    void clear () throw ();      
-   
+      
    std::string writeOutput (generate::Makefile&, const description::Rule*, const naming::File& input) throw (RuntimeException);
    std::string writeFirstInput (generate::Makefile&, const analysis::CSource*) throw (RuntimeException);
+   void forward (generate::Makefile&,  const analysis::CSource*)  throw (RuntimeException);   
    std::string writeOtherInput (generate::Makefile&, const analysis::CSource*, const naming::File& input) throw (RuntimeException);
    void writeCommand (generate::Makefile&, const description::Rule*, const analysis::CSource*, const std::string& input, const std::string& output) 
       throw (RuntimeException);   

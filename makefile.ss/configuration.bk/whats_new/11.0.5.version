@@ -1,0 +1,13 @@
+Incorpora las reglas para compilar los archivos de GSOAP.
+
+Genera los fuentes C++ a partir del archivo de WSDL  o del header, que llamaremos
+.gsoap. En gSOAP lo llaman .h ... pero no tiene ningún sentido.
+
+./whats_new/11.0.5.version |  Locally Added
+./config.xml |  Locally Modified
+./Linux2.6.schema/x86_64/this.outline |  Locally Modified
+./Linux2.6.schema/x86_64/soap/none.include |  Locally Added
+./Linux2.6.schema/x86_64/soap/gsoap/2.7.6c.include |  Locally Added
+./makefile |  Locally Modified
+./wsdl.sh |  Locally Added
+./soap.sh |  Locally Added

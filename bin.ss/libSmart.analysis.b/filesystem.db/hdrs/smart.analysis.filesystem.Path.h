@@ -39,7 +39,7 @@ class Path : public Node {
 public:
    struct ScanMode { enum _v { Full, Quick, Virtual }; };
 
-   typedef SortedVector <Node, SortByName, const std::string&> successor_container;
+   typedef SortedVector <Node, SortByName, std::string> successor_container;
    typedef successor_container::iterator successor_iterator;
    typedef successor_container::const_iterator const_successor_iterator;
    

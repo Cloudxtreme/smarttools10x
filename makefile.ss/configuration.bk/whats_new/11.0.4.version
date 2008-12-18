@@ -1,0 +1,8 @@
+version 11.0.4 - Evita la limitacion que impone el compilador de ProC/C++ en la longitud
+del nombre del fichero de salida, que sólo podría ser de un máximo de 128 caracteres.
+
+A partir de esta versión el proc.sh comprueba el nombre del fichero de salida y en caso
+de que pudieran darse problemas utiliza un nombre de archivo intermedio.
+
+./whats_new/11.0.4.version |  Locally Added
+./proc.sh |  Locally Modified

@@ -75,6 +75,7 @@ public:
    const int getMask () const throw () { return a_mask; }   
    const bool generateHeader () const throw () { return a_generateHeader; }
    std::string getOutputName (const naming::File*) const throw (RuntimeException);
+   std::string getAllOutputNames (const std::string& outputDirectory, const naming::File*) const throw (RuntimeException);
    const MetaCommand* getMetaCommand () const throw () { return a_metaCommand; }
 
    void setMask (const int mask) throw () { a_mask = mask; }

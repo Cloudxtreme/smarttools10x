@@ -1,0 +1,18 @@
+Soluciona el problema de que sólo sacaba a la lista de OBJECT_LIST
+
+# generate.SourceContainer.cc (197)
+OBJECT_LIST=$(OTHER_USER_OBJECTS) \
+        .$(GMAKE_TARGET).X/sizeC.o
+
+Un único archivo .o mientras que la regla incluye:
+
+# generate.Command.cc (82)
+.$(GMAKE_TARGET).X/sizeC.cc .$(GMAKE_TARGET).X/sizeH.h .$(GMAKE_TARGET).X/sizeStub.h .$(GMAKE_TARGET).X/size.proxy.cc .$(GMAKE_TARGET).X/size.service.cc : size.gsoap
+        @printf "%s$(GMAKE_EOL)" size.gsoap
+        $(VIEWER)$(SOAP) $(SOAP_FLAGS) $(USER_SOAP_FLAGS) size.gsoap
+
+con lo que debería tener en cuenta a size.proxy.o y size.service.o
+./whats_new/11.0.1.version |  Locally Added
+./generate.SourceContainer.cc |  Locally Modified
+./.project |  Locally Modified
+./.cproject |  Locally Modified

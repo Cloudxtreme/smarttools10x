@@ -1,6 +1,6 @@
-RDBMS_HOME=/export/oracle/app/oracle/product/10.2.0
+RDBMS_HOME=$(GMAKE_ORACLE_HOME)/$(GMAKE_ORACLE_VERSION)
 
-PLSQL_CPP=$(RDBMS_HOME)/bin/proc
+PLSQL_CPP=$(GMAKE_HOME)/bin/proc.sh
 
 PLSQL_INCLUDE_IND=include=
 PLSQL_OUTPUT_IND=oname=

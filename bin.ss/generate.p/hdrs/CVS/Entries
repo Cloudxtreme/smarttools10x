@@ -1,7 +1,6 @@
 /smart.generate.Agent.h/1.3/Mon Jul  9 12:24:23 2007//
 /smart.generate.Application.h/1.3/Fri Jan 11 08:55:53 2008//
 /smart.generate.AutoPointer.h/1.2/Mon Jul  9 12:24:23 2007//
-/smart.generate.Command.h/1.6/Thu Jul 12 11:40:55 2007//
 /smart.generate.Executable.h/1.2/Mon Jul  9 12:24:23 2007//
 /smart.generate.FileSystem.h/1.3/Mon Jul  9 12:24:23 2007//
 /smart.generate.Library.h/1.3/Mon Jul  9 12:24:23 2007//
@@ -13,4 +12,5 @@
 /smart.generate.Structure.h/1.4/Mon Jul  9 12:24:24 2007//
 /smart.generate.defines.h/1.3/Fri Jan 11 08:55:53 2008//
 /smart.generate.sccs.h/1.2/Mon Jul  9 12:24:24 2007//
+/smart.generate.Command.h/1.7/Thu Dec 18 14:10:50 2008//
 D

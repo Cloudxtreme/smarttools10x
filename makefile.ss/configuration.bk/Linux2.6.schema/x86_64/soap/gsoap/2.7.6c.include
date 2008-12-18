@@ -1,0 +1,24 @@
+# Utilidad que obtiento el código .cc en base el .h (.soap)
+SOAP=$(GMAKE_HOME)/bin/soap.sh
+
+SOAP_NAME=gsoap
+SOAP_HOME=/home/comun/trabajo/herramientas/gSOAP
+SOAP_RPC_ENCODING=-e
+SOAP_FLAGS=-i -d $(GMAKE_TARGET_DIR) -x -w
+
+# Por defecto genera el código de ambos extremos
+SOAP_SIDE=
+
+# Utilidad para obtener el .soap en base al wsdl
+# Ojo que los parámetros del WSDL siempre tiene que llevar algún valor
+# si se quieren desactivar habrá que poner "<none>"
+WSDL=$(GMAKE_HOME)/bin/wsdl.sh
+WSDL_FLAGS=-x
+USER_WSDL_FLAGS="<none>"
+
+# Los archivos .cc del gsoap se generan y compilan desde el directorio
+# de salida, así que hay que incluir "la ruta actual" en la ruta de búsquedas
+# de includes
+SYSTEM_INCLUDES += -I. -I$(SOAP_HOME)/2.7.6c
+
+

@@ -11,7 +11,7 @@ CAT=/usr/bin/cat
 YACC=bison
 YACC_FLAGS=-t -o y.tab.c
 
-LEX=flex
+LEX=$(GMAKE_HOME)/bin/flex.sh
 LEX_FLAGS=
 
 CPP_FLAGS=-include /usr/include/machine/types.h -D_POSIX_CPUTIME -D__linux__

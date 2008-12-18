@@ -1,4 +1,4 @@
-<Description Version="10.0.15" Owner="frr@tid.es"> 
+<Description Version="11.0.1" Owner="frr@tid.es"> 
    <TargetDirectory Prefix="." Name="GMAKE_TARGET" Extension=".X"/>
    <Project Configure="project.x.config" Tune="tune_project.x.config"/>
    <Makefile Name=".makefile" Configure="makefile.x.config" Resource="makefile.x.resources"/>
@@ -96,7 +96,7 @@
       <Target Extensions="cc" Suffix=".lex"/>
       <Command>
          <Line>
-            <Text>$(LEX) $(USER_LEX_FLAGS) -o$@ </Text>
+            <Text>$(LEX) $(LEX_FLAGS) $(USER_LEX_FLAGS) -o$@ </Text>
             <Input Indicator=""/>
          </Line>
       </Command>
@@ -116,5 +116,38 @@
          </Line>
       </Command>
    </Rule>
+   <Rule Name="SOAP" Type="AnsiC">
+      <FileClass Values="gsoap"/>
+      <FineTarget>
+          <FineEntry Extensions="cc" Suffix="C"/>
+          <FineEntry Extensions="h" Suffix="H"/>
+          <FineEntry Extensions="h" Suffix="Stub"/>
+          <FineEntry Extensions="cc|h" Suffix="Proxy"/>
+          <FineEntry Extensions="cc|h" Suffix="Service"/>
+      </FineTarget>
+      <Command>
+         <Line>
+            <Text>$(SOAP)</Text>
+            <Input Indicator=""/>
+            <Text>$(SOAP_NAME) $(SOAP_HOME) $(SOAP_RPC_ENCODING) $(SOAP_SIDE) $(SOAP_FLAGS) $(USER_SOAP_FLAGS)</Text>
+         </Line>
+      </Command>
+   </Rule>
+   <Rule Name="WSDL" Type="AnsiC">
+      <FileClass Values="wsdl"/>
+      <FineTarget>
+          <FineEntry Extensions="cc" Suffix="C"/>
+          <FineEntry Extensions="h" Suffix="H"/>
+          <FineEntry Extensions="h" Suffix="Stub"/>
+          <FineEntry Extensions="cc|h" Suffix="Proxy"/>
+          <FineEntry Extensions="cc|h" Suffix="Service"/>
+      </FineTarget>
+      <Command>
+         <Line>
+            <Text>$(WSDL)</Text>
+            <Input Indicator=""/>
+            <Text> $(SOAP_NAME) $(SOAP_HOME) $(WSDL_FLAGS) $(USER_WSDL_FLAGS) $(SOAP_RPC_ENCODING) $(SOAP_SIDE) $(SOAP_FLAGS) $(USER_SOAP_FLAGS)</Text>
+         </Line>
+      </Command>
+   </Rule>
 </Description>
-

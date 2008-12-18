@@ -1,0 +1,5 @@
+Incorpora los cambios requeridos por la NemesisRD.core 1.9.4
+
+./core.sccs.cc |  Locally Modified
+./what_new/11.0.1.version |  Locally Added
+./naming.db/hdrs/smart.naming.FileClass.h |  Locally Modified

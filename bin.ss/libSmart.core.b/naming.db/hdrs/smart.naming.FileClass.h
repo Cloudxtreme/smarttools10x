@@ -51,7 +51,7 @@ public:
 private:
    const std::string a_id;
 
-   typedef SafeSortedVector <FileClass, SortByKey, const std::string&> class_container;
+   typedef SafeSortedVector <FileClass, SortByKey, std::string> class_container;
 
    static class_container st_classes;
    

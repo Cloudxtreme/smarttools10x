@@ -28,7 +28,7 @@
 
 #include <nemesis.ModuleManager.h>
 
-smart_define_sccs_tag (Maker, 15);
+smart_define_sccs_tag (Maker, 0);
 
 void smart::smake::sccs::activate ()
    throw ()

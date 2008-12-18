@@ -1,0 +1,4 @@
+version 11.0.2 - Soluciona el fallo de linkado con la openssl
+
+./whats_new/11.0.2.version |  Locally Added
+./SunOS5.10.schema/sparc/ssl/openssl/0.9.8a.include |  Locally Added

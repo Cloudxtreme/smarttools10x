@@ -24,7 +24,7 @@
 #include <smart.sccs.h>
 #include <smart.structure.sccs.h>
 
-smart_define_sccs_tag (structure, 1) 
+smart_define_sccs_tag (structure, 0) 
 
 void smart::structure::sccs::activate ()
    throw ()

@@ -1,0 +1,23 @@
+version 11.0.1 - Cambia el modo de invocación al flex/lex
+
+En Solaris 10, hemos tenido que instalar flex, luego el m4
+y al final sigue fallando con el error:
+
+m4: fatal: libsigsegv.so.0: open failed: No such file or directory
+flex: error writing output file
+
+asi que en vez de seguir instalando "cosas" es preferible probar
+a invocar al lex. Para eso se ejecuta el comando $(GMAKE_HOME)/bin/flex.sh
+que selectiva ajusta los parámetros requeridos por lex/flex.
+
+./whats_new/11.0.1.version |  Locally Added
+./Linux2.4.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/x86_64/this.include |  Locally Modified
+./Linux2.6.schema/unknown/this.include |  Locally Modified
+./makefile |  Locally Modified
+./SunOS5.8.schema/sparc/this.include |  Locally Modified
+./CYGWIN_NT-5.11.5.schema/unknown/this.include |  Locally Modified
+./SunOS5.10.schema/sparc/this.include |  Locally Modified
+./create.minimal |  Locally Modified
+./flex.sh |  Locally Added

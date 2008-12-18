@@ -11,8 +11,8 @@ CAT=/usr/bin/cat
 YACC=/usr/ccs/bin/yacc 
 YACC_FLAGS=-t -d
 
-LEX=flex
-LEX_FLAGS=
+LEX=$(GMAKE_HOME)/bin/flex.sh
+LEX_FLAGS=-l
 
 CPP_FLAGS=-D__solaris__ -D_SOLARIS_SDP
 CC_FLAGS=-D__solaris__=1 -D_SOLARIS_SDP=1

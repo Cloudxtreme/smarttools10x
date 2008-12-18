@@ -23,22 +23,22 @@
 #ifndef _MT
    #ifndef _DEBUG
       #define smart_define_sccs_tag(module,release)  \
-         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 10.0."#release"/Evo-X/ST/O"; \
-         const char* smart_version_##module = "10.0."#release"/Evo-X";
+         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 11.0."#release"/Evo-X/ST/O"; \
+         const char* smart_version_##module = "11.0."#release"/Evo-X";
    #else
       #define smart_define_sccs_tag(module,release)  \
-         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 10.0."#release"/Evo-X/ST/D"; \
-         const char* smart_version_##module = "10.0."#release"/Evo-X";
+         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 11.0."#release"/Evo-X/ST/D"; \
+         const char* smart_version_##module = "11.0."#release"/Evo-X";
    #endif
 #else
    #ifndef _DEBUG
       #define smart_define_sccs_tag(module,release)  \
-         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 10.0."#release"/Evo-X/MT/O"; \
-         const char* smart_version_##module = "10.0."#release"/Evo-X";
+         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 11.0."#release"/Evo-X/MT/O"; \
+         const char* smart_version_##module = "11.0."#release"/Evo-X";
    #else
       #define smart_define_sccs_tag(module,release)  \
-         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 10.0."#release"/Evo-X/MT/D"; \
-         const char* smart_version_##module = "10.0."#release"/Evo-X";
+         const char* smart_sccs_##module = "@(#)SmartTools."#module" VERSION 11.0."#release"/Evo-X/MT/D"; \
+         const char* smart_version_##module = "11.0."#release"/Evo-X";
    #endif
 #endif
 

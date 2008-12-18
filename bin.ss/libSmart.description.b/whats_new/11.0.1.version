@@ -1,0 +1,8 @@
+Incorpora el método description::Rule::getAllOutputNames
+
+./hdrs/smart.description.Rule.h |  Locally Modified
+./description.Rule.cc |  Locally Modified
+./description.sccs.cc |  Locally Modified
+./whats_new/11.0.1.version |  Locally Added
+./.project |  Locally Modified
+./.cproject |  Locally Modified

@@ -192,10 +192,12 @@ void generate::SourceContainer::writeObjectList (Makefile& makefile) const
    throw (RuntimeException)
 {
    const std::string& targetDirectory (description::functions::getTargetDirectory ());
-   const analysis::filesystem::Node* node;
+   const analysis::filesystem::Node* node;   
    
    makefile.debug (FILE_LOCATION);  
-   makefile.write ("OBJECT_LIST=$(OTHER_USER_OBJECTS)");     
+   makefile.write ("OBJECT_LIST=$(OTHER_USER_OBJECTS)");
+   string objectList;
+   
    for (const_dependence_iterator ii = a_objects.begin (), maxii = a_objects.end (); ii != maxii; ii ++) {   // (1)
       makefile.write (" \\\n\t");                 
       
@@ -205,9 +207,16 @@ void generate::SourceContainer::writeObjectList (Makefile& makefile) const
          makefile.write (node->getParent ()->getRelativePath (a_node));
          makefile.write ('/');
       }
-      makefile.write (targetDirectory);
-      makefile.write ('/');
-      makefile.write (node->getRule ()->getOutputName (node));
+  
+      objectList = node->getRule ()->getAllOutputNames (targetDirectory, node);
+
+      if (objectList.empty ()) {
+         objectList = targetDirectory;
+         objectList += '/';
+         objectList += node->getRule ()->getOutputName (node);         
+      }
+      
+      makefile.write (objectList);
    }
    makefile.newline ();
    makefile.newline ();
