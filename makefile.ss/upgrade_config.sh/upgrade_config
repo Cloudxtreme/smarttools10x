@@ -17,8 +17,6 @@ echo makefile.config: $makefile_config
 echo makefile.resources: $makefile_resources
 echo target: $target
 
-echo "1,$ s/_\$(TARGET).O/\$($target)/g" > /tmp/$$
-echo "x" >> /tmp/$$
 
 find . -name "makefile.config" | while read a
 do
@@ -28,10 +26,16 @@ do
    if [ ! -f $dir/$makefile_config ]
    then
       cp $a $dir/$makefile_config
+
+      echo "1,$ s/_\$(TARGET).O/\$($target)/g" > /tmp/$$
+      echo "x" >> /tmp/$$
+      ex $dir/$makefile_config < /tmp/$$ > /dev/null
+
+      echo "1,$ s/LINKER_OUTPUT/OBJECT_NAME/g" > /tmp/$$
+      echo "x" >> /tmp/$$
       ex $dir/$makefile_config < /tmp/$$ > /dev/null
    fi
 done
-
 
 echo "1,$ s/GMAKE_THREADMODE/GMAKE_THREADING/" > /tmp/$$
 echo "x" >> /tmp/$$
