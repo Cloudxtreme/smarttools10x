@@ -87,12 +87,13 @@ void generate::SourceContainer::beginning (Makefile& makefile)
       Logger::information (msg, FILE_LOCATION);
    );
    
+   do_writeObjectName (makefile);
+
    writeIncludes (makefile);
 
    forward (static_cast <const analysis::filesystem::Path*> (a_node), a_objects);
 
    writeObjectList (makefile);
-   do_writeObjectName (makefile);
   
    writeAllDependences (makefile);   
    writeClobber (makefile);

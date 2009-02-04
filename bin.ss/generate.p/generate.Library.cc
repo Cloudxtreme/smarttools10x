@@ -80,7 +80,7 @@ void generate::Library::do_writeObjectRule (Makefile& makefile) const
    makefile.tab (2);
       makefile.write ("if test \"$(CC_USE_AR)\" = \"true\" ; \\\n\t\tthen \\\n");
       makefile.tab (3);
-         makefile.write ("$(AR) crv $(OBJECT_NAME) $(OBJECT_LIST) ; \\\n");
+         makefile.write ("$(AR) $(AR_FLAGS) $(OBJECT_NAME) $(OBJECT_LIST) ; \\\n");
       makefile.tab (2);
       makefile.write ("else \\\n");
       makefile.tab (3);

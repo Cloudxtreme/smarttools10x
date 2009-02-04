@@ -1,0 +1,7 @@
+Al linkar una librería evita el uso directo de los parámetros "crv" y los 
+sustituye por el uso de la variable AR_FLAGS, que tendrá que ser 
+definida en los this.include en los que la variable CC_USE_AR sea 'true'.
+
+./generate.sccs.cc |  Locally Modified
+./whats_new/11.0.3.version |  Locally Added
+./generate.Library.cc |  Locally Modified

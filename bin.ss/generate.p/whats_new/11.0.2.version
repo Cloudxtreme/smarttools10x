@@ -1,0 +1,7 @@
+Cambia el orden en que se generan los includes y la definición de la variable
+OBJECT_NAME, ya que la forma de generarlo hasta ahora impedía que el usuario
+pudiera cambiar el nombre del ejecutable/librería.
+
+./generate.sccs.cc |  Locally Modified
+./whats_new/11.0.2.version |  Locally Added
+./generate.SourceContainer.cc |  Locally Modified
