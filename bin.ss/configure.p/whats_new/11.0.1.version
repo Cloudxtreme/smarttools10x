@@ -1,0 +1,6 @@
+Incorpora el soporte para archivos .include que permite el 
+tratamiento de los recursos que sólo existen en una determinada plataforma.
+
+./configure.sccs.cc |  Locally Modified
+./configure.Resource.cc |  Locally Modified
+./whats_new/11.0.1.version |  Locally Added

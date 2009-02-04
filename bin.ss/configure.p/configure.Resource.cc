@@ -65,7 +65,7 @@ void configure::Resource::initialize (const std::string& path)
    for (io::Directory::const_iterator ii = begin (), maxii = end (); ii != maxii; ii ++) {
       const std::string& entry = io::Directory::data (ii);
       
-      if (entry == "this.include")
+      if (entry == "this.include" || entry == ".include")
          continue;
    
       if (a_mode == Mode::Normal) {
