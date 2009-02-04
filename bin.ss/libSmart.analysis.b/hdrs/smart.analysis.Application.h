@@ -48,6 +48,8 @@ protected:
 private:
    Milisecond a_initTime;
    std::string a_configFile;
+   
+   void getCurrentDirectory (char* cwd, const int maxsize) throw (RuntimeException);
 };
 
 }

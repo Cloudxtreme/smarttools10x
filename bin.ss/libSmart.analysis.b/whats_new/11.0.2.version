@@ -1,0 +1,14 @@
+Hasta ahora SmartTools no podía actuar sobre proyectos cuyo .pj estuviera referenciado
+a partir de un link simbólico.
+
+El problema era debido a el método 'getcwd' devuelve el PATH físico. Es decir, si nuestro 
+se ejecuta desde un directorio "/home/aaaa" que es link simbólico a "/var/tmp/algo" e invocamos
+a 'getcwd' siempre nos devolverá "/var/tmp/algo".
+
+Para poder acceder al mismo valor que nos devolvería el comando pwd tenemos que acceder a la 
+variable de entorno PWD.
+
+./hdrs/smart.analysis.Application.h |  Locally Modified
+./whats_new/11.0.2.version |  Locally Added
+./analysis.sccs.cc |  Locally Modified
+./analysis.Application.cc |  Locally Modified

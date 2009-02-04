@@ -102,9 +102,8 @@ void analysis::Application::run ()
    char cwd [PATH_MAX];
    
    a_initTime = nemesis::functions::milisecond ();
-   
-   if (::getcwd (cwd, sizeof (cwd)) == NULL) 
-      throw RuntimeException ("No se puede obtener el directorio actual", errno, FILE_LOCATION);
+
+  getCurrentDirectory (cwd, sizeof (cwd));
 
    cout << "Directorio actual: " << cwd << endl << endl;
 
@@ -154,5 +153,28 @@ void analysis::Application::showTime (const Milisecond end)
    sprintf (result, " Proceso realizado en %d Dias, %d horas, %d minutos y %d segundos (%d ms)", days, hours, minutes, seconds, totalms);
 
    cout << result << endl << endl;
+}
+
+void analysis::Application::getCurrentDirectory (char* cwd, const int maxlen) 
+   throw (RuntimeException)
+{   
+   char * value;
+   
+   if ((value = getenv ("PWD")) == NULL) {
+      cout << "Variable PWD no está definida en el entorno" << endl;
+      
+      if (::getcwd (cwd, maxlen) == NULL) 
+         throw RuntimeException ("No se puede obtener el directorio actual", errno, FILE_LOCATION);      
+   }   
+   else {
+      const int len = nemesis_strlen (value);
+      
+      if (len >= maxlen) {
+         string msg (nemesis::functions::asString ("Variable PWD (%d bytes) out of memory (%d bytes)", len, maxlen));
+         throw RuntimeException (msg, FILE_LOCATION);
+      }
+      
+      nemesis_strcpy (cwd, value);
+   }
 }
 
