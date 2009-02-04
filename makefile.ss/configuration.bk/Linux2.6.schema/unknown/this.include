@@ -1,12 +1,14 @@
-#
+
 # Programas usandos habitualmente
 #
 AS=/usr/bin/as
 LD=/usr/bin/ld
 STRIP=/usr/bin/strip
-AR=/usr/bin/ar
 AWK=/usr/bin/awk
 CAT=/usr/bin/cat
+
+AR=/usr/bin/ar
+AR_FLAGS=cr
 
 YACC=bison -o y.tab.c
 YACC_FLAGS=-t -d
@@ -19,7 +21,7 @@ CC_FLAGS=-D__linux__=1 -D_LINUX_SDP=1
 
 # Se indica de forma independiente para dar la posibilidad de
 # eliminar su valor.
-USER_CPP_FLAG_RTTI=-fno-rtti
+USER_CPP_FLAG_RTTI=
 
 LIBS=-lrt
 LD_FLAGS=

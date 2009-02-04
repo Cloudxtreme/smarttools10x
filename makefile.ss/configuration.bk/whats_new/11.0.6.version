@@ -1,0 +1,5 @@
+Cambia el guion para permitir que un programa pueda usar
+simultáneamente Oracle y OpenLDAP.
+
+./whats_new/11.0.6.version |  Locally Added
+./Linux2.6.schema/x86_64/ldap/openldap/default.include |  Locally Modified

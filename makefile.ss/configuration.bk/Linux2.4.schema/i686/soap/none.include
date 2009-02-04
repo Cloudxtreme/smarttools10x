@@ -1,0 +1,5 @@
+# Este fichero tiene que existir por la variable GMAKE_SOAP
+# no está definida en Solaris, pero por si las moscas
+# hay alguien que pone GMAKE_SOAP=none
+
+

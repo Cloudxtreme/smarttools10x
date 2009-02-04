@@ -1,0 +1,8 @@
+Soluciona el BUG en Linux2.6i686_GNUgcc_debug_st_oracle9.2.0_none 
+al linkar el proceso no encontraba la librería dinámica libwtc9.so,
+asi que la añadimos a la lista de linkado ... y parece que funciona.
+
+
+./whats_new/11.0.8.version |  Locally Added
+./Linux2.6.schema/i686/rdbms/oracle/9.2.0.include |  Locally Modified
+./Linux2.6.schema/i686/ldap/.include |  Locally Added

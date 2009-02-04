@@ -4,9 +4,11 @@
 AS=/usr/bin/as
 LD=/usr/bin/ld
 STRIP=/usr/bin/strip
-AR=/usr/bin/ar
 AWK=/usr/bin/awk
 CAT=/usr/bin/cat
+
+AR=/usr/bin/ar
+AR_FLAGS=cr
 
 YACC=bison
 YACC_FLAGS=-t -o y.tab.c
@@ -19,7 +21,7 @@ CC_FLAGS=-include /usr/include/machine/types.h -D_POSIX_CPUTIME=1 -D__linux__=1
 
 # Se indica de forma independiente para dar la posibilidad de
 # eliminar su valor.
-USER_CPP_FLAG_RTTI=-fno-rtti
+USER_CPP_FLAG_RTTI=
 
 LIBS=
 LD_FLAGS=

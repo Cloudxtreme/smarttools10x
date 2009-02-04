@@ -1,0 +1,9 @@
+Ajusta los this.include a la generación de Smart.Generate 11.0.3, que
+evita el uso del literal "crv" y lo cambia por la variable AR_FLAGS.
+
+./whats_new/11.0.10.version |  Locally Added
+./Linux2.4.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/x86_64/this.include |  Locally Modified
+./Linux2.6.schema/unknown/this.include |  Locally Modified
+./CYGWIN_NT-5.11.5.schema/unknown/this.include |  Locally Modified

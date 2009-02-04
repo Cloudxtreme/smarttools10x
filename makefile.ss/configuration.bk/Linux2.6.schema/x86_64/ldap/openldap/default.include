@@ -2,5 +2,5 @@ SYSTEM_INCLUDES += -I /usr/include
 CPP_FLAGS += -DAC_INT2_TYPE=short -DAC_INT4_TYPE=long
 CC_FLAGS += -DAC_INT2_TYPE=short -DAC_INT4_TYPE=long
 
-SYSTEM_LIBS += -lldap
+SYSTEM_LIBS += /usr/lib64/libldap.a /usr/lib64/liblber.a /usr/lib64/libsasl2.a
 

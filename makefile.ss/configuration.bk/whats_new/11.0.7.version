@@ -1,0 +1,15 @@
+Incorpora los archivos vacios para evitar que los Makefiles generados con Linux 
+que tiene referencias a SOAP causen problemas al invocarlos desde Solaris.
+
+./whats_new/11.0.7.version |  Locally Added
+./SunOS5.8.schema/sparc/soap/.include |  Locally Added
+./SunOS5.8.schema/sparc/soap/none.include |  Locally Added
+./SunOS5.10.schema/sparc/soap/.include |  Locally Added
+./SunOS5.10.schema/sparc/soap/none.include |  Locally Added
+
+--- 
+
+./Linux2.4.schema/i686/soap/.include |  Locally Added
+./Linux2.4.schema/i686/soap/none.include |  Locally Added
+./Linux2.6.schema/i686/soap/.include |  Locally Added
+./Linux2.6.schema/i686/soap/none.include |  Locally Added
