@@ -3,8 +3,8 @@
 /copy_gpl.sh/1.1/Fri Jan 11 14:20:35 2008//
 /evo-x.prd/1.1/Wed May 23 08:05:06 2007//
 /get_sources.sh/1.1/Fri Jan 11 14:20:35 2008//
-/linux.spawn/1.20/Mon Feb 11 16:12:41 2008//
-/solaris.spawn/1.11/Wed Oct 29 08:34:40 2008//
-/v10.configure/1.11/Mon Aug 25 09:46:58 2008//
 D/bin.ss////
 D/makefile.ss////
+/linux.spawn/1.22/Fri Feb 27 10:44:58 2009//
+/solaris.spawn/1.17/Fri Feb 27 10:44:58 2009//
+/v10.configure/1.12/Fri Feb 27 10:44:58 2009//

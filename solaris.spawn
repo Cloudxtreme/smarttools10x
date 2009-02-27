@@ -1,11 +1,19 @@
 # Configuracion para CYGWIN_NT-5.1
 export LIBXML2_HOME
 export LIBXML2_NAME
-export CCFLAGS
+export CCFLAGS=-fast
 
 osName=`uname -s`
 osVersion=`uname -r | cut -f 1,2 -d '.'`
 osArch=`uname -p`
+
+if [ "$osName" == "SunOS" ]
+then
+   if [ "$1" == "-64" ]
+   then
+      osArch=${osArch}v9
+   fi
+fi
 
 export GMAKE_OSNAME=${osName}${osVersion}
 export GMAKE_SYSTEM=${GMAKE_OSNAME}${osArch}
@@ -13,11 +21,20 @@ export GMAKE_PROCESSORTYPE=$osArch
 export GMAKE_TARGET_DIR=.SunOS5.8sparc_Sunforte6_fast_st_none_none.X
 
 output=`pwd`
-export MYPJ=`pwd`
 output=`dirname $output`
 export NEMESIS_HOME=$output/NemesisRD.pj
 export BIN_DIR=$output/smarttools
 export MAKE_DIR=$output/smarttools
+
+if [ "$GMAKE_HOME" = "" ]
+then
+   echo "Indique GMAKE_HOME donde instalar: "
+   read GMAKE_HOME
+else
+   echo "GMAKE_HOME: $GMAKE_HOME"
+fi
+
+export GMAKE_HOME
 
 echo NEMESIS_HOME: $NEMESIS_HOME
 
@@ -49,7 +66,9 @@ echo CCFLAGS=$CCFLAGS
 
 $CC -V
 
-if [ "$1" != "install" ]
+compile="true"
+
+if [ "$compile" = "true" ]
 then
    cd bin.ss/libSmart.core.b
    solaris.spawn $LIBXML2_HOME
@@ -92,14 +111,15 @@ then
    
    cd ../checksum.p
    solaris.spawn $LIBXML2_HOME $LIBXML2_NAME $OTHER_LIBS
+else
+   cd makefile.ss/smake.p
+fi
    
    pwd
    cd ../configuration.bk
-   set |grep GMAKE
+   set |grep GMAKE > env.sh
+   set |grep PJ >> env.sh
+   cat env.sh
    make TEXTCODE=spawn 
-else
-   cd makefile.ss/configuration.bk
-   make -D TEXTCODE=spawn 
-fi
 
 

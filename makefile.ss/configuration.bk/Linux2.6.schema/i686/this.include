@@ -30,7 +30,7 @@ LD_FLAGS=
 # Linea de comandos del Purify. Makefile
 #
 PURIFY_FLAGS=-best-effort -cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -chain-length=10 -max-threads=200
-PURIFY=/APLICACIONES/PURESOFT/releases/purify.i386_linux2.2003a.06.15/purify
+PURIFY=/APLICACIONES/PURESOFT/releases/purify.i386_linux2.7.0.0.0-012/purify
 
 QUANTIFY_FLAGS=-cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -max-threads=200
 QUANTIFY=/APLICACIONES/PURESOFT/releases/quantify.i386_linux2.2003a.06.13/quantify

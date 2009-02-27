@@ -1,0 +1,2 @@
+SYSTEM_INCLUDES += -I/usr/include/libxml2
+SYSTEM_LIBS += /usr/lib/64/libxml2.so

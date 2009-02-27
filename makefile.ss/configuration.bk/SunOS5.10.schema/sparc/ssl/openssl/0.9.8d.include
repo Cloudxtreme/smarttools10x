@@ -1,8 +1,0 @@
-SSL_HOME=/home/intsdp/ssl/openssl-0.9.8d-sol10-i386/
-
-SYSTEM_INCLUDES += -I$(SSL_HOME)/include -I$(SSL_HOME)/include/openssl
-SYSTEM_LIBS += $(SSL_HOME)/lib/libssl.a -ldl 
-
-# Por compatiblidad con plataforma prepago SDP
-SYSTEM_LIBS += $(SSL_HOME)/lib/libcrypto.a 
-

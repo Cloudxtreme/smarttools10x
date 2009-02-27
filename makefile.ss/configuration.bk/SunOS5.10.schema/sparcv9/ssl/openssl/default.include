@@ -1,0 +1,8 @@
+SSL_HOME=/usr/sfw
+
+SYSTEM_INCLUDES += -I$(SSL_HOME)/include -I$(SSL_HOME)/include/openssl
+SYSTEM_LIBS += $(SSL_HOME)/lib/64/libssl.so 
+
+# Por compatiblidad con plataforma prepago SDP
+SYSTEM_LIBS += $(SSL_HOME)/lib/64/libcrypto.so 
+

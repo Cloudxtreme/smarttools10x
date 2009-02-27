@@ -27,11 +27,14 @@
 #include <sys/utsname.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include <nemesis.defines.h>
 #include <nemesis.Logger.h>
 #include <nemesis.functions.h>
 #include <nemesis.Tokenizer.h>
+
+#include <nemesis.io.TextReader.h>
 
 #include <smart.functions.h>
 
@@ -94,6 +97,26 @@ std::string smart::functions::getArchitecture ()
 
    /* Problema detectado en Solaris, pero no podemos cambiar porque el impacto sería grande */
    result = (nemesis_strcmp (aux, "sun4u") == 0) ? "sparc": aux;
+
+   char version [16];
+
+   sysinfo (SI_RELEASE, version, sizeof (version));
+
+   // La variable GMAKE_SOLARIS_64 sólo tiene efecto para Solaris 5.10
+   if (nemesis_strcmp (version, "5.10") == 0) {
+      static const char* varUse64 = "GMAKE_SOLARIS_64";
+      try {
+         if (nemesis::functions::asBool (getenv (varUse64)) == true)
+            result += "v9";
+      }
+      catch (RuntimeException& ex) {
+         string msg ("Variable: ");
+         msg += varUse64;
+         msg += " | ";
+         msg += ex.getText ();
+         Logger::error (msg, ex.getFromFile ().c_str (), ex.getFromLine ());
+      }
+   }
 #else
    struct utsname name;
    uname (&name);
@@ -106,59 +129,28 @@ std::string smart::functions::getArchitecture ()
 int smart::functions::keycode (const char* str)
    throw ()
 {
-   int result (0xfffefdfc);
-   int nbit = 0;
-   int byte;   
-   
-   while (*str != 0) {
-      byte = ((result & (0xff << nbit)) >> nbit) & 0xff;
-      byte += nbit;
-      
-      if ((byte ^= *str) != 0) {
-         result &= ~(0xff << nbit);
-         byte <<= nbit;
-         result |= byte;         
-      }
-      
-      if ((nbit += 8) >= sizeof (int) * 8)
-         nbit = 0;     
-     
-      str ++;
-   }
-   
-   return result;
+   Integer64 i64 = nemesis::functions::hash (str);
+   struct { unsigned int h; unsigned int l; }  result;
+   nemesis_memmove (&result, &i64, sizeof (result));
+
+//   cout << endl << "str: " << str << endl;
+//   cout << "h: " << result.h << " | l: " << result.l << endl << endl;
+
+   return result.h ^ result.l;
 }
 
 int smart::functions::keyfile (const char* filename, const int keycode)
-   throw ()
+   throw (RuntimeException)
 {
-   struct stat data;
-   
-   int fd = open (filename, O_RDONLY);
-   
-   if (fd == -1) 
-      return 0;
-   
-   off_t length = lseek (fd, 0, SEEK_END);
-   
-   if (length <= 0)
-      length = 1;
-   
-   if (fstat (fd, &data) != 0) {
-      close (fd);
-      return 0;
-   }
+   io::TextReader reader;
+   string contain (nemesis::functions::asString (keycode));
+   const char* block;
 
-   close (fd);
-   
-   unsigned int code = data.st_mtime * length; 
-   
-   code ^= keycode;
-   
-//   cout << endl << "mtime: " << data.st_mtime << " L: " << length << " code: " << code << endl;
-   
-   string textcode (nemesis::functions::asString (code));   
-   return functions::keycode (textcode.c_str ());   
+   reader.open (filename);
+   while ((block = reader.fetch ()) != NULL) 
+      contain += block;
+
+   return functions::keycode (contain.c_str ());
 }
 
 // 

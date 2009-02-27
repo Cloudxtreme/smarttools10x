@@ -9,7 +9,8 @@ export BASEPJ=`pwd`
 
 #export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/v1_6.pj
 export SDPPJ=/home/comun/usuarios/frr/plataforma/NemesisRD/cooking.pj
-export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/v1_8.pj
+#export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/v1_8.pj
+#export SDPPJ=/home/comun/trabajo/plataforma/NemesisRD/cooking.pj
 
 . $GMAKE_HOME/bin/SmartConfigure -t warning -v SDPPJ -x $SDPPJ/bad.ss,$SDPPJ/test.ss,$SDPPJ/collaboration.ss
 

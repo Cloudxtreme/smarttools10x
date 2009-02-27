@@ -1,0 +1,36 @@
+Ajustes en las versiones Debug/Fast 
+
+Se añade 
+-xtarget=native64 -xarch=v9
+
+Por el argumento -xarch debe aparecer después que el -xtarget; que hay que indicarlo
+porque de otro modo aparece un Warning cada vez que intenta compilar un fuente C++.
+
+./whats_new/11.0.12.version |  Locally Added
+./SunOS5.10.schema/sparc/cppcompiler/Sun/forte6/release/debug.include |  Locally Modified
+./SunOS5.10.schema/sparcv9/this.include |  Locally Modified
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/release/debug.include |  Locally Modified
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/release/fast.include |  Locally Modified
+
+----------------------------------------------
+
+Incorpora el -erroff=badargtype2w para evitar que salgan los warnings del tipo:
+
+nucleo.db/MonitorTransacciones.cc", line 131: Warning (Anachronism): Assigning extern "C" void(*)(int) to void(*)(int).
+"nucleo.db/MonitorTransacciones.cc", line 132: Warning (Anachronism): The operation "void(*)(int) == extern "C" void(*)(int)" is illegal.
+"nucleo.db/MonitorTransacciones.cc", line 136: Warning (Anachronism): The operation "void(*)(int) == extern "C" void(*)(int)" is illegal.
+"nucleo.db/MonitorTransacciones.cc", line 282: Warning (Anachronism): Formal argument 2 of type extern "C" void(*)(int) in call to sigset(int, extern "C" void(*)(int)) is being passed void(*)(int).
+
+-----------------------------------------------
+
+Incorpora el uso de la nueva versión de Purify
+
+./Linux2.6.schema/i686/this.include |  Locally Modified
+./Linux2.6.schema/i686/rdbms/oracle/10.2.0.include |  Locally Modified
+./Linux2.6.schema/x86_64/rdbms/oracle/10.2.0.include |  Locally Modified
+./SunOS5.10.schema/sparc/this.include |  Locally Modified
+./SunOS5.10.schema/sparc/cppcompiler/Sun/forte6/this.include |  Locally Modified
+./SunOS5.10.schema/sparcv9/this.include |  Locally Modified
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/this.include |  Locally Modified
+./SunOS5.8.schema/sparc/rdbms/oracle/10.2.0.include |  Locally Added
+./whats_new/11.0.12.version |  Locally Modified

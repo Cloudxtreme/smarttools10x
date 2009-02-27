@@ -1,0 +1,35 @@
+#
+# Programas usandos habitualmente
+#
+AS=/usr/ccs/bin/as
+LD=/usr/ccs/bin/ld
+STRIP=/usr/ccs/bin/strip
+AR=/usr/ccs/bin/ar
+AWK=/bin/awk
+CAT=/usr/bin/cat
+
+YACC=/usr/ccs/bin/yacc 
+YACC_FLAGS=-t -d
+
+LEX=$(GMAKE_HOME)/bin/flex.sh
+LEX_FLAGS=-l
+
+# En el modo 'fast' se indica -xtarget que tiene que ir antes de -xarch
+# por lo que si indicamos aqui el -xarch en modo fast no tendría efecto.
+# Así que se añade el -xarch=v9 en los cppcompiler/Sun/forte6/release/*
+CPP_FLAGS=-D__solaris__ -D_SOLARIS_SDP 
+CC_FLAGS=-D__solaris__=1 -D_SOLARIS_SDP=1 
+
+LIBS=-lsocket -lnsl -ly -ll -lelf -lw -lgen -lrt -lresolv
+LD_FLAGS=-xarch=v9
+
+#
+# Linea de comandos del Purify. Makefile
+#
+PURIFY_FLAGS=-best-effort -cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -max-threads=200 -chain-length=10
+PURIFY=/APLICACIONES/PURESOFT/releases/purify.sol.7.0.0.0-010/purify
+
+QUANTIFY_FLAGS=-cache-dir=../$(GMAKE_TARGET).puresoft -always-use-cache-dir -follow-child-processes=yes  -max-threads=200 
+QUANTIFY=/APLICACIONES/PURESOFT/releases/quantify.sol.2002a.06.00/quantify
+
+

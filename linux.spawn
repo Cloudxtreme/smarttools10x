@@ -39,11 +39,19 @@ export GMAKE_PROCESSORTYPE=$osArch
 export GMAKE_TARGET_DIR="bin"
 
 output=`pwd`
-export MYPJ=`pwd`
 output=`dirname $output`
 export NEMESIS_HOME=$output/nemesis
 export BIN_DIR=$output/smarttools
 export MAKE_DIR=$output/smarttools
+export CCFLAGS=-O3
+
+if [ "$GMAKE_HOME" = "" ]
+then
+   echo "Indique GMAKE_HOME donde instalar: "
+   read GMAKE_HOME
+else
+   echo "GMAKE_HOME: $GMAKE_HOME"
+fi
 
 echo NEMESIS_HOME: $NEMESIS_HOME
 
@@ -75,11 +83,11 @@ cd makefile.ss/configuration.bk
 
 if [ "$1" = "" ]
 then
-   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin" 
+   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin"  GMAKE_HOME=$GMAKE_HOME
 else
    echo Instalacion creada en $1
    mkdir -p $1
-   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin" MYPJ=$1
+   make TEXTCODE=spawn EXTENSION=$EXTENSION BIN_DIR=$BIN_DIR MAKE_DIR=$MAKE_DIR GMAKE_TARGET_DIR="bin" MYPJ=$1 GMAKE_HOME=$GMAKE_HOME
 fi
    
 

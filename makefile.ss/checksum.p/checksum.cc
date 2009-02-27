@@ -62,10 +62,12 @@ int main (const int argc, const char* argv [])
          exit (1);
       }
 
+//      cout << "keycode: " << nemesis::functions::asHexString (keycode) << " ";
       cout << nemesis::functions::asHexString (keycode) << " ";
       
       if (cl.exists ("f")) {
          keycode = smart::functions::keyfile (cl.getValue ("f"), keycode);
+//         cout << "kfile: " << nemesis::functions::asHexString (keycode) << " ";
          cout << nemesis::functions::asHexString (keycode) << " ";
       }
       

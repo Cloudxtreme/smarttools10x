@@ -1,0 +1,9 @@
+SS7_HOME=/home/intsdp/D7_1.5.0
+
+SYSTEM_INCLUDES += -I$(SS7_HOME)/include
+
+CPP_FLAGS += -DAMGR -DSUN
+CC_FLAGS += -DAMGR=1 -DSUN=1
+
+SYSTEM_LIBS += -L$(SS7_HOME)/lib/64b -ltcap -lsccp -lmtp -lapm -lspm -linet
+

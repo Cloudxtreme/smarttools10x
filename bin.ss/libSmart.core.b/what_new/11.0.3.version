@@ -1,0 +1,18 @@
+Cambia la política de firmado. 
+
+A partir de ahora se firmará en base al contenido del fichero, no el 
+en base a la fecha de modificación del ficher; que no permitía copiar 
+un fichero firmado a otro directorio. 
+
+Con la nueva política es posible firmar en un directorio A y una vez 
+firmado mover el archivo a otro directorio B. Con esto facilitamos
+el proceso de instalación de las SmartTools.
+
+Recordar que no usa un firmado MD5 ó SHA-1 porque se quiere mantener
+al mínimo el nº de paquetes requeridos por esta utilidad. Así que se hace
+algo con una idea similar pero más simple.
+
+./core.functions.cc |  Locally Modified
+./core.sccs.cc |  Locally Modified
+./hdrs/smart.functions.h |  Locally Modified
+./what_new/11.0.3.version |  Locally Added

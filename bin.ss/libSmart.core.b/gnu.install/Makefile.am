@@ -1,4 +1,4 @@
-INCLUDES=-I../hdrs -I../naming.db/hdrs -I${NEMESIS_HOME}/include/core 
+INCLUDES=-I../hdrs -I../naming.db/hdrs -I${NEMESIS_HOME}/include/core  -I${NEMESIS_HOME}/include/io
 
 libSmart_core_a_SOURCES=../core.Variable.cc ../naming.db/naming.File.cc ../naming.db/naming.FileClass.cc ../core.functions.cc ../core.sccs.cc 
 

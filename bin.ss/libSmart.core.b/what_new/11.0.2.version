@@ -1,0 +1,18 @@
+Incorpora la posiblidad de usar 64 bits en la máquinas Sun Solaris 5.x
+
+Estas máquinas permiten ejecutar código en 32 y 64 bits indistintamente, pero
+no hay forma clara de saber qué deseamos usar. 
+
+Así que para ajustar este comportamiento se define la variable GMAKE_SOLARIS_64
+que en caso de valer 'true' indicará que se desea generar los ejecutables en modo
+64 bits.
+
+./core.functions.cc |  Locally Modified
+./core.sccs.cc |  Locally Modified
+./what_new/11.0.2.version |  Locally Added
+
+----------------------------------------------------
+
+Sólo aplica la posiblidad de compilar en 64 bits en máquinas con Solaris 5.10.
+./core.functions.cc |  Locally Modified
+./what_new/11.0.2.version |  Locally Modified

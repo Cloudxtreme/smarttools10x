@@ -1,0 +1,38 @@
+Incorpora la compilación de 64 bits para Solaris 5.10.
+
+./whats_new/11.0.11.version |  Locally Added
+./SunOS5.10.schema/sparcv9/this.include |  Locally Added
+./SunOS5.10.schema/sparcv9/this.outline |  Locally Added
+./SunOS5.10.schema/sparcv9/asn1/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/asn1/nokalva/0.0.0.include |  Locally Added
+./SunOS5.10.schema/sparcv9/asn1/snacc/1.3.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/this.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/this.outline |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/library/dynamic.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/library/static.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/release/debug.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/release/fast.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/rwtools/7.0.0.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/rwtools/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/threading/mt.include |  Locally Added
+./SunOS5.10.schema/sparcv9/cppcompiler/Sun/forte6/threading/st.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ldap/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ldap/openldap/3.0.include |  Locally Added
+./SunOS5.10.schema/sparcv9/rdbms/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ss7/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ss7/d7/1.5.0.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ssl/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/ssl/openssl/0.9.8a.include |  Locally Added
+./SunOS5.10.schema/sparcv9/xml/none.include |  Locally Added
+./SunOS5.10.schema/sparcv9/xml/libxml2/2.6.11.include |  Locally Added
+./SunOS5.10.schema/sparcv9/soap/.include |  Locally Added
+./SunOS5.10.schema/sparcv9/soap/none.include |  Locally Added
+
+-------
+
+Versi\363n 11.0.11.1 - En Solaris 5.8 Renombra el recurso Oracle 10.2.0_32bits para
+evitar equivocaciones a Oracle 10.2.0. Hay que tener cuidado por que cambia el nombre
+del directorio de salida.
+
+./whats_new/11.0.11.version |  Locally Modified
+./SunOS5.10.schema/sparc/rdbms/oracle/10.2.0.include |  Locally Added

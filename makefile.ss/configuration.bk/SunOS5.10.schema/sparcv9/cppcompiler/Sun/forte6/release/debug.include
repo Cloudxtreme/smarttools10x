@@ -1,0 +1,4 @@
+CPP_DEBUG_INDICATOR=-g0
+CPP_FLAGS += -D_DEBUG -xarch=native64
+CC_FLAGS += -g -D_DEBUG=1 -xarch=native64
+

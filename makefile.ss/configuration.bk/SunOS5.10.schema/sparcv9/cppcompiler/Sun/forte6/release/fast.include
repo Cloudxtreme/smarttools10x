@@ -1,0 +1,4 @@
+CPP_FLAGS += -fast -xregs=appl -xtarget=native64 -xarch=v9 -xprefetch=auto 
+CC_FLAGS += -fast -xregs=appl -xtarget=native64 -xarch=v9 -xprefetch=auto
+
+LD_FLAGS += -fast -xregs=appl -xtarget=native64 -xarch=v9 -xprefetch=auto

@@ -1,4 +1,4 @@
-echo SmartConfigure - Configurador de proyecto. Version 11.0.0/Evo-X
+echo SmartConfigure - Configurador de proyecto. Version 11.0.2/Evo-X
 echo Desarrollado por Nuevos Conceptos de Plataformas
 echo "(c) Copyright 2002-2007 Telefonica Investigaci\303\263n y Desarrollo, S.A. Unipersonal."
 echo
@@ -33,13 +33,51 @@ v2=`echo $osVersion |cut -f 2 -d .`
 osVersion=$v1.$v2
 archName=`uname -p`
 
+argNoAuto=0
+
+export GMAKE_SOLARIS_64=
+
+this_arg="$1 $2"
+
+for arg in $this_arg
+do
+   case $arg in 
+      "-noauto") argNoAuto=1 ; shift ;;
+      "-32") GMAKE_SOLARIS_64=false; shift ;;
+      "-64") GMAKE_SOLARIS_64=true; shift ;;
+   esac
+done
+
+if [ "$osName" == "SunOS" -a "$osVersion" == "5.10" ]
+then
+   if [ "$GMAKE_SOLARIS_64" == "" ]
+   then
+      echo
+      echo "Seleccione el modo de generación: "
+      LongSize="64 Bits"
+      DefaultSize="32 Bits"
+   
+      select nbits in "$DefaultSize" "$LongSize"
+      do
+         case $nbits in
+            $DefaultSize) GMAKE_SOLARIS_64=false; break ;;
+            $LongSize) GMAKE_SOLARIS_64=true; break ;;
+         esac
+      done
+   fi
+
+   if [ "$GMAKE_SOLARIS_64" == "true" ]
+   then
+      archName=${archName}v9
+   fi
+fi
+
 autoName=.$osName$osVersion$archName.auto
 systemID=$osName$osVersion$archName
 
-if [ "$1" = "-noauto" ]
+if [ "$argNoAuto" -eq 1 ]
 then
    rm -f $autoName
-   shift
 fi
 
 if [ -f $autoName ]
@@ -47,14 +85,7 @@ then
    echo Recargando memoria de configuracion de $autoName
    echo
 else
-   if [ "$1" = "-tuning" ]
-   then
-      shift;
-      $GMAKE_HOME/bin/$systemID/configure -tuning $1
-      shift
-   else
-      $GMAKE_HOME/bin/$systemID/configure 
-   fi
+   $GMAKE_HOME/bin/$systemID/configure 
 fi
 
 . $autoName
@@ -63,6 +94,7 @@ if [ -x $GMAKE_HOME/bin/$systemID/generate ]
 then
    alias gmake=`echo $GMAKE_HOME/bin/$systemID/generate $*`
    echo Alias 'gmake' establecido para el generador de Makefiles
+   alias gmake
 else
    echo "No existe ejecutable $GMAKE_HOME/bin/$systemID/generate"
    echo "Aviso no se pudo establecer el alias para el generador de Makefiles ('gmake')"
@@ -73,6 +105,7 @@ if [ -x $GMAKE_HOME/bin/$systemID/smake ]
 then
    alias smake=`echo $GMAKE_HOME/bin/$systemID/smake`
    echo Alias 'smake' establecido para el generador de Makefiles
+   alias smake
 else
    echo "No existe ejecutable $GMAKE_HOME/bin/$systemID/smake"
    echo "Aviso no se pudo establecer el alias para el generador de Makefiles ('smake')"

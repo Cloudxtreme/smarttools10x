@@ -1,0 +1,2 @@
+Incorpora el uso de la variable GMAKE_SOLARIS_64 que permite indicar el modo de generacion
+en Solaris 5.x

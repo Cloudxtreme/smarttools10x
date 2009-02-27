@@ -1,4 +1,6 @@
-CPP_DEBUG_INDICATOR=-g0
-CPP_FLAGS += -D_DEBUG
-CC_FLAGS += -g -D_DEBUG=1
+CPP_DEBUG_INDICATOR=-g0 
+CPP_FLAGS += -D_DEBUG  -xtarget=ultra
+CC_FLAGS += -g -D_DEBUG=1 -xtarget=ultra
+
+LD_FLAGS += -xtarget=ultra
 

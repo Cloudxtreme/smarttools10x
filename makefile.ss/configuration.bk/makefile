@@ -22,8 +22,8 @@ EXTENSION=
 BIN_DIR=../../bin.ss
 MAKE_DIR=..
 
-dataDirectory=$(MYPJ)/data
-binDirectory=$(MYPJ)/bin
+dataDirectory=$(GMAKE_HOME)/data
+binDirectory=$(GMAKE_HOME)/bin
 
 sourceMainBinary=$(BIN_DIR)/$(GMAKE_TARGET_DIR)
 sourceGadgetBinary=$(MAKE_DIR)/$(GMAKE_TARGET_DIR)
@@ -100,7 +100,7 @@ $(dataDirectory)/config.xml : config.xml
    
 $(dataDirectory)/oracle_minimal.config : makefile
 	@echo "Actualizando " $@
-	$(VIEWER)echo "/export/oracle/app/oracle/product" > $(dataDirectory)/oracle_minimal.config ; 
+	$(VIEWER)echo "/home/comun/utils/oracle.minimal/" > $(dataDirectory)/oracle_minimal.config ; 
 
 $(dataDirectory)/empty.include :
 	@echo "Creando " $(dataDirectory)/empty.include 

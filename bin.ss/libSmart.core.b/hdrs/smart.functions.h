@@ -31,7 +31,7 @@ struct functions {
    static std::string getOSName () throw ();
    static std::string getArchitecture () throw ();
    static int keycode (const char* str) throw ();
-   static int keyfile (const char* path, const int keycode) throw ();
+   static int keyfile (const char* path, const int keycode) throw (RuntimeException);
 
 private:
    static std::string execute (const char* command) throw (RuntimeException);
