@@ -1,0 +1,7 @@
+Incorpora constructores en naming::File necesarios para facilitar la búsqueda de 
+archivos ubicados en árboles de inclusión de la forma .../hdrs/acme/goo/foo.h
+
+./core.sccs.cc |  Locally Modified
+./what_new/11.0.4.version |  Locally Added
+./naming.db/hdrs/smart.naming.File.h |  Locally Modified
+./naming.db/naming.File.cc |  Locally Modified

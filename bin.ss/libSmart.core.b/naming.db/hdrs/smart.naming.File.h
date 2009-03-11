@@ -38,8 +38,9 @@ public:
    };
 
    File ();
-   File (File* parent);
+   explicit File (File* parent);
    File (File* parent, const std::string& name);
+   File (File* parent, const char* name);
    File (const File&);
    ~File ();
 

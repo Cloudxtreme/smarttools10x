@@ -83,6 +83,15 @@ naming::File::File (naming::File* parent, const string& name) :
    a_variablePath = NULL;
 }
 
+naming::File::File (naming::File* parent, const char* name) :
+   a_parent (parent),
+   a_name (name)
+{
+   a_fileClass = FileClass::instance (*this);
+   a_fullPath = NULL;
+   a_variablePath = NULL;
+}
+
 naming::File::File (naming::File* parent) :
    a_parent (parent)
 {   
