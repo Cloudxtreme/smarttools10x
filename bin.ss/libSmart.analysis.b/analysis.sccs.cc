@@ -21,7 +21,7 @@
 #include <smart.sccs.h>
 #include <smart.analysis.sccs.h>
 
-smart_define_sccs_tag (analysis, 2) 
+smart_define_sccs_tag (analysis, 3) 
 
 void smart::analysis::sccs::activate ()
    throw ()

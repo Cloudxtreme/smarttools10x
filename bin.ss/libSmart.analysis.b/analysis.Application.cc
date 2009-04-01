@@ -103,7 +103,7 @@ void analysis::Application::run ()
    
    a_initTime = nemesis::functions::milisecond ();
 
-  getCurrentDirectory (cwd, sizeof (cwd));
+   getCurrentDirectory (cwd, sizeof (cwd));
 
    cout << "Directorio actual: " << cwd << endl << endl;
 

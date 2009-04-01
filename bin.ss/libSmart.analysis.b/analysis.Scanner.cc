@@ -160,6 +160,7 @@ void analysis::Scanner::terminate ()
 // (4) Si no encuentra ninguna regla que aplicar => ignora el nodo.
 // (5) Si los elementos no tiene relacion => la interseccion de sus mascara sera 0.
 //-------------------------------------------------------------------------------------------
+/*static*/
 void analysis::Scanner::forward (filesystem::Path* path, string& aux)
    throw (RuntimeException)
 {
@@ -233,6 +234,8 @@ void analysis::Scanner::forward (filesystem::Path* path, string& aux)
 //------------------------------------------------------------------------------------------------------------
 // (1) Si es un repositorio de includes (hdrs) lo carga y termina la recursion 
 // (2) Si no hay ningun regla para la extension recibida => ignora el archivo.
+//     2.1 intenta tratar los directorios que estén dentro de hdrs, para tratar include/acm o hdrs/acm de la
+//         misma forma que trata el "hdrs"
 // (3) Cada regla tiene un tipo, y una mascara que indican los tipos con los que tiene relacion => si no hay
 // relacion entre ambas reglas su 'and' sera 0.
 // (4) Si la regla corresponde con una regla de directorio => continua profundizando en la estructura.
@@ -263,8 +266,24 @@ void analysis::Scanner::analize (filesystem::Path* path, naming::File& file, str
 
    const description::Rule* rule (NULL);
    
-   if ((rule = st_ruleAgent->find (fileClass)) == NULL)                                // (2)
+   if ((rule = st_ruleAgent->find (fileClass)) == NULL) {                               // (2)
+      for (filesystem::Path* ww = path; ww != NULL; ww = ww->getPath ()) {               // (2.1)
+         LOGDEBUG (
+            string msg ("backward | ");
+            msg += ww->asString ();
+            Logger::debug (msg, FILE_LOCATION);
+         );
+         if (st_ruleAgent->recognizeHeaderRepository (*ww) == true) {
+            if (io::functions::isADirectory (file.getFullPath ()) == true) {
+               filesystem::Path* npath = new filesystem::Path (
+                  path, file, st_ruleAgent->getRuleHeaderRepository (), false        
+               );
+               forward (npath, aux);
+            }
+         }
+      }
       return;
+   }
 
    const int mask = path->getRule ()->getMask ();
 

@@ -64,7 +64,7 @@ protected:
    }   
    virtual bool specialLine (char* line) throw () { return false; }
    
-private:
+private:  
    bool a_onComment;
    firststep_container a_firststeps;
    include_container a_includes;
@@ -84,6 +84,11 @@ private:
    
    static bool complexComment (const bool onComment, char* line) throw ();
    static Node* forward (filesystem::Path*, const naming::File&) throw (RuntimeException);
+   
+   typedef std::pair <analysis::filesystem::Node*,analysis::filesystem::Node*> loop_search_result;   
+   static loop_search_result loop_search (analysis::filesystem::Path* parent, const naming::File& file) throw (RuntimeException);   
+   static analysis::filesystem::Node* result_found (loop_search_result& ii) throw () { return ii.first; }
+   static analysis::filesystem::Node* result_done (loop_search_result& ii) throw () { return ii.second; }
          
    friend class filesystem::Path;
 };

@@ -27,6 +27,7 @@
 
 #include <smart.analysis.filesystem.Path.h>
 #include <smart.analysis.filesystem.FlatEntry.h>
+#include <smart.analysis.filesystem.FlatDirectory.h>
 
 using namespace std;
 using namespace nemesis;
@@ -131,6 +132,19 @@ void  analysis::CSource::do_synthesize ()
 //     fichero que estamos analizado. Buscaria en uno.db/hdrs
 // 2.- Segundo busca en los directorios que estan a la misma altura que el directorio padre
 //     actual. Buscaria en la estructura de dos.db 
+//
+// (1) Al dar la posiblidad de buscar los .h en directorios con la pinta hdrs/acme/foom/goom.h
+//     hay que tener en cuenta que es posible que se haga el include "#include foom/goom.h" o 
+//     "#include acme/foom/goom.h".
+// (2) Si la búsqueda detallada en base al nombre largo no dio resultado o si la búsqueda ha
+//     sido en base a un nombre corto => recupera la entrada en el directorio plano y ya está-
+// (3) Si el nombre del PATH contiene una subcadena igual que el nombre del archivo que estamos buscando,
+//     la recupera. El nombre de archivo tendrá una forma "aaaa/zzzz/aa.h"
+// (4) Las estructura detectada en prepago es:
+//     .ss/hdrs/acme/goom.h
+//     .ss/.cc -> acme/goom.h
+//     Es decir, que el 'parent' que tenemos actualmente no tiene porqué contener el archivo que
+//     estamos buscando, así que hay que hacer la búsqueda completa.
 //----------------------------------------------------------------------------------------------
 analysis::filesystem::Node* analysis::CSource::search (analysis::filesystem::Path* parent, const naming::File& file)
    throw (RuntimeException)
@@ -139,54 +153,75 @@ analysis::filesystem::Node* analysis::CSource::search (analysis::filesystem::Pat
 
    Path* backup (parent);
    Node* result (NULL);
+   bool longPath (false);
+   Node* done (NULL);
 
    FileSystem& fs (FileSystem::instance ());        
       
-   if (fs.wasNotFound (file) == false) {      
-      Path::successor_iterator ii, maxii;
-      Node* done (NULL);
-      Node* w;      
-      Path* p;
+   if (fs.wasNotFound (file) == false) {
+      const char* filename = file.getName ().c_str ();
+      char* basename = strrchr (filename, '/');                // Recupera el último nombre ..../acme/foom/goom.h => goom.h
       
-      do  {
-         if ((result = parent->successor_find (file)) != NULL)
-            break;                    
-
-         for (ii = parent->successor_begin (), maxii = parent->successor_end (); ii != maxii; ii ++) {
-            if ((w = Path::successor (ii)) == done)
-               continue;
-
-            if (w->isAPath () == true) {
-               p = static_cast <Path*> (w);
-               if ((result = p->successor_find (file)) != NULL)
-                  break;      
-               if ((result = forward (p, file)) != NULL)
-                  break;
-            }         
-         }
-
-         done = parent;
-         parent = parent->getPath ();         
-      } while (parent != NULL && result == NULL);
-
-      if (result == NULL && done != NULL) {
-         filesystem::FlatEntry* fe = fs.find (file, static_cast <filesystem::Path*> (done));
-
+      if (basename != NULL) {                                  // si es un nombre con '/' => nombre largo
+         naming::File aux (parent, basename + 1);
+         
+         filesystem::FlatEntry* fe = parent->getFlatDirectory ()->find (&aux);
+         
+         LOGDEBUG (
+            string msg ("analysis::CSource::search | File: ");
+            msg += filename;
+            
+            if (fe != NULL) {
+               msg += " | ";
+               msg += fe->asString ();
+            }
+            else {
+               msg += " | FileName: ";
+               msg += aux.getName ();
+               msg += " | FlatEntry: <null>";
+            }
+            
+            Logger::debug (msg, FILE_LOCATION);
+         );        
+         
          if (fe != NULL) {
+            for (FlatEntry::path_iterator ii = fe->path_begin (), maxii = fe->path_end (); ii != maxii; ii ++) {
+               if (FlatEntry::path (ii)->getVariablePath ().find (filename) != string::npos) {     
+                  result = FlatEntry::path (ii);
+                  break;
+               }
+            }            
+         }
+         else {                                                   // (4)
+            loop_search_result rr = loop_search (parent, aux);         
+            done = result_done (rr);
+            result = result_found (rr);                        
+         }
+      }
+      else {
+         loop_search_result rr = loop_search (parent, file);         
+         done = result_done (rr);
+         result = result_found (rr);
+      }
+         
+      if (result == NULL && done != NULL) {                         // (2)
+         filesystem::FlatEntry* fe = fs.find (file, static_cast <filesystem::Path*> (done));
+         if (fe != NULL){
             if (fe->path_size () > 1) {
                string msg ("Entrada ");
                msg += getVariablePath ();
                msg += " | Usa nombre duplicado: ";
                msg += fe->asString ();
-               Logger::warning (msg, FILE_LOCATION);
+               Logger::warning (msg, FILE_LOCATION);            
             }
-            result = fe->path (fe->path_begin ());
+            result = FlatEntry::path (fe->path_begin ());                        
          }
-         else
-            fs.notFound (file);
-      }
+      }            
+      
+      if (result == NULL)
+         fs.notFound (file);      
    }
-
+   
    LOGDEBUG (
       string msg ("smart::analysis::CSource::search | File: ");
       msg += file.getName ();
@@ -200,6 +235,49 @@ analysis::filesystem::Node* analysis::CSource::search (analysis::filesystem::Pat
    return result;
 }
 
+/*static*/
+analysis::CSource::loop_search_result analysis::CSource::loop_search (analysis::filesystem::Path* parent, const naming::File& file)
+   throw (RuntimeException)
+{
+   using namespace smart::analysis::filesystem;
+   
+   Path::successor_iterator ii, maxii;
+   Node* result (NULL);
+   Node* done (NULL);
+   Node* w;      
+   Path* p;
+   
+   LOGDEBUG (
+      string msg ("analysis::CSource::loop_search | File: ");
+      msg += file.getName ();
+      Logger::debug (msg, FILE_LOCATION);
+   );    
+   
+   do  {
+      if ((result = parent->successor_find (file)) != NULL)
+         break;                    
+
+      for (ii = parent->successor_begin (), maxii = parent->successor_end (); ii != maxii; ii ++) {
+         if ((w = Path::successor (ii)) == done)
+            continue;
+
+         if (w->isAPath () == true) {
+            p = static_cast <Path*> (w);
+            if ((result = p->successor_find (file)) != NULL)
+               break;      
+            if ((result = forward (p, file)) != NULL)
+               break;
+         }         
+      }
+
+      done = parent;
+      parent = parent->getPath ();         
+   } while (parent != NULL && result == NULL);
+   
+   return loop_search_result (result, done);
+}
+
+/*static*/
 analysis::filesystem::Node* 
 analysis::CSource::forward (analysis::filesystem::Path* parent, const naming::File& file)
    throw (RuntimeException)

@@ -1,0 +1,13 @@
+Trata los directorios que encuentra dentro de un repositorio de cabeceras
+como un repositorio de cabeceras, independientemente de su nombre y extensión.
+
+Así por ejemplo se podría localizar un archivo de cabecera ubicado en un ruta
+como ..../hdrs/acm/core.h o includes/foo/goo.h; este modelo de organización es 
+usado en algunos proyectos externos y librerías de uso público.
+
+./hdrs/smart.analysis.CSource.h |  Locally Modified
+./analysis.CSource.cc |  Locally Modified
+./analysis.Scanner.cc |  Locally Modified
+./whats_new/11.0.3.version |  Locally Added
+./analysis.sccs.cc |  Locally Modified
+./analysis.Application.cc |  Locally Modified
