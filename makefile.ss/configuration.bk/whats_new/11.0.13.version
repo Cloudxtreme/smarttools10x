@@ -1,0 +1,4 @@
+Incorpora el uso de purify para Linux 2.6 (64 bits).
+
+./whats_new/11.0.13.version |  Locally Added
+./Linux2.6.schema/x86_64/this.include |  Locally Modified
