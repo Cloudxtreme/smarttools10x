@@ -31,7 +31,7 @@ osVersion=`uname -r`
 v1=`echo $osVersion |cut -f 1 -d .`
 v2=`echo $osVersion |cut -f 2 -d .`
 osVersion=$v1.$v2
-archName=`uname -p`
+archName=`uname -m`
 
 argNoAuto=0
 

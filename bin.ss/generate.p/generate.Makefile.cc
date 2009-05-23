@@ -75,7 +75,7 @@ generate::Makefile* generate::Makefile::create (const analysis::filesystem::Path
    );
    
    nemesis_signal_shield (result->a_fd, open (filename.c_str (), omode, mask));   
-   nemesis_signal_shield (result->a_fd, open (filename.c_str (), omode));   
+//   nemesis_signal_shield (result->a_fd, open (filename.c_str (), omode));   
 
    if (result->a_fd == -1)
       throw RuntimeException (filename, errno, FILE_LOCATION);   
