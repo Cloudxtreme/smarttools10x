@@ -1,0 +1,8 @@
+SS7_HOME=/home/intsdp/D7_1.6.0_A27
+
+SYSTEM_INCLUDES += -I$(SS7_HOME)/linux/include
+
+CPP_FLAGS += -DAMGR
+CC_FLAGS += -DAMGR=1
+
+SYSTEM_LIBS += -L$(SS7_HOME)/linux/lib -ltcap -lsccp -lmtp -lapm -lspm -lstreams -linet
