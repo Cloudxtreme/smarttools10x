@@ -160,7 +160,7 @@ analysis::filesystem::Node* analysis::CSource::search (analysis::filesystem::Pat
       
    if (fs.wasNotFound (file) == false) {
       const char* filename = file.getName ().c_str ();
-      char* basename = strrchr (filename, '/');                // Recupera el último nombre ..../acme/foom/goom.h => goom.h
+      const char* basename = strrchr (filename, '/');                // Recupera el último nombre ..../acme/foom/goom.h => goom.h
       
       if (basename != NULL) {                                  // si es un nombre con '/' => nombre largo
          naming::File aux (parent, basename + 1);
