@@ -3,6 +3,17 @@ echo Desarrollado por Nuevos Conceptos de Plataformas
 echo "(c) Copyright 2002-2007 Telefonica Investigaci\303\263n y Desarrollo, S.A. Unipersonal."
 echo
 
+osName=`uname -s`
+osVersion=`uname -r`
+archName=""
+
+if [ "$osName" = "SunOS" ]
+then
+   archName=`uname -p`
+else
+   archName=`uname -m`
+fi
+
 if [ "$GMAKE_HOME" == "" ]
 then
    echo La variable GMAKE_HOME no tiene establecido el directorio de trabajo
@@ -20,18 +31,15 @@ export GMAKE_ORACLE_HOME
 if  [ -f $GMAKE_HOME/data/oracle_minimal.config ]
 then
    GMAKE_ORACLE_HOME=`cat $GMAKE_HOME/data/oracle_minimal.config`
-   GMAKE_ORACLE_HOME=$GMAKE_ORACLE_HOME/`uname -s`
+   GMAKE_ORACLE_HOME=$GMAKE_ORACLE_HOME/$osName
    GMAKE_ORACLE_HOME=$GMAKE_ORACLE_HOME/`uname -m`
 else
    GMAKE_ORACLE_HOME="/export/oracle/app/oracle/product" 
 fi
 
-osName=`uname -s`
-osVersion=`uname -r`
 v1=`echo $osVersion |cut -f 1 -d .`
 v2=`echo $osVersion |cut -f 2 -d .`
 osVersion=$v1.$v2
-archName=`uname -m`
 
 argNoAuto=0
 
