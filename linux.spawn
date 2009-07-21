@@ -51,6 +51,8 @@ then
    read GMAKE_HOME
 else
    echo "GMAKE_HOME: $GMAKE_HOME"
+   echo "Pulse <Enter> para continuar ..."
+   read a
 fi
 
 echo NEMESIS_HOME: $NEMESIS_HOME
